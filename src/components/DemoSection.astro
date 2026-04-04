@@ -10,15 +10,13 @@ const DEMO_CLIENT_ID = '5fe6055a-89ce-4cb5-be41-c8ce27ebd3da';
     <div class="demo-box mt-3">
       <!-- Widget inline real -->
       <div class="demo-widget">
-        <div id="mychatbot-demo" style="height:500px;border-radius:12px;overflow:hidden;border:0.5px solid #e2e8f0;background:#f8fafc;position:relative"></div>
+        <div id="mychatbot" style="height:500px;border-radius:12px;overflow:hidden;border:0.5px solid #e2e8f0;background:#f8fafc;position:relative"></div>
         <script is:inline define:vars={{ DEMO_CLIENT_ID }}>
           (function() {
-            var script = document.createElement('script');
-            script.src = 'https://app.mychatbot.ro/widget.js';
-            script.setAttribute('data-client-id', DEMO_CLIENT_ID);
-            script.setAttribute('data-mode', 'inline');
-            script.setAttribute('data-container', '#mychatbot-demo');
-            document.getElementById('mychatbot-demo').appendChild(script);
+            var s = document.createElement('script');
+            s.src = 'https://app.mychatbot.ro/widget.js';
+            s.setAttribute('data-client-id', DEMO_CLIENT_ID);
+            document.getElementById('mychatbot').appendChild(s);
           })();
         </script>
       </div>
