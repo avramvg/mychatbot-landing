@@ -2,8 +2,19 @@
 ---
 <nav>
   <div class="container nav-inner">
-    <a href="/" class="nav-logo" aria-label="MyChatbot">
-      <img src="/logos/mychatbot-logo.svg" alt="MyChatbot" height="40" />
+    <a href="/" style="display:flex;align-items:center;gap:10px;text-decoration:none">
+      <svg width="36" height="28" viewBox="0 0 80 64" xmlns="http://www.w3.org/2000/svg">
+        <rect x="4" y="4" width="72" height="48" rx="14" fill="#0ea5e9"/>
+        <polygon points="16,52 4,68 32,52" fill="#0ea5e9"/>
+        <circle cx="27" cy="29" r="6" fill="white"/>
+        <circle cx="40" cy="29" r="6" fill="white" opacity="0.7"/>
+        <circle cx="53" cy="29" r="6" fill="white" opacity="0.4"/>
+        <polygon points="64,4 68,12 76,8 70,16 78,20 70,20 68,28 64,20 56,24 62,16 54,12 62,12" fill="#f59e0b"/>
+      </svg>
+      <div>
+        <div style="font-family:'Plus Jakarta Sans',Inter,sans-serif;font-size:16px;font-weight:700;color:#0f172a;line-height:1">MyChatbot</div>
+        <div style="font-size:10px;color:#64748b;font-weight:400">by Hello Web</div>
+      </div>
     </a>
     <div class="nav-links">
       <a href="#functionalitati">Funcționalități</a>
@@ -32,8 +43,7 @@
     padding-top: 0.9rem;
     padding-bottom: 0.9rem;
   }
-  .nav-logo { display: flex; align-items: center; text-decoration: none; }
-  .nav-links {
+.nav-links {
     display: flex;
     align-items: center;
     gap: 1.5rem;
