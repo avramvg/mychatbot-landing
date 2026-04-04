@@ -1,0 +1,56 @@
+---
+---
+<nav>
+  <div class="container nav-inner">
+    <a href="/" class="nav-logo" aria-label="MyChatbot">
+      <img src="/logos/mychatbot-logo.svg" alt="MyChatbot" height="40" />
+    </a>
+    <div class="nav-links">
+      <a href="#functionalitati">Funcționalități</a>
+      <a href="#preturi">Prețuri</a>
+      <a href="#demo">Demo</a>
+      <a href="https://app.mychatbot.ro/login">Autentificare</a>
+      <a href="https://app.mychatbot.ro/signup" class="btn-primary nav-cta">Încearcă gratuit</a>
+    </div>
+  </div>
+</nav>
+
+<style>
+  nav {
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 0.5px solid var(--color-border);
+    z-index: 100;
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0.9rem;
+    padding-bottom: 0.9rem;
+  }
+  .nav-logo { display: flex; align-items: center; text-decoration: none; }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .nav-links a {
+    font-size: 13px;
+    color: var(--color-slate);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .nav-links a:hover { color: var(--color-dark); }
+  .nav-cta {
+    padding: 8px 18px !important;
+    font-size: 13px !important;
+    color: white !important;
+  }
+  @media (max-width: 768px) {
+    .nav-links a:not(.nav-cta):not([href*="login"]) { display: none; }
+    .nav-links { gap: 0.75rem; }
+  }
+</style>

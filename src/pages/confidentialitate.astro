@@ -1,0 +1,46 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Politică de confidențialitate — MyChatbot"
+  description="Politica de confidențialitate a serviciului MyChatbot by Hello Web. GDPR complet, server UE."
+  canonical="https://www.mychatbot.ro/confidentialitate"
+>
+  <Nav />
+  <main class="container" style="padding: 3rem 1.5rem; min-height: 60vh;">
+    <h1 style="margin-bottom: 1.5rem;">Politică de confidențialitate</h1>
+    <p style="margin-bottom: 1rem;">
+      Ultima actualizare: <strong>Aprilie 2026</strong>
+    </p>
+    <p style="margin-bottom: 1.5rem;">
+      Hello Web SRL respectă confidențialitatea datelor tale. Această politică explică
+      ce date colectăm, cum le folosim și drepturile tale conform GDPR.
+    </p>
+
+    <h2 style="font-size: 18px; margin: 2rem 0 0.75rem;">1. Date colectate</h2>
+    <p>Colectăm: adresa de email (pentru cont), URL-ul site-ului tău (pentru crawl),
+    date de facturare (procesate prin Stripe). Nu stocăm conținutul conversațiilor vizitatorilor.</p>
+
+    <h2 style="font-size: 18px; margin: 2rem 0 0.75rem;">2. Scopul prelucrării</h2>
+    <p>Datele sunt folosite exclusiv pentru furnizarea serviciului MyChatbot:
+    autentificare, generare chatbot, facturare și suport tehnic.</p>
+
+    <h2 style="font-size: 18px; margin: 2rem 0 0.75rem;">3. Stocare și securitate</h2>
+    <p>Datele sunt stocate pe servere din UE (Frankfurt, Germania) prin Supabase.
+    Conexiunile sunt criptate (TLS 1.3). Aplicăm principiul minimizării datelor.</p>
+
+    <h2 style="font-size: 18px; margin: 2rem 0 0.75rem;">4. Drepturile tale</h2>
+    <p>Conform GDPR, ai dreptul la acces, rectificare, ștergere și portabilitate a datelor.
+    Poți șterge contul din panoul de control sau scriind la <a href="mailto:hello@helloweb.ro" style="color: #0ea5e9;">hello@helloweb.ro</a>.</p>
+
+    <h2 style="font-size: 18px; margin: 2rem 0 0.75rem;">5. Cookies</h2>
+    <p>Folosim cookie-uri strict necesare pentru autentificare. Nu folosim cookie-uri de tracking terțe.</p>
+
+    <h2 style="font-size: 18px; margin: 2rem 0 0.75rem;">6. Contact DPO</h2>
+    <p>Responsabil protecția datelor: <a href="mailto:hello@helloweb.ro" style="color: #0ea5e9;">hello@helloweb.ro</a></p>
+  </main>
+  <Footer />
+</Layout>

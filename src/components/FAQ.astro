@@ -1,0 +1,55 @@
+---
+const faqs = [
+  {
+    q: 'Funcționează pe orice platformă?',
+    a: 'Da — WordPress, Wix, Shopify, Squarespace, Hello Web sau orice HTML. Un singur rând de cod.',
+  },
+  {
+    q: 'Ce se întâmplă după 7 zile trial?',
+    a: 'Alegi un plan și continui. Datele și configurarea sunt salvate. Reactivare instantanee.',
+  },
+  {
+    q: 'Pot anula abonamentul oricând?',
+    a: 'Da, fără penalități. Abonamentul Stripe se oprește la cerere. Fără perioadă minimă.',
+  },
+  {
+    q: 'În ce limbi răspunde chatbot-ul?',
+    a: 'Detectează automat limba vizitatorului — română, engleză, germană, franceză, italiană.',
+  },
+  {
+    q: 'Datele clienților sunt în siguranță?',
+    a: 'GDPR complet. Server UE (Frankfurt). Nu stocăm textul conversațiilor. Consimțământ explicit.',
+  },
+  {
+    q: 'Am nevoie de cunoștințe tehnice?',
+    a: 'Nu. 10 minute configurare. Echipa Hello Web te asistă dacă ai nevoie de ajutor.',
+  },
+];
+---
+<section>
+  <div class="container">
+    <span class="section-tag">Întrebări frecvente</span>
+    <h2>Ai întrebări?</h2>
+    <div class="faq-grid mt-3">
+      {faqs.map((f) => (
+        <div class="faq-item">
+          <h3>{f.q}</h3>
+          <p>{f.a}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  .faq-item h3 { margin-bottom: 5px; }
+  .faq-item p  { font-size: 12px; }
+  @media (max-width: 640px) {
+    .faq-grid { grid-template-columns: 1fr; }
+  }
+</style>

@@ -1,0 +1,29 @@
+backend:
+  name: github
+  repo: avramvg/mychatbot-landing
+  branch: main
+  auth_type: pkce
+
+media_folder: public/images
+public_folder: /images
+
+collections:
+  - name: faq
+    label: Întrebări frecvente
+    folder: src/content/faq
+    create: true
+    slug: "{{ordine}}-{{intrebare}}"
+    fields:
+      - { name: intrebare, label: Întrebare, widget: string }
+      - { name: raspuns,   label: Răspuns,   widget: text }
+      - { name: ordine,    label: Ordine afișare, widget: number, default: 1 }
+
+  - name: settings
+    label: Setări site
+    files:
+      - name: general
+        label: General
+        file: src/content/settings.json
+        fields:
+          - { name: demo_client_id, label: Client ID Demo Widget, widget: string }
+          - { name: contact_email,  label: Email contact,         widget: string }

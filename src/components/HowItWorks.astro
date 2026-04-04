@@ -1,0 +1,72 @@
+---
+const steps = [
+  {
+    n: '1',
+    title: 'Înregistrează-te',
+    desc: 'Creează un cont gratuit în 30 de secunde. Fără card, fără angajamente.',
+  },
+  {
+    n: '2',
+    title: 'Configurează chatbot-ul',
+    desc: 'Adaugă URL-ul site-ului tău — crawlăm automat toate paginile. Completează fișa structurată cu adresa, programul și serviciile tale.',
+  },
+  {
+    n: '3',
+    title: 'Publică pe site',
+    desc: 'Copiază un singur rând de cod în site-ul tău. Chatbot-ul e live instant, pe orice platformă.',
+  },
+];
+---
+<section>
+  <div class="container">
+    <span class="section-tag">Cum funcționează</span>
+    <h2>3 pași, gata în 10 minute</h2>
+    <div class="steps-grid mt-4">
+      {steps.map((s) => (
+        <div class="step">
+          <div class="step-number">{s.n}</div>
+          <h3>{s.title}</h3>
+          <p>{s.desc}</p>
+        </div>
+      ))}
+    </div>
+    <div class="steps-cta mt-4 text-center">
+      <a href="https://app.mychatbot.ro/signup" class="btn-primary">Începe acum — 7 zile gratuit →</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    position: relative;
+  }
+  .steps-grid::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: calc(16.66% + 16px);
+    right: calc(16.66% + 16px);
+    height: 2px;
+    background: var(--color-border);
+    z-index: 0;
+  }
+  .step { text-align: center; position: relative; z-index: 1; }
+  .step-number {
+    width: 40px; height: 40px;
+    background: var(--color-primary);
+    color: white;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 600; font-size: 16px;
+    margin: 0 auto 14px;
+  }
+  .step h3 { margin-bottom: 6px; }
+  .step p  { font-size: 13px; }
+  @media (max-width: 768px) {
+    .steps-grid { grid-template-columns: 1fr; }
+    .steps-grid::before { display: none; }
+  }
+</style>

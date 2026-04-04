@@ -1,0 +1,52 @@
+---
+---
+<section id="video">
+  <div class="container video-grid">
+    <div>
+      <span class="section-tag">Demo video</span>
+      <h2>Vezi cum funcționează în 60 de secunde</h2>
+      <p class="mt-1">De la înregistrare la chatbot live pe site-ul tău — totul în mai puțin de un minut.</p>
+    </div>
+    <div class="video-placeholder">
+      <div class="play-btn">
+        <svg width="0" height="0" viewBox="0 0 24 24" style="display:none"></svg>
+        <span class="play-icon">▶</span>
+      </div>
+      <div class="video-label">MyChatbot — Demo 60 secunde</div>
+      <div class="video-sub">Video YouTube · disponibil în curând</div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .video-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  .video-placeholder {
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    border-radius: 12px;
+    aspect-ratio: 16 / 9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    cursor: pointer;
+  }
+  .play-btn {
+    width: 56px; height: 56px;
+    background: #ef4444; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    transition: transform 0.2s;
+  }
+  .play-btn:hover { transform: scale(1.1); }
+  .play-icon { color: white; font-size: 20px; margin-left: 4px; }
+  .video-label { font-size: 13px; color: rgba(255,255,255,0.7); }
+  .video-sub   { font-size: 11px; color: rgba(255,255,255,0.4); }
+  @media (max-width: 768px) {
+    .video-grid { grid-template-columns: 1fr; }
+  }
+</style>

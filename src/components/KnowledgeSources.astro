@@ -1,0 +1,91 @@
+---
+const sources = [
+  {
+    bg: '#e0f2fe', icon: '#0369a1',
+    label: 'Site crawlat',
+    desc: 'Toate paginile indexate automat cu linkuri directe',
+    svg: '<circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>',
+  },
+  {
+    bg: '#d1fae5', icon: '#065f46',
+    label: 'Documente',
+    desc: 'PDF, DOCX, TXT — prețuri, meniuri, oferte',
+    svg: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>',
+  },
+  {
+    bg: '#fef3c7', icon: '#92400e',
+    label: 'Fișă structurată',
+    desc: 'Adresă, program, telefon, servicii, prețuri',
+    svg: '<path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>',
+  },
+  {
+    bg: '#ede9fe', icon: '#5b21b6',
+    label: 'FAQ explicit',
+    desc: 'Întrebări frecvente aprobate și prioritizate',
+    svg: '<circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/>',
+  },
+  {
+    bg: '#fce7f3', icon: '#9d174d',
+    label: 'Google Drive',
+    desc: 'Sincronizare automată documente și prezentări',
+    svg: '<path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>',
+  },
+];
+---
+<section id="functionalitati">
+  <div class="container">
+    <span class="section-tag">Baza de cunoștințe</span>
+    <h2>Chatbot-ul tău știe tot despre business-ul tău</h2>
+    <p>Informațiile vin din 5 surse complementare, compilate automat.</p>
+
+    <div class="sources-grid mt-4">
+      {sources.map((s) => (
+        <div class="source-card">
+          <div class="source-icon" style={`background:${s.bg}`}>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={s.icon} stroke-width="2" set:html={s.svg} />
+          </div>
+          <h3>{s.label}</h3>
+          <p>{s.desc}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="priority-note">
+      Prioritate compilare: <strong>FAQ → Fișă structurată → Documente → Site crawlat.</strong>
+      Chatbot-ul răspunde întotdeauna cu informația cea mai precisă și actualizată.
+    </div>
+  </div>
+</section>
+
+<style>
+  .sources-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+  }
+  .source-card {
+    background: var(--color-bg-subtle);
+    border-radius: 12px;
+    padding: 1rem;
+    text-align: center;
+  }
+  .source-icon {
+    width: 40px; height: 40px;
+    border-radius: 8px;
+    margin: 0 auto 10px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .source-card h3 { font-size: 13px; }
+  .source-card p  { font-size: 11px; margin-top: 4px; }
+  .priority-note {
+    background: #eff6ff;
+    border-radius: 8px;
+    padding: 10px 16px;
+    margin-top: 1rem;
+    font-size: 13px;
+    color: #1e40af;
+  }
+  @media (max-width: 768px) {
+    .sources-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>

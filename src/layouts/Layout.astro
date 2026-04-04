@@ -1,0 +1,52 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+}
+
+const {
+  title = 'MyChatbot — Chatbot AI pentru turism și HoReCa',
+  description = 'Chatbot AI 24/7 pentru pensiuni, hoteluri, restaurante și agenții de turism. 7 zile gratuit, fără card. Configurare în 10 minute.',
+  canonical = 'https://www.mychatbot.ro',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <!-- Open Graph -->
+    <meta property="og:title"       content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image"       content="/logos/mychatbot-logo.svg" />
+    <meta property="og:url"         content={canonical} />
+    <meta property="og:type"        content="website" />
+    <meta property="og:locale"      content="ro_RO" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card"        content="summary_large_image" />
+    <meta name="twitter:title"       content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image"       content="/logos/mychatbot-logo.svg" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/logos/mychatbot-icon.svg" />
+
+    <!-- Preconnect Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  @import '../styles/global.css';
+</style>
