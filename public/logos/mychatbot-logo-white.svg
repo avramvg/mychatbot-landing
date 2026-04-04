@@ -5,6 +5,6 @@
   <circle cx="36" cy="33" r="6" fill="white" opacity="0.7"/>
   <circle cx="49" cy="33" r="6" fill="white" opacity="0.4"/>
   <polygon points="60,4 64,12 72,8 66,16 74,20 66,20 64,28 60,20 52,24 58,16 50,12 58,12" fill="#f59e0b"/>
-  <text x="88" y="30" font-family="Inter, -apple-system, sans-serif" font-size="22" font-weight="600" fill="white">MyChatbot</text>
-  <text x="88" y="52" font-family="Inter, -apple-system, sans-serif" font-size="13" font-weight="400" fill="rgba(255,255,255,0.7)">by Hello Web</text>
+  <text x="88" y="30" font-family="'Plus Jakarta Sans', Inter, sans-serif" font-size="22" font-weight="600" fill="white">MyChatbot</text>
+  <text x="88" y="52" font-family="'Plus Jakarta Sans', Inter, sans-serif" font-size="13" font-weight="400" fill="rgba(255,255,255,0.7)">by Hello Web</text>
 </svg>
