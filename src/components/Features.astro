@@ -56,7 +56,7 @@ const features = [
   },
 ];
 ---
-<section>
+<section class="dark-section">
   <div class="container">
     <span class="section-tag">Funcționalități cheie</span>
     <h2>Tot ce ai nevoie, inclus</h2>
@@ -64,7 +64,7 @@ const features = [
       {features.map((f) => (
         <div class="feature-card">
           <div class="feat-icon" style={`background:${f.bg}`}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={f.icon} stroke-width="2" set:html={f.svg} />
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={f.icon} stroke-width="2" set:html={f.svg} />
           </div>
           <h3>{f.title}</h3>
           <p>{f.desc}</p>
@@ -75,23 +75,37 @@ const features = [
 </section>
 
 <style>
+  .dark-section {
+    background: #0f172a;
+    border-bottom: none;
+  }
+  .dark-section h2 { color: white; }
+  .dark-section p  { color: rgba(255,255,255,0.7); }
+  .dark-section .section-tag { color: #38bdf8; }
+
   .features-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 14px;
   }
   .feature-card {
-    background: var(--color-bg-subtle);
+    background: #1e293b;
+    border: 0.5px solid rgba(255,255,255,0.08);
     border-radius: 12px;
     padding: 1.1rem;
+    transition: transform 0.2s ease;
+    cursor: default;
   }
+  .feature-card:hover { transform: translateY(-3px); }
   .feat-icon {
-    width: 32px; height: 32px;
+    width: 40px; height: 40px;
     border-radius: 8px;
     display: flex; align-items: center; justify-content: center;
     margin-bottom: 10px;
   }
-  .feature-card p { font-size: 12px; margin-top: 4px; }
+  .feature-card h3 { color: white; margin-bottom: 6px; }
+  .feature-card p  { font-size: 12px; color: rgba(255,255,255,0.6); margin-top: 4px; }
+
   @media (max-width: 768px) {
     .features-grid { grid-template-columns: repeat(2, 1fr); }
   }

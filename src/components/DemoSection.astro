@@ -1,15 +1,14 @@
 ---
-// Înlocuiește CLIENT_ID_DEMO cu ID-ul clientului demo după creare în admin
 const DEMO_CLIENT_ID = 'CLIENT_ID_DEMO';
 ---
-<section id="demo">
+<section id="demo" class="demo-section">
   <div class="container">
     <span class="section-tag">Demo live</span>
     <h2>Testează chatbot-ul chiar acum</h2>
     <p>Acesta e un chatbot real configurat pentru o pensiune demonstrativă. Pune orice întrebare.</p>
 
     <div class="demo-box mt-3">
-      <!-- Preview widget mockup -->
+      <!-- Widget mockup -->
       <div class="demo-widget">
         <div class="widget-win">
           <div class="widget-header">
@@ -24,6 +23,10 @@ const DEMO_CLIENT_ID = 'CLIENT_ID_DEMO';
               <span class="qr-d">Camere disponibile</span>
               <span class="qr-d">Prețuri</span>
               <span class="qr-d">Localizare</span>
+            </div>
+            <!-- Typing indicator -->
+            <div class="typing-indicator">
+              <span></span><span></span><span></span>
             </div>
           </div>
           <div class="widget-input">Scrieți un mesaj...</div>
@@ -51,7 +54,6 @@ const DEMO_CLIENT_ID = 'CLIENT_ID_DEMO';
   </div>
 </section>
 
-<!-- Widget embed — activează după ce setezi DEMO_CLIENT_ID -->
 {DEMO_CLIENT_ID !== 'CLIENT_ID_DEMO' && (
   <script is:inline define:vars={{ DEMO_CLIENT_ID }}>
     var s = document.createElement('script');
@@ -63,8 +65,11 @@ const DEMO_CLIENT_ID = 'CLIENT_ID_DEMO';
 )}
 
 <style>
+  .demo-section { background: #f0f9ff; }
+
   .demo-box {
-    background: var(--color-bg-subtle);
+    background: white;
+    border: 0.5px solid #bae6fd;
     border-radius: 12px;
     padding: 2rem;
     display: flex;
@@ -99,6 +104,31 @@ const DEMO_CLIENT_ID = 'CLIENT_ID_DEMO';
     border-radius: 12px; padding: 4px 10px;
     font-size: 11px; cursor: pointer;
   }
+
+  /* Typing indicator */
+  .typing-indicator {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 10px;
+    background: #1e293b;
+    border-radius: 8px 8px 8px 2px;
+    width: fit-content;
+  }
+  .typing-indicator span {
+    width: 6px; height: 6px;
+    background: rgba(255,255,255,0.5);
+    border-radius: 50%;
+    display: block;
+    animation: typing-bounce 1.2s infinite ease-in-out;
+  }
+  .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+  .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+  @keyframes typing-bounce {
+    0%, 60%, 100% { transform: translateY(0); opacity: 0.5; }
+    30%           { transform: translateY(-4px); opacity: 1; }
+  }
+
   .widget-input {
     padding: 8px 12px;
     border-top: 0.5px solid #1e293b;
@@ -115,6 +145,6 @@ const DEMO_CLIENT_ID = 'CLIENT_ID_DEMO';
   .check { color: #10b981; }
 
   @media (max-width: 768px) {
-    .demo-box { flex-direction: column; }
+    .demo-box { flex-direction: column; padding: 1.25rem; }
   }
 </style>

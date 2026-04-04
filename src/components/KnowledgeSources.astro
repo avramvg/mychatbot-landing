@@ -32,7 +32,7 @@ const sources = [
   },
 ];
 ---
-<section id="functionalitati">
+<section id="functionalitati" class="gray-section">
   <div class="container">
     <span class="section-tag">Baza de cunoștințe</span>
     <h2>Chatbot-ul tău știe tot despre business-ul tău</h2>
@@ -58,13 +58,17 @@ const sources = [
 </section>
 
 <style>
+  .gray-section {
+    background: #f8fafc;
+  }
   .sources-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 12px;
   }
   .source-card {
-    background: var(--color-bg-subtle);
+    background: white;
+    border: 0.5px solid var(--color-border);
     border-radius: 12px;
     padding: 1rem;
     text-align: center;
