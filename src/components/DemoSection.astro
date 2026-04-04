@@ -8,30 +8,16 @@ const DEMO_CLIENT_ID = '5fe6055a-89ce-4cb5-be41-c8ce27ebd3da';
     <p>Acesta e un chatbot real configurat pentru o pensiune demonstrativă. Pune orice întrebare.</p>
 
     <div class="demo-box mt-3">
-      <!-- Widget mockup -->
+      <!-- Widget inline real -->
       <div class="demo-widget">
-        <div class="widget-win">
-          <div class="widget-header">
-            <span class="online-dot"></span>
-            <span class="widget-title">Pensiunea Demo · MyChatbot</span>
-          </div>
-          <div class="widget-msgs">
-            <div class="wm bot-w">
-              <p>Bună! Sunt asistentul virtual al Pensiunii Demo. Cu ce vă pot ajuta?</p>
-            </div>
-            <div class="quick-replies-demo">
-              <span class="qr-d">Camere disponibile</span>
-              <span class="qr-d">Prețuri</span>
-              <span class="qr-d">Localizare</span>
-            </div>
-            <!-- Typing indicator -->
-            <div class="typing-indicator">
-              <span></span><span></span><span></span>
-            </div>
-          </div>
-          <div class="widget-input">Scrieți un mesaj...</div>
-        </div>
-        <p class="demo-note">* Widget demo — datele sunt fictive</p>
+        <div id="mychatbot-demo" style="height:500px;border-radius:12px;overflow:hidden;border:0.5px solid #e2e8f0;background:#0f172a"></div>
+        <script
+          src="https://app.mychatbot.ro/widget.js"
+          data-client-id={DEMO_CLIENT_ID}
+          data-mode="inline"
+          data-container="#mychatbot-demo"
+          defer
+        ></script>
       </div>
 
       <!-- Info -->
@@ -54,16 +40,6 @@ const DEMO_CLIENT_ID = '5fe6055a-89ce-4cb5-be41-c8ce27ebd3da';
   </div>
 </section>
 
-{DEMO_CLIENT_ID !== 'CLIENT_ID_DEMO' && (
-  <script is:inline define:vars={{ DEMO_CLIENT_ID }}>
-    var s = document.createElement('script');
-    s.src = 'https://app.mychatbot.ro/widget.js';
-    s.setAttribute('data-client-id', DEMO_CLIENT_ID);
-    s.defer = true;
-    document.head.appendChild(s);
-  </script>
-)}
-
 <style>
   .demo-section { background: #f0f9ff; }
 
@@ -76,68 +52,7 @@ const DEMO_CLIENT_ID = '5fe6055a-89ce-4cb5-be41-c8ce27ebd3da';
     gap: 2.5rem;
     align-items: flex-start;
   }
-  .demo-widget { flex: 1; }
-  .widget-win {
-    background: #0f172a;
-    border-radius: 10px;
-    overflow: hidden;
-    max-width: 320px;
-  }
-  .widget-header {
-    background: var(--color-primary);
-    padding: 10px 14px;
-    display: flex; align-items: center; gap: 8px;
-  }
-  .online-dot { width: 8px; height: 8px; background: #4ade80; border-radius: 50%; flex-shrink: 0; }
-  .widget-title { font-size: 13px; font-weight: 500; color: white; }
-  .widget-msgs {
-    padding: 12px;
-    display: flex; flex-direction: column; gap: 8px;
-    min-height: 140px;
-  }
-  .wm { border-radius: 8px; padding: 8px 10px; max-width: 85%; }
-  .bot-w { background: #1e293b; border-radius: 8px 8px 8px 2px; }
-  .bot-w p { font-size: 12px; color: #e2e8f0; margin: 0; }
-  .quick-replies-demo { display: flex; gap: 6px; flex-wrap: wrap; }
-  .qr-d {
-    background: var(--color-primary); color: white;
-    border-radius: 12px; padding: 4px 10px;
-    font-size: 11px; cursor: pointer;
-  }
-
-  /* Typing indicator */
-  .typing-indicator {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    padding: 8px 10px;
-    background: #1e293b;
-    border-radius: 8px 8px 8px 2px;
-    width: fit-content;
-  }
-  .typing-indicator span {
-    width: 6px; height: 6px;
-    background: rgba(255,255,255,0.5);
-    border-radius: 50%;
-    display: block;
-    animation: typing-bounce 1.2s infinite ease-in-out;
-  }
-  .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
-  .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
-  @keyframes typing-bounce {
-    0%, 60%, 100% { transform: translateY(0); opacity: 0.5; }
-    30%           { transform: translateY(-4px); opacity: 1; }
-  }
-
-  .widget-input {
-    padding: 8px 12px;
-    border-top: 0.5px solid #1e293b;
-    background: #1e293b;
-    font-size: 12px; color: #64748b;
-    border-radius: 0 0 10px 10px;
-  }
-  .demo-note { font-size: 11px; color: var(--color-slate); margin-top: 8px; }
-
+  .demo-widget { flex: 1; min-width: 0; }
   .demo-info { flex: 1; }
   .demo-info h3 { margin-bottom: 8px; }
   .knows-list { display: flex; flex-direction: column; gap: 6px; }
