@@ -29,12 +29,14 @@ const DEMO_CLIENT_ID = '5fe6055a-89ce-4cb5-be41-c8ce27ebd3da';
       <div class="demo-info">
         <h3>Chatbot-ul demo știe:</h3>
         <div class="knows-list">
-          <div class="knows-item"><span class="check">✓</span>3 tipuri de camere cu prețuri</div>
+          <div class="knows-item"><span class="check">✓</span>Tipuri de camere și prețuri</div>
           <div class="knows-item"><span class="check">✓</span>Program mic dejun și restaurant</div>
-          <div class="knows-item"><span class="check">✓</span>Disponibilitate iCal în timp real</div>
-          <div class="knows-item"><span class="check">✓</span>Linkuri directe către pagini relevante</div>
-          <div class="knows-item"><span class="check">✓</span>Preluare cereri de rezervare</div>
+          <div class="knows-item"><span class="check">✓</span>Date de contact și recepție</div>
+          <div class="knows-item"><span class="check">✓</span>Recomandări locale și obiective turistice</div>
+          <div class="knows-item"><span class="check">✓</span>Servicii suplimentare disponibile</div>
+          <div class="knows-item"><span class="check">✓</span>Preia cereri de rezervare și contact</div>
         </div>
+        <p class="demo-hint">💡 Un chatbot conectat la site-ul tău știe în plus: facilitățile complete, disponibilitate în timp real și trimite vizitatorii direct pe paginile relevante.</p>
         <div class="mt-3">
           <a href="https://app.mychatbot.ro/signup" class="btn-primary" style="font-size:13px;padding:10px 20px">
             Creează chatbot-ul tău →
@@ -63,6 +65,7 @@ const DEMO_CLIENT_ID = '5fe6055a-89ce-4cb5-be41-c8ce27ebd3da';
   .knows-list { display: flex; flex-direction: column; gap: 6px; }
   .knows-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--color-slate); }
   .check { color: #10b981; }
+  .demo-hint { margin-top: 10px; font-size: 12px; color: #9ca3af; font-style: italic; line-height: 1.5; }
 
   @media (max-width: 768px) {
     .demo-box { flex-direction: column; padding: 1.25rem; }
