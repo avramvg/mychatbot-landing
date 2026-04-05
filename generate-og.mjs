@@ -26,19 +26,28 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" v
   <!-- Linie decorativă sus -->
   <rect x="0" y="0" width="1200" height="3" fill="#F5A623" opacity="0.8"/>
 
-  <!-- LOGO centrat — "my" text-anchor end, "CHATBOT" text-anchor start, gap fix 24px -->
-  <!-- "my" italic bold portocaliu -->
-  <text x="558" y="234"
+  <!-- LOGO grup: icon + text centrat la x=600 -->
+  <!-- Icon chat bubble: translate(271,158) scale(1.6) → icon right ~370, gap 30px → "my" left ~400 -->
+  <g transform="translate(271, 158) scale(1.6)">
+    <path d="M4 6C4 3.8 5.8 2 8 2L54 2C56.2 2 58 3.8 58 6L58 46C58 48.2 56.2 50 54 50L34 50L20 64L20 50L8 50C5.8 50 4 48.2 4 46Z" fill="#3B9EE0"/>
+    <polygon points="50,2 52.5,9 60,9 54,13.5 56.5,20.5 50,16 43.5,20.5 46,13.5 40,9 47.5,9" fill="#F5A623"/>
+    <circle cx="20" cy="26" r="4.5" fill="white" opacity="0.95"/>
+    <circle cx="31" cy="26" r="4.5" fill="white" opacity="0.95"/>
+    <circle cx="42" cy="26" r="4.5" fill="white" opacity="0.95"/>
+  </g>
+
+  <!-- "my" text-anchor end la x=520, "my" left ≈400, gap 30px față de icon right ≈370 -->
+  <text x="520" y="234"
     font-family="Georgia, serif" font-style="italic" font-weight="bold"
     font-size="96" fill="#F5A623" text-anchor="end" letter-spacing="-2">my</text>
 
-  <!-- "CHATBOT" bold alb -->
-  <text x="582" y="230"
+  <!-- "CHATBOT" text-anchor start la x=544, gap 24px față de "my" end -->
+  <text x="544" y="230"
     font-family="Arial Black, sans-serif" font-weight="900"
     font-size="86" fill="#FFFFFF" text-anchor="start" letter-spacing="8">CHATBOT</text>
 
-  <!-- Linie separator sub logo -->
-  <rect x="320" y="258" width="560" height="2" fill="#F5A623" opacity="0.4" rx="1"/>
+  <!-- Linie separator sub logo, span 277–923 -->
+  <rect x="280" y="260" width="640" height="2" fill="#F5A623" opacity="0.4" rx="1"/>
 
   <!-- Tagline principal -->
   <text x="600" y="330"
