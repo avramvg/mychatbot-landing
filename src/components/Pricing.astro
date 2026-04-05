@@ -3,74 +3,68 @@ const plans = [
   {
     id: 'start',
     name: 'Start',
-    price: '100 lei',
-    desc: 'Pentru afaceri mici la început de drum.',
+    price: '150 lei',
+    desc: 'Pentru pensiuni mici, restaurante, cafenele și atracții locale din turism și ospitalitate.',
     featured: false,
     cta: { label: 'Începe gratuit', href: 'https://app.mychatbot.ro/signup', style: 'secondary' },
     features: [
-      { ok: true,  text: '500K tokeni (~150 conv.)' },
-      { ok: true,  text: 'Crawl automat săptămânal' },
-      { ok: true,  text: '1 crawl manual/săptămână' },
-      { ok: true,  text: '1 document / max 2MB' },
-      { ok: true,  text: 'FAQ manual (max 5)' },
-      { ok: true,  text: 'Handoff simplu' },
-      { ok: true,  text: '2 butoane ghidate' },
-      { ok: true,  text: 'Portal management (bază)' },
+      { ok: true,  text: '~150 conversații/lună' },
+      { ok: true,  text: 'Crawl automat lunar' },
+      { ok: true,  text: '1 crawl manual/lună' },
+      { ok: true,  text: '1 document upload' },
+      { ok: true,  text: 'Mod widget: FAB flotant' },
+      { ok: true,  text: 'Handoff simplu (formular contact)' },
+      { ok: true,  text: 'Portal client' },
       { ok: true,  text: 'Rapoarte de bază' },
-      { ok: false, text: 'FAQ automat AI' },
-      { ok: false, text: 'Disponibilitate iCal' },
+      { ok: false, text: 'Verificare disponibilitate iCal' },
       { ok: false, text: 'Handoff avansat' },
-      { ok: false, text: 'Recomandări AI' },
-      { ok: false, text: 'Fără branding MyChatbot' },
+      { ok: false, text: 'Răspunsuri sugerate' },
+      { ok: false, text: 'Mod Inline/Sidebar' },
+      { ok: null,  text: 'Branding „Chatbot AI by Hello Web" vizibil' },
     ],
   },
   {
     id: 'standard',
     name: 'Standard',
-    price: '200 lei',
-    desc: 'Pentru business-uri active cu trafic regulat.',
+    price: '250 lei',
+    desc: 'Pentru hoteluri boutique, agenții de turism mici, pensiuni active și restaurante cu rezervări.',
     featured: true,
     badge: 'Recomandat',
     cta: { label: 'Începe gratuit', href: 'https://app.mychatbot.ro/signup', style: 'primary' },
     features: [
-      { ok: true,  text: '2M tokeni (~600 conv.)' },
+      { ok: true,  text: '~500 conversații/lună' },
       { ok: true,  text: 'Crawl automat săptămânal' },
-      { ok: true,  text: '2 crawluri manuale/săptămână' },
-      { ok: true,  text: '3 documente / max 5MB' },
-      { ok: true,  text: 'FAQ automat generat AI' },
-      { ok: true,  text: 'Handoff avansat cu colectare date' },
-      { ok: true,  text: '4 butoane ghidate' },
-      { ok: true,  text: '2 surse iCal disponibilitate' },
-      { ok: true,  text: 'Recomandări AI' },
-      { ok: true,  text: 'Fără branding MyChatbot' },
-      { ok: true,  text: 'Portal management complet' },
+      { ok: true,  text: '2 crawluri manuale/lună' },
+      { ok: true,  text: '4 documente upload' },
+      { ok: true,  text: 'Verificare disponibilitate iCal' },
+      { ok: true,  text: 'Moduri widget: FAB + Inline + Sidebar' },
+      { ok: true,  text: 'Handoff avansat (colectare date în conversație)' },
+      { ok: true,  text: 'Răspunsuri sugerate' },
+      { ok: true,  text: 'Portal client complet' },
       { ok: true,  text: 'Rapoarte standard' },
-      { ok: false, text: 'Upselling proactiv AI' },
-      { ok: false, text: 'Rapoarte avansate + CSV' },
+      { ok: true,  text: 'Fără branding MyChatbot' },
     ],
   },
   {
     id: 'pro',
     name: 'Pro',
-    price: '400 lei',
-    desc: 'Pentru hoteluri și agenții cu volum mare.',
+    price: '550 lei',
+    desc: 'Pentru hoteluri cu peste 30 camere, tour operatori, agenții cu volum și destinații turistice.',
     featured: false,
     cta: { label: 'Începe gratuit', href: 'https://app.mychatbot.ro/signup', style: 'secondary' },
     features: [
-      { ok: true,  text: '10M tokeni (~3.000 conv.)' },
+      { ok: true,  text: 'Conversații nelimitate' },
       { ok: true,  text: 'Crawl automat zilnic' },
       { ok: true,  text: 'Crawluri manuale nelimitate' },
-      { ok: true,  text: '10 documente / max 10MB' },
-      { ok: true,  text: 'FAQ automat generat AI' },
-      { ok: true,  text: 'Handoff avansat cu colectare date' },
-      { ok: true,  text: '4 butoane ghidate' },
-      { ok: true,  text: '10 surse iCal disponibilitate' },
-      { ok: true,  text: 'Recomandări AI' },
-      { ok: true,  text: 'Upselling proactiv AI' },
+      { ok: true,  text: '10 documente upload' },
+      { ok: true,  text: 'Verificare disponibilitate iCal' },
+      { ok: true,  text: 'Toate modurile widget (inclusiv Modal)' },
+      { ok: true,  text: 'Handoff avansat' },
+      { ok: true,  text: 'Răspunsuri sugerate' },
+      { ok: true,  text: 'Portal client complet' },
+      { ok: true,  text: 'Rapoarte avansate + export CSV' },
       { ok: true,  text: 'Fără branding MyChatbot' },
-      { ok: true,  text: 'Rapoarte avansate + CSV' },
       { ok: true,  text: 'Suport prioritar 24h' },
-      { ok: true,  text: 'Call onboarding 1h inclus' },
     ],
   },
   {
@@ -78,19 +72,16 @@ const plans = [
     name: 'Enterprise',
     price: 'Preț negociat',
     priceSmall: true,
-    desc: 'Companii mari, lanțuri hoteliere, instituții cu volum.',
+    desc: 'Pentru lanțuri hoteliere, operatori de turism și destinații turistice cu volum.',
     featured: false,
-    cta: { label: 'Contactează-ne', href: 'mailto:hello@helloweb.ro', style: 'secondary' },
+    cta: { label: 'Contactează-ne →', href: 'mailto:hello@helloweb.ro', style: 'secondary' },
     features: [
-      { ok: true, text: 'Volum negociat' },
+      { ok: true, text: 'Conversații nelimitate' },
       { ok: true, text: 'SLA garantat contractual' },
-      { ok: true, text: 'API dedicat' },
-      { ok: true, text: 'Manager cont dedicat' },
-      { ok: true, text: 'Onboarding complet echipă' },
-      { ok: true, text: 'Raportare personalizată' },
-      { ok: true, text: 'Training echipă inclus' },
-      { ok: true, text: 'Contract personalizat' },
-      { ok: true, text: 'Toate funcțiile Pro incluse' },
+      { ok: true, text: 'Integrări personalizate' },
+      { ok: true, text: 'Suport dedicat' },
+      { ok: true, text: 'Facturare personalizată' },
+      { ok: true, text: 'Onboarding asistat' },
     ],
   },
 ];
@@ -107,13 +98,15 @@ const plans = [
           {p.badge && <div class="plan-badge">{p.badge}</div>}
           <div class="plan-name">{p.name}</div>
           <div class={`plan-price ${p.priceSmall ? 'plan-price-sm' : ''}`}>
-            {p.price}<span>/lună</span>
+            {p.price}{!p.priceSmall && <span>/lună</span>}
           </div>
           <div class="plan-desc">{p.desc}</div>
           <ul class="plan-features">
             {p.features.map((f) => (
               <li>
-                <span class={f.ok ? 'ck' : 'xx'}>{f.ok ? '✓' : '✕'}</span>
+                <span class={f.ok === true ? 'ck' : f.ok === false ? 'xx' : 'nd'}>
+                  {f.ok === true ? '✓' : f.ok === false ? '✕' : '—'}
+                </span>
                 {f.text}
               </li>
             ))}
@@ -126,6 +119,12 @@ const plans = [
           </a>
         </div>
       ))}
+    </div>
+
+    <!-- Taglines motivaționale sub grid -->
+    <div class="pricing-hints mt-4">
+      <p>💡 O rezervare directă în plus pe lună acoperă abonamentul întreg.</p>
+      <p>Cu cât business-ul tău crește, cu atât costul per conversație scade.</p>
     </div>
 
     <!-- Non-profit -->
@@ -187,7 +186,6 @@ const plans = [
   .plan-desc {
     font-size: 11px; color: var(--color-slate);
     margin-bottom: 12px;
-    min-height: 28px;
     line-height: 1.5;
   }
   .plan-features {
@@ -205,12 +203,22 @@ const plans = [
   .plan-features li:last-child { border-bottom: none; }
   .ck { color: #10b981; font-size: 10px; flex-shrink: 0; margin-top: 2px; }
   .xx { color: #ef4444; font-size: 10px; flex-shrink: 0; margin-top: 2px; }
+  .nd { color: #94a3b8; font-size: 10px; flex-shrink: 0; margin-top: 2px; }
   .plan-btn {
     width: 100%;
     text-align: center;
     display: block;
     font-size: 12px;
     padding: 9px 12px;
+  }
+
+  /* Hints motivaționale */
+  .pricing-hints {
+    text-align: center;
+    font-size: 13px;
+    color: var(--color-slate);
+    font-style: italic;
+    line-height: 1.8;
   }
 
   /* Non-profit */
