@@ -15,6 +15,13 @@ const {
 <!doctype html>
 <html lang="ro">
   <head>
+    <!-- PRIMUL: scroll restoration sincron — trebuie să ruleze înainte de orice altceva -->
+    <script is:inline>
+      if (history.scrollRestoration) {
+        history.scrollRestoration = 'manual';
+      }
+    </script>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
@@ -40,9 +47,6 @@ const {
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/logos/mychatbot-icon.svg" />
-
-    <!-- Dezactivează scroll restoration automată a browser-ului (previne alunecare la reload cu scroll-behavior:smooth) -->
-    <script>if (history.scrollRestoration) history.scrollRestoration = 'manual';</script>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
