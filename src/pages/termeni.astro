@@ -5,39 +5,98 @@ import Footer from '../components/Footer.astro';
 ---
 
 <Layout
-  title="Termeni și condiții — MyChatbot"
-  description="Termeni și condiții de utilizare a serviciului MyChatbot by Hello Web."
+  title="Termeni și Condiții — MyChatbot"
+  description="Termenii și condițiile de utilizare ale platformei MyChatbot by Hello Web SRL."
   canonical="https://www.mychatbot.ro/termeni"
 >
   <Nav />
-  <main class="container" style="padding: 3rem 1.5rem; min-height: 60vh;">
-    <h1 style="margin-bottom: 1.5rem;">Termeni și condiții</h1>
-    <p style="margin-bottom: 1rem;">
-      Ultima actualizare: <strong>Aprilie 2026</strong>
-    </p>
-    <p style="margin-bottom: 1.5rem;">
-      Prin utilizarea serviciului MyChatbot, ești de acord cu termenii de mai jos.
-      Serviciul este furnizat de <strong>Hello Web SRL</strong>, înregistrată în România.
-    </p>
+  <main>
+    <div class="content">
+      <h1>Termeni și Condiții de Utilizare</h1>
+      <p><em>Ultima actualizare: aprilie 2026</em></p>
 
-    <h2 style="font-size: 18px; margin: 2rem 0 0.75rem;">1. Serviciul</h2>
-    <p>MyChatbot este o platformă SaaS pentru crearea și gestionarea chatbot-urilor AI pe site-uri web.
-    Serviciul include o perioadă de trial de 7 zile fără card, urmată de un abonament lunar.</p>
+      <h2>1. Despre noi</h2>
+      <p>MyChatbot este un serviciu SaaS operat de <strong>HELLO WEB SRL</strong>, cu sediul în Bdul. Ion Ionescu de la Brad 81-85, Et. 1, Ap. 1, Sector 1, București, CUI 39199732, Nr. Reg. Com. J40/451/2020, email: <a href="mailto:hello@helloweb.ro">hello@helloweb.ro</a>.</p>
 
-    <h2 style="font-size: 18px; margin: 2rem 0 0.75rem;">2. Utilizare</h2>
-    <p>Te obligi să utilizezi serviciul în conformitate cu legislația românească și europeană.
-    Este interzisă utilizarea pentru activități ilegale, spam sau inducerea în eroare a utilizatorilor finali.</p>
+      <h2>2. Serviciul oferit</h2>
+      <p>MyChatbot oferă o platformă de chatbot AI pentru site-uri web, disponibilă prin abonament lunar. Prin utilizarea platformei, acceptați acești termeni în totalitate.</p>
 
-    <h2 style="font-size: 18px; margin: 2rem 0 0.75rem;">3. Plăți și anulare</h2>
-    <p>Abonamentele sunt procesate prin Stripe. Poți anula oricând din panoul de control,
-    fără penalități. Facturile sunt emise electronic.</p>
+      <h2>3. Abonament și plată</h2>
+      <ul>
+        <li>Abonamentele se facturează lunar, prin Stripe</li>
+        <li>Prețurile includ TVA 21% conform Legii 141/2025</li>
+        <li>Plata se efectuează în avans pentru luna curentă</li>
+        <li>Puteți anula oricând — accesul rămâne activ până la sfârșitul perioadei plătite</li>
+        <li>Nu oferim rambursări pentru perioadele parțial utilizate</li>
+      </ul>
 
-    <h2 style="font-size: 18px; margin: 2rem 0 0.75rem;">4. Disponibilitate</h2>
-    <p>Ne propunem o disponibilitate de 99.5% lunar. Nu garantăm funcționarea neîntreruptă
-    în cazul unor evenimente de forță majoră sau mentenanță planificată.</p>
+      <h2>4. Trial gratuit</h2>
+      <p>Noii utilizatori beneficiază de 7 zile de trial gratuit pe planul Standard, fără card de credit. La expirarea trialului, serviciul se suspendă automat dacă nu se alege un plan plătit.</p>
 
-    <h2 style="font-size: 18px; margin: 2rem 0 0.75rem;">5. Contact</h2>
-    <p>Întrebări? Scrie-ne la <a href="mailto:hello@helloweb.ro" style="color: #0ea5e9;">hello@helloweb.ro</a></p>
+      <h2>5. Utilizare acceptabilă</h2>
+      <p>Este interzisă utilizarea platformei pentru:</p>
+      <ul>
+        <li>Activități ilegale sau frauduloase</li>
+        <li>Trimiterea de informații false sau înșelătoare către vizitatori</li>
+        <li>Activități care încalcă drepturile terților</li>
+      </ul>
+
+      <h2>6. Disponibilitatea serviciului</h2>
+      <p>Ne străduim să menținem disponibilitatea serviciului la un nivel ridicat. Nu garantăm o disponibilitate specifică și nu suntem răspunzători pentru întreruperi cauzate de terți (Vercel, Supabase, Anthropic).</p>
+
+      <h2>7. Răspunderea chatbot-ului</h2>
+      <p>Răspunsurile generate de chatbot sunt bazate pe informațiile furnizate de client. HELLO WEB SRL nu garantează acuratețea răspunsurilor și nu este răspunzătoare pentru deciziile luate pe baza acestora. Chatbot-ul nu confirmă rezervări — confirmarea revine întotdeauna businessului.</p>
+
+      <h2>8. Proprietate intelectuală</h2>
+      <p>Platforma MyChatbot, codul sursă și designul sunt proprietatea HELLO WEB SRL. Conținutul furnizat de clienți (texte, documente) rămâne proprietatea acestora.</p>
+
+      <h2>9. Modificarea termenilor</h2>
+      <p>Ne rezervăm dreptul de a modifica acești termeni cu notificare prealabilă de 30 de zile prin email.</p>
+
+      <h2>10. Legea aplicabilă</h2>
+      <p>Acești termeni sunt guvernați de legislația română. Orice litigiu va fi soluționat de instanțele competente din București.</p>
+    </div>
   </main>
   <Footer />
 </Layout>
+
+<style>
+  main {
+    padding: 2rem 1.5rem;
+  }
+  @media (min-width: 768px) {
+    main {
+      padding: 4rem 2rem;
+    }
+  }
+  .content {
+    max-width: 48rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #0f172a;
+  }
+  h2 {
+    font-size: 1.25rem;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    color: #0f172a;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 0.25rem;
+  }
+  p, li {
+    color: #475569;
+    line-height: 1.7;
+    font-size: 0.95rem;
+  }
+  ul {
+    padding-left: 1.5rem;
+    margin: 0.5rem 0;
+  }
+  a {
+    color: #2563eb;
+  }
+</style>

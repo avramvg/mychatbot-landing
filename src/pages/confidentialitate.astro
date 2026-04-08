@@ -5,42 +5,125 @@ import Footer from '../components/Footer.astro';
 ---
 
 <Layout
-  title="Politică de confidențialitate — MyChatbot"
-  description="Politica de confidențialitate a serviciului MyChatbot by Hello Web. GDPR complet, server UE."
+  title="Politică de Confidențialitate — MyChatbot"
+  description="Politica de confidențialitate și prelucrare date personale MyChatbot by Hello Web SRL."
   canonical="https://www.mychatbot.ro/confidentialitate"
 >
   <Nav />
-  <main class="container" style="padding: 3rem 1.5rem; min-height: 60vh;">
-    <h1 style="margin-bottom: 1.5rem;">Politică de confidențialitate</h1>
-    <p style="margin-bottom: 1rem;">
-      Ultima actualizare: <strong>Aprilie 2026</strong>
-    </p>
-    <p style="margin-bottom: 1.5rem;">
-      Hello Web SRL respectă confidențialitatea datelor tale. Această politică explică
-      ce date colectăm, cum le folosim și drepturile tale conform GDPR.
-    </p>
+  <main>
+    <div class="content">
+      <h1>Politică de Confidențialitate</h1>
+      <p><em>Ultima actualizare: aprilie 2026</em></p>
 
-    <h2 style="font-size: 18px; margin: 2rem 0 0.75rem;">1. Date colectate</h2>
-    <p>Colectăm: adresa de email (pentru cont), URL-ul site-ului tău (pentru crawl),
-    date de facturare (procesate prin Stripe). Nu stocăm conținutul conversațiilor vizitatorilor.</p>
+      <h2>1. Operatorul de date</h2>
+      <p>HELLO WEB SRL, Bdul. Ion Ionescu de la Brad 81-85, Et. 1, Ap. 1, Sector 1, București, CUI 39199732, Nr. Reg. Com. J40/451/2020, email: <a href="mailto:hello@helloweb.ro">hello@helloweb.ro</a>.</p>
 
-    <h2 style="font-size: 18px; margin: 2rem 0 0.75rem;">2. Scopul prelucrării</h2>
-    <p>Datele sunt folosite exclusiv pentru furnizarea serviciului MyChatbot:
-    autentificare, generare chatbot, facturare și suport tehnic.</p>
+      <h2>2. Ce date colectăm</h2>
+      <p><strong>Pentru clienții platformei (abonați):</strong></p>
+      <ul>
+        <li>Adresă email, nume, nume business</li>
+        <li>Date de facturare (procesate de Stripe — nu stocăm date de card)</li>
+        <li>Date de utilizare a platformei (conversații anonimizate, statistici)</li>
+      </ul>
+      <p><strong>Pentru vizitatorii end-user (prin chatbot):</strong></p>
+      <ul>
+        <li>Date furnizate voluntar în formularul de contact: nume, telefon, email, mesaj</li>
+        <li>Date tehnice anonime: limbă browser, număr sesiune (fără IP stocat)</li>
+      </ul>
 
-    <h2 style="font-size: 18px; margin: 2rem 0 0.75rem;">3. Stocare și securitate</h2>
-    <p>Datele sunt stocate pe servere din UE (Frankfurt, Germania) prin Supabase.
-    Conexiunile sunt criptate (TLS 1.3). Aplicăm principiul minimizării datelor.</p>
+      <h2>3. De ce colectăm datele</h2>
+      <ul>
+        <li>Executarea contractului de abonament (Art. 6(1)(b) GDPR)</li>
+        <li>Facturare și obligații fiscale (Art. 6(1)(c) GDPR)</li>
+        <li>Îmbunătățirea serviciului (Art. 6(1)(f) GDPR — interes legitim)</li>
+        <li>Datele din formularul de contact sunt transmise businessului client care le-a solicitat</li>
+      </ul>
 
-    <h2 style="font-size: 18px; margin: 2rem 0 0.75rem;">4. Drepturile tale</h2>
-    <p>Conform GDPR, ai dreptul la acces, rectificare, ștergere și portabilitate a datelor.
-    Poți șterge contul din panoul de control sau scriind la <a href="mailto:hello@helloweb.ro" style="color: #0ea5e9;">hello@helloweb.ro</a>.</p>
+      <h2>4. Cu cine partajăm datele</h2>
+      <table>
+        <thead>
+          <tr><th>Furnizor</th><th>Scop</th><th>Locație</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Supabase</td><td>Stocare date platformă</td><td>EU (Frankfurt)</td></tr>
+          <tr><td>Anthropic</td><td>Procesare AI conversații</td><td>SUA (cu garanții adecvate)</td></tr>
+          <tr><td>Stripe</td><td>Procesare plăți</td><td>SUA/EU</td></tr>
+          <tr><td>Resend</td><td>Trimitere emailuri</td><td>SUA (cu garanții adecvate)</td></tr>
+          <tr><td>Vercel</td><td>Hosting aplicație</td><td>SUA/EU</td></tr>
+        </tbody>
+      </table>
 
-    <h2 style="font-size: 18px; margin: 2rem 0 0.75rem;">5. Cookies</h2>
-    <p>Folosim cookie-uri strict necesare pentru autentificare. Nu folosim cookie-uri de tracking terțe.</p>
+      <h2>5. Cât păstrăm datele</h2>
+      <ul>
+        <li>Date cont: pe durata abonamentului + 5 ani (obligații fiscale)</li>
+        <li>Conversații: nu stocăm textul conversațiilor (GDPR)</li>
+        <li>Date formulare contact: transmise imediat businessului, nu stocate pe termen lung</li>
+      </ul>
 
-    <h2 style="font-size: 18px; margin: 2rem 0 0.75rem;">6. Contact DPO</h2>
-    <p>Responsabil protecția datelor: <a href="mailto:hello@helloweb.ro" style="color: #0ea5e9;">hello@helloweb.ro</a></p>
+      <h2>6. Drepturile tale (GDPR Art. 15-22)</h2>
+      <p>Ai dreptul la: acces, rectificare, ștergere, restricționare, portabilitate, opoziție. Pentru exercitarea drepturilor contactează-ne la <a href="mailto:hello@helloweb.ro">hello@helloweb.ro</a>. Răspundem în maximum 30 de zile.</p>
+
+      <h2>7. Cookie-uri</h2>
+      <p>Folosim exclusiv cookie-uri tehnice necesare funcționării platformei. Nu folosim cookie-uri de tracking sau publicitate.</p>
+
+      <h2>8. Modificări</h2>
+      <p>Vom notifica utilizatorii prin email cu 30 de zile înainte de orice modificare semnificativă.</p>
+    </div>
   </main>
   <Footer />
 </Layout>
+
+<style>
+  main {
+    padding: 2rem 1.5rem;
+  }
+  @media (min-width: 768px) {
+    main {
+      padding: 4rem 2rem;
+    }
+  }
+  .content {
+    max-width: 48rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #0f172a;
+  }
+  h2 {
+    font-size: 1.25rem;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    color: #0f172a;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 0.25rem;
+  }
+  p, li {
+    color: #475569;
+    line-height: 1.7;
+    font-size: 0.95rem;
+  }
+  ul {
+    padding-left: 1.5rem;
+    margin: 0.5rem 0;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+  }
+  th, td {
+    padding: 0.5rem 1rem;
+    border: 1px solid #e2e8f0;
+    text-align: left;
+  }
+  th {
+    background: #f8fafc;
+    font-weight: 600;
+  }
+  a {
+    color: #2563eb;
+  }
+</style>
