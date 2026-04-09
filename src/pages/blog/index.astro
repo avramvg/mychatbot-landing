@@ -1,0 +1,117 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import BlogCard from '../../components/BlogCard.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog'))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<Layout
+  title="Blog — MyChatbot"
+  description="Articole despre chatbot AI pentru afaceri: HoReCa, medical, turism, automatizare rezervări și creșterea ratei de conversie."
+  canonical="https://www.mychatbot.ro/blog"
+>
+  <Nav basePath="/" />
+  <main>
+
+    {/* ── Hero ── */}
+    <section class="blog-hero">
+      <div class="container">
+        <span class="section-tag">Blog</span>
+        <h1>Resurse despre chatbot AI pentru afaceri</h1>
+        <p class="blog-hero-sub">
+          Ghiduri practice, comparații și studii de caz despre cum automatizarea
+          conversațiilor crește vânzările și reduce munca repetitivă.
+        </p>
+      </div>
+    </section>
+
+    {/* ── Grid articole ── */}
+    <section class="blog-section">
+      <div class="container">
+        <div class="blog-grid">
+          {posts.map((post) => (
+            <BlogCard
+              title={post.data.title}
+              description={post.data.description}
+              pubDate={post.data.pubDate}
+              slug={post.slug}
+              image={post.data.image}
+              imageAlt={post.data.imageAlt}
+              tags={post.data.tags}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* ── CTA final ── */}
+    <section class="blog-cta-final">
+      <div class="container blog-cta-inner">
+        <h2>Gata să automatizezi și tu?</h2>
+        <p>7 zile gratuit · Fără card de credit · Configurare în 10 minute</p>
+        <a href="https://app.mychatbot.ro/signup" class="btn-primary">
+          Încearcă MyChatbot gratuit →
+        </a>
+      </div>
+    </section>
+
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .blog-hero {
+    padding: 4rem 0 2.5rem;
+    border-bottom: 0.5px solid var(--color-border);
+    text-align: center;
+  }
+  .blog-hero h1 {
+    font-size: clamp(1.75rem, 4vw, 2.4rem);
+    margin-bottom: 1rem;
+  }
+  .blog-hero-sub {
+    font-size: 1.05rem;
+    color: var(--color-slate);
+    max-width: 560px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  .blog-section {
+    padding: 3rem 0 4rem;
+  }
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .blog-cta-final {
+    background: #0f172a;
+    padding: 4rem 0;
+    text-align: center;
+    border-bottom: none;
+  }
+  .blog-cta-inner h2 {
+    color: white;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    margin-bottom: 0.75rem;
+  }
+  .blog-cta-inner p {
+    color: rgba(255,255,255,0.6);
+    font-size: 0.9rem;
+    margin-bottom: 1.75rem;
+  }
+
+  @media (max-width: 900px) {
+    .blog-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 540px) {
+    .blog-grid { grid-template-columns: 1fr; }
+    .blog-hero  { padding: 2.5rem 0 2rem; }
+  }
+</style>
