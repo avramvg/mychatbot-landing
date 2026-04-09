@@ -2,14 +2,14 @@
 const sources = [
   {
     bg: '#e0f2fe', icon: '#0369a1',
-    label: 'Site crawlat',
-    desc: 'Toate paginile indexate automat cu linkuri directe',
+    label: 'Site crawlat (scanat)',
+    desc: 'Scanează și inventariază automat toate paginile - servicii, prețuri, despre noi, toate paginile indexate cu linkuri directe',
     svg: '<circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>',
   },
   {
     bg: '#d1fae5', icon: '#065f46',
-    label: 'Documente',
-    desc: 'PDF, DOCX, TXT — prețuri, meniuri, oferte',
+    label: 'Documente încărcate',
+    desc: 'Citește PDF, DOCX, TXT - meniuri, oferte, tarife, prezentări',
     svg: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>',
   },
   {
@@ -36,7 +36,7 @@ const sources = [
   <div class="container">
     <span class="section-tag">Baza de cunoștințe</span>
     <h2>Chatbot-ul tău știe tot despre business-ul tău</h2>
-    <p>Informațiile vin din 5 surse complementare, compilate automat.</p>
+    <p>Informațiile vin din 5 surse complementare, compilate automat. Înainte să răspundă, chatbot-ul scanează, inventariază și înțelege business-ul tău.</p>
 
     <div class="sources-grid mt-4">
       {sources.map((s) => (
@@ -51,8 +51,7 @@ const sources = [
     </div>
 
     <div class="priority-note">
-      Prioritate compilare: <strong>FAQ → Fișă structurată → Documente → Site crawlat.</strong>
-      Chatbot-ul răspunde întotdeauna cu informația cea mai precisă și actualizată.
+      Când răspunde, chatbot-ul corelează toate sursele, oferă detalii corecte cu linkuri din site și ghidează vizitatorul spre o cerere, rezervare sau contact.
     </div>
   </div>
 </section>
