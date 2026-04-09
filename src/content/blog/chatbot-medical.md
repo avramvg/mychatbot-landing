@@ -40,7 +40,7 @@ Toate acestea, fără să implici personalul medical.
 
 Dacă un pacient descrie o urgență - durere acută, traumatism, sângerare - chatbot-ul furnizează numărul de telefon de urgență și protocolul corect. Nu oferă sfaturi medicale. Direcționează corect. Rapid.
 
-## De ce programările telefonice sunt ineficiente în 2025
+## De ce programările telefonice sunt ineficiente în 2026
 
 ### Telefonul blochează secretara
 

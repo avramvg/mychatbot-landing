@@ -1,5 +1,5 @@
 ---
-title: "Chatbot vs. formular de contact - ce convertește mai bine în 2025?"
+title: "Chatbot vs. formular de contact - ce convertește mai bine în 2026?"
 description: "Comparație directă între chatbot AI și formularul clasic de contact: rata de conversie, experiența utilizatorului, costuri și când să folosești fiecare variantă."
 pubDate: 2026-04-09
 author: "Hello Web"
