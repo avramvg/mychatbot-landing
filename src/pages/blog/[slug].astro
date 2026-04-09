@@ -51,15 +51,17 @@ const canonical = `https://www.mychatbot.ro/blog/${post.slug}`;
       </div>
     </section>
 
-    {/* ── Imagine hero ── */}
-    <div class="art-img-wrap">
-      <img
-        src={post.data.image}
-        alt={post.data.imageAlt}
-        class="art-img"
-        loading="eager"
-      />
-    </div>
+    {post.data.image && (
+      <div class="article-hero-img">
+        <img
+          src={post.data.image}
+          alt={post.data.imageAlt || post.data.title}
+          width="800"
+          height="400"
+          style="width:100%;height:auto;border-radius:12px;margin-bottom:2rem;"
+        />
+      </div>
+    )}
 
     {/* ── Conținut articol ── */}
     <div class="art-body-wrap">
