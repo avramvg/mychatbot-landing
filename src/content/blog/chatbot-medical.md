@@ -1,5 +1,5 @@
 ---
-title: "Chatbot pentru cabinete medicale — programări 24/7 fără secretară"
+title: "Chatbot pentru cabinete medicale - programări 24/7 fără secretară"
 description: "Cum un chatbot AI poate gestiona programările la cabinet medical sau stomatologic, reduce apelurile telefonice și îmbunătățește experiența pacienților."
 pubDate: 2026-04-05
 author: "Hello Web"
@@ -22,13 +22,13 @@ Angajezi o a doua secretară? Sau automatizezi tot ce poate fi automatizat?
 
 Un pacient care vrea să se programeze trebuie să specifice: tipul de consultație sau investigație dorită, medicul preferat dacă sunt mai mulți, data și ora preferată, datele de contact pentru confirmare.
 
-Un chatbot ghidează natural pacientul prin toate acestea, printr-o conversație scurtă. Secretara primește o cerere completă — nu un mesaj cu „vreau să mă programez, când aveți loc?"
+Un chatbot ghidează natural pacientul prin toate acestea, printr-o conversație scurtă. Secretara primește o cerere completă - nu un mesaj cu „vreau să mă programez, când aveți loc?"
 
 ### Informații despre servicii și prețuri
 
 „Cât costă un detartraj?" „Acceptați CAS?" „Faceți radiografii panoramice?" „Câte ședințe durează un aparat dentar?"
 
-Astea sunt întrebările care ocupă 40% din apelurile unui cabinet stomatologic. Un chatbot configurat cu prețurile și serviciile tale răspunde la toate, oricând — inclusiv sâmbăta la ora 22, când pacientul caută informații după o durere de măsea.
+Astea sunt întrebările care ocupă 40% din apelurile unui cabinet stomatologic. Un chatbot configurat cu prețurile și serviciile tale răspunde la toate, oricând - inclusiv sâmbăta la ora 22, când pacientul caută informații după o durere de măsea.
 
 ### Informații administrative
 
@@ -36,9 +36,9 @@ Ce documente trebuie aduse la prima consultație? Cum ajungeți la cabinet? Exis
 
 Toate acestea, fără să implici personalul medical.
 
-### Urgențe — protocol și redirecționare
+### Urgențe - protocol și redirecționare
 
-Dacă un pacient descrie o urgență — durere acută, traumatism, sângerare — chatbot-ul furnizează numărul de telefon de urgență și protocolul corect. Nu oferă sfaturi medicale. Direcționează corect. Rapid.
+Dacă un pacient descrie o urgență - durere acută, traumatism, sângerare - chatbot-ul furnizează numărul de telefon de urgență și protocolul corect. Nu oferă sfaturi medicale. Direcționează corect. Rapid.
 
 ## De ce programările telefonice sunt ineficiente în 2025
 
@@ -60,21 +60,21 @@ Dimineața între 9 și 11 și în pauza de masă, telefonul sună întruna. Lin
 
 Nu revine.
 
-## GDPR și confidențialitate — ce trebuie să știi
+## GDPR și confidențialitate - ce trebuie să știi
 
 Prima întrebare pe care o pune orice medic: „Dar datele pacienților sunt în siguranță?"
 
 Răspuns direct: **datele colectate de chatbot sunt la fel de sigure ca un email sau un formular web**, dacă soluția e configurată corect.
 
 Concret:
-- Datele rămân în infrastructura soluției alese — nu pleacă în cloud-uri externe necunoscute
+- Datele rămân în infrastructura soluției alese - nu pleacă în cloud-uri externe necunoscute
 - Chatbot-ul colectează **minimul necesar** pentru programare: nume, telefon, tip consultație
-- Nu colectează și nu procesează date medicale — acestea rămân exclusiv în sistemul intern al cabinetului
+- Nu colectează și nu procesează date medicale - acestea rămân exclusiv în sistemul intern al cabinetului
 - Termenii de utilizare și politica de confidențialitate pot fi afișate explicit în chat
 
 Un chatbot bine configurat nu creează riscuri GDPR suplimentare față de un formular web standard.
 
-## Cum arată o programare prin chatbot — exemplu real
+## Cum arată o programare prin chatbot - exemplu real
 
 **Pacient:** Bună seara! Vreau să fac o programare la detartraj.
 
@@ -96,15 +96,15 @@ Un chatbot bine configurat nu creează riscuri GDPR suplimentare față de un fo
 
 ## Ce tip de cabinet beneficiază cel mai mult
 
-**Stomatologie** — servicii multiple, prețuri frecvent întrebate. Chatbot-ul e extrem de util.
+**Stomatologie** - servicii multiple, prețuri frecvent întrebate. Chatbot-ul e extrem de util.
 
-**Medicină de familie** — consultații de rutină, reînnoire rețete, trimiteri. Volum mare, sarcini repetitive. Potrivit perfect.
+**Medicină de familie** - consultații de rutină, reînnoire rețete, trimiteri. Volum mare, sarcini repetitive. Potrivit perfect.
 
-**Psihologie și psihoterapie** — pacienții preferă adesea să nu vorbească la telefon pentru o programare. Chatbot-ul elimină exact această barieră.
+**Psihologie și psihoterapie** - pacienții preferă adesea să nu vorbească la telefon pentru o programare. Chatbot-ul elimină exact această barieră.
 
-**Dermatologie, oftalmologie, ORL** — cabinete private cu volum ridicat de pacienți noi care vin de pe căutări online.
+**Dermatologie, oftalmologie, ORL** - cabinete private cu volum ridicat de pacienți noi care vin de pe căutări online.
 
-## Concluzie: chatbot-ul nu înlocuiește secretara — o eliberează
+## Concluzie: chatbot-ul nu înlocuiește secretara - o eliberează
 
 Un chatbot AI nu ia locul secretarei medicale. Îi preia sarcinile repetitive și o eliberează pentru ce contează cu adevărat: relația față în față cu pacientul, situațiile complexe, coordonarea echipei.
 

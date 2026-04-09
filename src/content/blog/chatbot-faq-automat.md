@@ -18,17 +18,17 @@ Există acum o metodă mai bună: **lași AI-ul să analizeze site-ul tău și s
 
 ### Procesul în 3 pași
 
-**Pasul 1: Crawling** — AI-ul scanează toate paginile site-ului tău. Extrage textul relevant. Ignoră navigația, footer-ul, cookie bannerele. Construiește o bază de cunoaștere structurată.
+**Pasul 1: Crawling** - AI-ul scanează toate paginile site-ului tău. Extrage textul relevant. Ignoră navigația, footer-ul, cookie bannerele. Construiește o bază de cunoaștere structurată.
 
-**Pasul 2: Analiză** — Pe baza conținutului colectat, modelul identifică informațiile cheie. Servicii oferite, prețuri, program, locație, politici, restricții, facilități. Înțelege ce e important pentru un client potențial.
+**Pasul 2: Analiză** - Pe baza conținutului colectat, modelul identifică informațiile cheie. Servicii oferite, prețuri, program, locație, politici, restricții, facilități. Înțelege ce e important pentru un client potențial.
 
-**Pasul 3: Generare** — AI-ul formulează întrebările cum le-ar pune un vizitator real. „Cât costă?" „Unde sunteți localizați?" „Acceptați plata cu cardul?" Și le asociază cu răspunsuri precise din conținutul existent.
+**Pasul 3: Generare** - AI-ul formulează întrebările cum le-ar pune un vizitator real. „Cât costă?" „Unde sunteți localizați?" „Acceptați plata cu cardul?" Și le asociază cu răspunsuri precise din conținutul existent.
 
 ### Ce produce ca output
 
 O listă de 8-15 perechi întrebare-răspuns, calibrate pe informațiile reale din site-ul tău.
 
-Nu întrebări generice — „Ce face compania voastră?" — ci întrebări specifice domeniului: „Aveti cameră disponibilă cu jacuzzi?" „Se poate face detartraj fără programare?" „Livrați și în afara Bucureștiului?"
+Nu întrebări generice - „Ce face compania voastră?" - ci întrebări specifice domeniului: „Aveti cameră disponibilă cu jacuzzi?" „Se poate face detartraj fără programare?" „Livrați și în afara Bucureștiului?"
 
 ## De ce FAQ-urile manuale sunt incomplete
 
@@ -36,7 +36,7 @@ Nu întrebări generice — „Ce face compania voastră?" — ci întrebări sp
 
 Problema fundamentală a scrierii manuale de FAQ: îți e greu să ghicești ce nu știu clienții tăi.
 
-Ești prea familiarizat cu propriul business. Lucruri care ți se par evidente — că prețul e per persoană, că check-out-ul e la 11, că serviciul include și transportul — sunt exact întrebările pe care le primești zilnic.
+Ești prea familiarizat cu propriul business. Lucruri care ți se par evidente - că prețul e per persoană, că check-out-ul e la 11, că serviciul include și transportul - sunt exact întrebările pe care le primești zilnic.
 
 AI-ul privește conținutul din perspectiva unui vizitator nou, fără cunoaștere prealabilă. Și identifică tocmai acele goluri de informație pe care tu nu le mai „vezi".
 
@@ -44,7 +44,7 @@ AI-ul privește conținutul din perspectiva unui vizitator nou, fără cunoaște
 
 Ai scris FAQ-urile în urmă cu 2 ani. De atunci ai schimbat prețurile, ai adăugat servicii noi, ai modificat programul.
 
-FAQ-urile manuale devin rapid depășite dacă nu există un proces de actualizare regulată. Iar actualizarea manuală — ei bine, o tot amâni.
+FAQ-urile manuale devin rapid depășite dacă nu există un proces de actualizare regulată. Iar actualizarea manuală - ei bine, o tot amâni.
 
 Un sistem cu generare automată poate regenera FAQ-urile la fiecare recrawl al site-ului. Dacă prețul se schimbă pe site, FAQ-ul reflectă automat noua realitate.
 
@@ -68,7 +68,7 @@ Tu le vezi în dashboard. Poți edita răspunsurile, poți șterge ce nu e relev
 
 La fiecare recrawl al site-ului, dacă conținutul se schimbă semnificativ, sistemul poate genera un nou set de FAQ-uri pentru aprobare. Fără muncă manuală din partea ta.
 
-## Cum arată un set de FAQ generate automat — exemplu
+## Cum arată un set de FAQ generate automat - exemplu
 
 Să presupunem că ai o pensiune în Brașov. Iată ce ar putea genera AI-ul:
 
@@ -91,7 +91,7 @@ A: [Extras din politica de anulare].
 
 ## Ce beneficii aduce automatizarea FAQ pentru business
 
-**Economie de timp:** Configurarea manuală a 10-15 FAQ-uri relevante durează 2-3 ore. Generarea automată — 30 de secunde.
+**Economie de timp:** Configurarea manuală a 10-15 FAQ-uri relevante durează 2-3 ore. Generarea automată - 30 de secunde.
 
 **Acoperire mai bună:** AI-ul identifică informații relevante din pagini pe care tu nici nu te-ai gândi să le transformi în FAQ. Din pagina „Despre noi" extrage informații despre experiența echipei. Din pagina unui produs extrage specificații tehnice care devin FAQ.
 
@@ -99,7 +99,7 @@ A: [Extras din politica de anulare].
 
 **Actualizare fără efort:** Când schimbi ceva pe site, FAQ-urile pot fi regenerate automat. Nu mai ții evidența manuală a ce trebuie actualizat.
 
-## Concluzie: FAQ-urile nu mai trebuie scrise — trebuie aprobate
+## Concluzie: FAQ-urile nu mai trebuie scrise - trebuie aprobate
 
 Paradigma s-a schimbat. În loc să scrii FAQ-uri de la zero, rolul tău devine de curator.
 

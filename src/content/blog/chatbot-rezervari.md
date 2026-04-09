@@ -14,7 +14,7 @@ Ai investit în site. În fotografii profesionale. Poate chiar în reclame plăt
 
 Nu rezervă. Nu scriu. Pur și simplu dispară.
 
-De ce? Unul dintre principalele motive: **formularul de contact**. Acel instrument care ar trebui să transforme vizitatorii în clienți — dar în realitate îi descurajează.
+De ce? Unul dintre principalele motive: **formularul de contact**. Acel instrument care ar trebui să transforme vizitatorii în clienți - dar în realitate îi descurajează.
 
 ## De ce formularele clasice nu mai funcționează
 
@@ -46,7 +46,7 @@ Formularul nu poate răspunde. Întrebările rămân fără răspuns. Vizitatoru
 
 ### Sunt invizibile pe mobil
 
-Jumătate din traficul web vine de pe telefon. Completarea unui formular cu 10 câmpuri pe un ecran de 6 inchi, cu tastatura virtuală acoperind câmpurile — e o experiență neplăcută.
+Jumătate din traficul web vine de pe telefon. Completarea unui formular cu 10 câmpuri pe un ecran de 6 inchi, cu tastatura virtuală acoperind câmpurile - e o experiență neplăcută.
 
 Mulți abandonează pur și simplu din cauza incomodității tehnice. Nu pentru că nu sunt interesați.
 
@@ -89,7 +89,7 @@ Să facem un calcul simplu pentru o pensiune cu 10 camere:
 
 La o valoare medie de 300 lei pe noapte, 2 nopți per rezervare, pierzi **2.400-3.000 lei pe lună** din cauza unui formular care nu funcționează bine.
 
-Acesta e costul de oportunitate al lipsei unui chatbot. Nu al abonamentului — al lipsei lui.
+Acesta e costul de oportunitate al lipsei unui chatbot. Nu al abonamentului - al lipsei lui.
 
 ## Cum arată o conversație de rezervare prin chatbot
 
@@ -113,7 +113,7 @@ De la întrebare la cerere completă: sub 2 minute. Fără să fii tu implicat.
 
 Formularul de contact rămâne util ca opțiune secundară. Dar ca principal instrument de conversie, și-a atins limitele.
 
-Vizitatorii de astăzi cer răspuns instant, conversație naturală și disponibilitate non-stop. Un chatbot AI nu înlocuiește relația umană — o pregătește. Preia munca de colectare, filtrează cererile și îți livrează un lead calificat, gata de confirmare.
+Vizitatorii de astăzi cer răspuns instant, conversație naturală și disponibilitate non-stop. Un chatbot AI nu înlocuiește relația umană - o pregătește. Preia munca de colectare, filtrează cererile și îți livrează un lead calificat, gata de confirmare.
 
 ---
 
