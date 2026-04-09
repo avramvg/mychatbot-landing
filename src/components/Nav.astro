@@ -1,4 +1,6 @@
 ---
+interface Props { basePath?: string }
+const { basePath = '' } = Astro.props
 ---
 <nav>
   <div class="container nav-inner">
@@ -21,9 +23,10 @@
       </div>
     </a>
     <div class="nav-links">
-      <a href="#functionalitati">Funcționalități</a>
-      <a href="#preturi">Prețuri</a>
-      <a href="#demo">Demo</a>
+      <a href={`${basePath}#functionalitati`}>Funcționalități</a>
+      <a href={`${basePath}#preturi`}>Prețuri</a>
+      <a href={`${basePath}#demo`}>Demo</a>
+      <a href="/industrii">Industrii</a>
       <a href="https://app.mychatbot.ro/login">Autentificare</a>
       <a href="https://app.mychatbot.ro/signup" class="btn-primary nav-cta">Încearcă gratuit</a>
     </div>
