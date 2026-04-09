@@ -1,0 +1,53 @@
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <rect width="800" height="400" fill="#f0f9ff"/>
+
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" fill="#0f172a" font-size="17" font-weight="700">Chatbot vs. Formular — cine convertește?</text>
+
+  <!-- Balance fulcrum -->
+  <polygon points="400,340 370,380 430,380" fill="#0f172a"/>
+  <rect x="366" y="376" width="68" height="12" rx="4" fill="#0f172a"/>
+
+  <!-- Balance beam — tilted: chatbot side down, form side up -->
+  <!-- Beam: from (120, 290) to (680, 210), pivot at (400, 250) -->
+  <line x1="100" y1="295" x2="700" y2="205" stroke="#0f172a" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- Strings left (chatbot, lower) -->
+  <line x1="165" y1="286" x2="165" y2="196" stroke="#64748b" stroke-width="2"/>
+  <line x1="255" y1="297" x2="255" y2="196" stroke="#64748b" stroke-width="2"/>
+
+  <!-- Chatbot pan (lower, left) -->
+  <rect x="110" y="140" width="200" height="60" rx="12" fill="#2563eb"/>
+  <!-- Chat bubble icon inside -->
+  <rect x="130" y="156" width="80" height="28" rx="8" fill="white" opacity="0.3"/>
+  <text x="170" y="175" text-anchor="middle" fill="white" font-size="12">✓ Răspuns instant</text>
+  <text x="240" y="172" text-anchor="middle" fill="white" font-size="22" font-weight="700">💬</text>
+  <!-- Pan base -->
+  <rect x="110" y="196" width="200" height="8" rx="4" fill="#1d4ed8"/>
+
+  <!-- Chatbot label -->
+  <text x="210" y="232" text-anchor="middle" fill="#2563eb" font-size="16" font-weight="700">Chatbot AI</text>
+  <text x="210" y="250" text-anchor="middle" fill="#10b981" font-size="13" font-weight="600">8–15% conversie ↑</text>
+
+  <!-- Strings right (form, higher) -->
+  <line x1="545" y1="214" x2="545" y2="130" stroke="#64748b" stroke-width="2"/>
+  <line x1="635" y1="206" x2="635" y2="130" stroke="#64748b" stroke-width="2"/>
+
+  <!-- Form pan (higher, right) -->
+  <rect x="490" y="76" width="200" height="56" rx="12" fill="#94a3b8"/>
+  <!-- Form lines inside -->
+  <rect x="510" y="90" width="100" height="7" rx="3" fill="white" opacity="0.5"/>
+  <rect x="510" y="104" width="140" height="7" rx="3" fill="white" opacity="0.5"/>
+  <rect x="510" y="118" width="80" height="7" rx="3" fill="white" opacity="0.5"/>
+  <!-- Pan base -->
+  <rect x="490" y="128" width="200" height="8" rx="4" fill="#64748b"/>
+
+  <!-- Form label -->
+  <text x="590" y="156" text-anchor="middle" fill="#64748b" font-size="16" font-weight="700">Formular</text>
+  <text x="590" y="174" text-anchor="middle" fill="#ef4444" font-size="13" font-weight="600">2–5% conversie ↓</text>
+
+  <!-- Arrow down on chatbot side -->
+  <text x="90" y="260" fill="#10b981" font-size="28" font-weight="700">↓</text>
+  <!-- Arrow up on form side -->
+  <text x="710" y="200" fill="#ef4444" font-size="28" font-weight="700">↑</text>
+</svg>

@@ -1,0 +1,53 @@
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <rect width="800" height="400" fill="#f0f9ff"/>
+
+  <!-- Background medical cross (subtle) -->
+  <rect x="370" y="60" width="60" height="280" rx="8" fill="#e0f2fe" opacity="0.6"/>
+  <rect x="260" y="170" width="280" height="60" rx="8" fill="#e0f2fe" opacity="0.6"/>
+
+  <!-- Left: Stethoscope -->
+  <rect x="60" y="70" width="260" height="260" rx="14" fill="white" stroke="#e2e8f0" stroke-width="1.5"/>
+  <!-- Stethoscope shape -->
+  <!-- Head (diaphragm) -->
+  <circle cx="190" cy="290" r="38" fill="none" stroke="#2563eb" stroke-width="6"/>
+  <circle cx="190" cy="290" r="22" fill="#2563eb" opacity="0.15"/>
+  <!-- Tube going up -->
+  <path d="M190 252 C190 220 140 210 130 180 C120 150 130 110 160 100" fill="none" stroke="#2563eb" stroke-width="6" stroke-linecap="round"/>
+  <path d="M190 252 C190 220 240 210 250 180 C260 150 250 110 220 100" fill="none" stroke="#2563eb" stroke-width="6" stroke-linecap="round"/>
+  <!-- Earpieces -->
+  <circle cx="160" cy="100" r="10" fill="#2563eb"/>
+  <circle cx="220" cy="100" r="10" fill="#2563eb"/>
+  <!-- Chest piece label -->
+  <text x="190" y="294" text-anchor="middle" fill="#2563eb" font-size="14" font-weight="700">♥</text>
+
+  <!-- Label -->
+  <text x="190" y="352" text-anchor="middle" fill="#64748b" font-size="13" font-weight="500">Cabinet medical</text>
+
+  <!-- Right: Chat bubble with appointment -->
+  <rect x="480" y="70" width="260" height="260" rx="14" fill="white" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- Chat header -->
+  <rect x="480" y="70" width="260" height="46" rx="14" fill="#2563eb"/>
+  <rect x="480" y="100" width="260" height="16" fill="#2563eb"/>
+  <text x="610" y="98" text-anchor="middle" fill="white" font-size="14" font-weight="600">Programare online</text>
+
+  <!-- Bot message -->
+  <rect x="496" y="130" width="200" height="36" rx="10" fill="#f1f5f9"/>
+  <text x="508" y="153" fill="#0f172a" font-size="13">Bună! Doriți o programare?</text>
+
+  <!-- User -->
+  <rect x="520" y="180" width="196" height="36" rx="10" fill="#2563eb"/>
+  <text x="532" y="203" fill="white" font-size="13">Da, pentru detartraj.</text>
+
+  <!-- Bot -->
+  <rect x="496" y="230" width="210" height="36" rx="10" fill="#f1f5f9"/>
+  <text x="508" y="253" fill="#0f172a" font-size="13">Când preferați? Luni sau marți?</text>
+
+  <!-- Confirmation — green -->
+  <rect x="496" y="280" width="220" height="38" rx="10" fill="#10b981"/>
+  <text x="508" y="298" fill="white" font-size="14" font-weight="700">Marți 10:00 ✓</text>
+  <text x="508" y="313" fill="white" font-size="11">Confirmat! Vă așteptăm.</text>
+
+  <!-- Footer label -->
+  <text x="400" y="370" text-anchor="middle" fill="#2563eb" font-size="13" font-weight="600">Programare în 2 minute · Fără telefon · 24/7</text>
+</svg>
