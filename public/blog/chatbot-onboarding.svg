@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#312e81"/>
+      <stop offset="100%" stop-color="#4f46e5"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="400" fill="url(#bg)"/>
+  <!-- Card stanga: pasi onboarding -->
+  <rect x="40" y="40" width="220" height="320" rx="12" fill="white"/>
+  <rect x="40" y="40" width="220" height="36" rx="12" fill="#312e81"/>
+  <rect x="40" y="64" width="220" height="12" fill="#312e81"/>
+  <text x="150" y="63" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="600" fill="white">Configurare</text>
+  <!-- Steps -->
+  <circle cx="68" cy="110" r="10" fill="#4f46e5"/>
+  <text x="68" y="115" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="white">1</text>
+  <text x="88" y="115" font-family="sans-serif" font-size="12" fill="#1e293b">Fișa afacerii</text>
+  <line x1="68" y1="120" x2="68" y2="148" stroke="#c7d2fe" stroke-width="2"/>
+  <circle cx="68" cy="158" r="10" fill="#4f46e5"/>
+  <text x="68" y="163" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="white">2</text>
+  <text x="88" y="163" font-family="sans-serif" font-size="12" fill="#1e293b">Scanare site</text>
+  <line x1="68" y1="168" x2="68" y2="196" stroke="#c7d2fe" stroke-width="2"/>
+  <circle cx="68" cy="206" r="10" fill="#4f46e5"/>
+  <text x="68" y="211" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="white">3</text>
+  <text x="88" y="211" font-family="sans-serif" font-size="12" fill="#1e293b">FAQ automat</text>
+  <line x1="68" y1="216" x2="68" y2="244" stroke="#c7d2fe" stroke-width="2"/>
+  <circle cx="68" cy="254" r="10" fill="#4f46e5"/>
+  <text x="68" y="259" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="white">4</text>
+  <text x="88" y="259" font-family="sans-serif" font-size="12" fill="#1e293b">Instalare cod</text>
+  <line x1="68" y1="264" x2="68" y2="292" stroke="#c7d2fe" stroke-width="2"/>
+  <circle cx="68" cy="302" r="10" fill="#10b981"/>
+  <text x="68" y="307" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="white">&#x2713;</text>
+  <text x="88" y="307" font-family="sans-serif" font-size="12" fill="#10b981" font-weight="600">Live în 10 min</text>
+  <!-- Arrow center -->
+  <polygon points="290,200 315,188 315,212" fill="rgba(255,255,255,0.4)"/>
+  <!-- Card dreapta: chat rezultat -->
+  <rect x="330" y="40" width="240" height="320" rx="12" fill="white"/>
+  <rect x="330" y="40" width="240" height="36" rx="12" fill="#4f46e5"/>
+  <rect x="330" y="64" width="240" height="12" fill="#4f46e5"/>
+  <text x="450" y="63" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="600" fill="white">Chatbot activ</text>
+  <!-- Chat bubbles -->
+  <rect x="348" y="95" width="160" height="30" rx="8" fill="#f1f5f9"/>
+  <text x="358" y="115" font-family="sans-serif" font-size="11" fill="#475569">Aveți camere libere în iulie?</text>
+  <rect x="358" y="138" width="180" height="44" rx="8" fill="#e0e7ff"/>
+  <text x="368" y="155" font-family="sans-serif" font-size="11" fill="#3730a3">Da! Avem disponibilitate în</text>
+  <text x="368" y="171" font-family="sans-serif" font-size="11" fill="#3730a3">iulie. Doriți să rezervați?</text>
+  <rect x="348" y="196" width="140" height="30" rx="8" fill="#f1f5f9"/>
+  <text x="358" y="216" font-family="sans-serif" font-size="11" fill="#475569">Ce include micul dejun?</text>
+  <rect x="358" y="239" width="185" height="44" rx="8" fill="#e0e7ff"/>
+  <text x="368" y="256" font-family="sans-serif" font-size="11" fill="#3730a3">Bufet suedez 07:00-10:00,</text>
+  <text x="368" y="272" font-family="sans-serif" font-size="11" fill="#3730a3">inclus în toate pachetele.</text>
+  <!-- Badge 24/7 -->
+  <rect x="348" y="300" width="60" height="22" rx="11" fill="#10b981"/>
+  <text x="378" y="315" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="white">24/7</text>
+  <rect x="420" y="300" width="110" height="22" rx="11" fill="#e0e7ff"/>
+  <text x="475" y="315" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#3730a3">răspuns instant</text>
+  <!-- Card dreapta mic: timp -->
+  <rect x="598" y="40" width="162" height="320" rx="12" fill="rgba(255,255,255,0.12)"/>
+  <text x="679" y="80" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="600" fill="white">Timp setup</text>
+  <text x="679" y="130" text-anchor="middle" font-family="sans-serif" font-size="42" font-weight="800" fill="white">10</text>
+  <text x="679" y="155" text-anchor="middle" font-family="sans-serif" font-size="14" fill="rgba(255,255,255,0.7)">minute</text>
+  <line x1="618" y1="175" x2="740" y2="175" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <text x="679" y="205" text-anchor="middle" font-family="sans-serif" font-size="11" fill="rgba(255,255,255,0.7)">fără programatori</text>
+  <text x="679" y="225" text-anchor="middle" font-family="sans-serif" font-size="11" fill="rgba(255,255,255,0.7)">fără agenție</text>
+  <text x="679" y="245" text-anchor="middle" font-family="sans-serif" font-size="11" fill="rgba(255,255,255,0.7)">fără cod</text>
+  <line x1="618" y1="265" x2="740" y2="265" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <text x="679" y="295" text-anchor="middle" font-family="sans-serif" font-size="11" fill="rgba(255,255,255,0.85)" font-weight="600">7 zile gratuit</text>
+  <rect x="618" y="308" width="122" height="28" rx="14" fill="white"/>
+  <text x="679" y="327" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#4f46e5">Încearcă acum</text>
+</svg>
