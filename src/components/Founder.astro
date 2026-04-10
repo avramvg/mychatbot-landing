@@ -1,0 +1,117 @@
+---
+---
+<section class="founder-section">
+  <div class="container">
+    <div class="founder-inner">
+
+      <div class="founder-photo-wrap">
+        <img
+          src="/poza_vali.jpeg"
+          alt="Valentin Avram — Fondator Hello Web"
+          class="founder-photo"
+          width="160"
+          height="160"
+        />
+      </div>
+
+      <div class="founder-quote-wrap">
+        <div class="founder-quote-mark">"</div>
+        <p class="founder-quote">
+          Un vizitator care nu primește răspuns în 5 minute caută în altă parte.
+          MyChatbot există pentru că am văzut prea mulți proprietari de business
+          pierzând clienți din cauza unui mesaj fără răspuns.
+        </p>
+        <div class="founder-identity">
+          <div class="founder-line"></div>
+          <div>
+            <p class="founder-name">Valentin Avram</p>
+            <p class="founder-title">Fondator Hello Web · MyChatbot</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+.founder-section {
+  background: #f0f9ff;
+  border-top: 1px solid #e0f2fe;
+  border-bottom: 1px solid #e0f2fe;
+  padding: 3rem 0;
+}
+.founder-inner {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+.founder-photo-wrap {
+  flex-shrink: 0;
+}
+.founder-photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  border: 3px solid #2563eb;
+  display: block;
+}
+.founder-quote-wrap {
+  flex: 1;
+  min-width: 280px;
+}
+.founder-quote-mark {
+  font-size: 72px;
+  line-height: 1;
+  color: #2563eb;
+  opacity: 0.3;
+  font-family: Georgia, serif;
+  margin-bottom: -12px;
+}
+.founder-quote {
+  font-size: 17px;
+  line-height: 1.75;
+  color: #1e3a5f;
+  font-style: italic;
+  margin: 0 0 1.5rem;
+}
+.founder-identity {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.founder-line {
+  width: 36px;
+  height: 2px;
+  background: #2563eb;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+.founder-name {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #0f172a;
+}
+.founder-title {
+  margin: 0;
+  font-size: 12px;
+  color: #64748b;
+}
+@media (max-width: 640px) {
+  .founder-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  .founder-identity {
+    justify-content: center;
+  }
+  .founder-quote-mark {
+    text-align: left;
+  }
+}
+</style>
