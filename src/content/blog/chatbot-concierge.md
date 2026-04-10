@@ -8,7 +8,7 @@ imageAlt: "Concierge de hotel profesionist cu chatbot AI"
 tags: ["ospitalitate", "comunicare", "HoReCa", "AI"]
 ---
 
-Ai intrat vreodată într-un hotel de 5 stele și ai simțit că angajații știu deja ce vrei înainte să ceri? Asta nu e magie — e un standard de comunicare antrenat ani de zile.
+Ai intrat vreodată într-un hotel de 5 stele și ai simțit că angajații știu deja ce vrei înainte să ceri? Asta nu e magie - e un standard de comunicare antrenat ani de zile.
 
 Acum imaginează-ți că site-ul tău face același lucru, 24/7, pentru fiecare vizitator.
 
@@ -22,11 +22,11 @@ Diferența concretă:
 
 **Concierge 5 stele:** „Check-in-ul este la ora 14:00. Dacă ajungeți mai devreme, depozităm bagajele gratuit și vă puteți relaxa în lobby. Doriți să vă rezervăm și un loc la restaurant pentru prânz?"
 
-Același răspuns la aceeași întrebare — dar experiența e complet diferită.
+Același răspuns la aceeași întrebare - dar experiența e complet diferită.
 
 ## Cum arată un chatbot generic vs. un chatbot antrenat cu standarde de ospitalitate
 
-Majority chatboților de pe piață sunt construiți pentru eficiență, nu pentru experiență. Răspund corect, dar rece. Funcționează, dar nu impresionează.
+Majoritatea chatboților de pe piață sunt construiți pentru eficiență, nu pentru experiență. Răspund corect, dar rece. Funcționează, dar nu impresionează.
 
 Iată câteva scenarii reale:
 
@@ -34,7 +34,7 @@ Iată câteva scenarii reale:
 
 **Chatbot generic:** „Da, avem camere disponibile pentru perioada respectivă."
 
-**Chatbot concierge:** „Da, avem disponibilitate pentru 15-17 mai. Câte persoane sunteți? Vă recomand camera dublă cu vedere la grădină — e preferata oaspeților noștri pentru weekenduri."
+**Chatbot concierge:** „Da, avem disponibilitate pentru 15-17 mai. Câte persoane sunteți? Vă recomand camera dublă cu vedere la grădină - e preferata oaspeților noștri pentru weekenduri."
 
 ### Scenariul 2 - Vizitatorul menționează că vine pentru o aniversare
 
@@ -52,11 +52,11 @@ Iată câteva scenarii reale:
 
 ### 1. Anticiparea, nu doar răspunsul
 
-Un chatbot bun nu așteaptă să fie întrebat — oferă proactiv informația pe care vizitatorul o va căuta oricum. Dacă cineva întreabă de check-in, menționezi automat și check-out-ul, parcarea și opțiunile de mic dejun.
+Un chatbot bun nu așteaptă să fie întrebat - oferă proactiv informația pe care vizitatorul o va căuta oricum. Dacă cineva întreabă de check-in, menționezi automat și check-out-ul, parcarea și opțiunile de mic dejun.
 
 ### 2. Memoria contextului
 
-Dacă vizitatorul menționează că vine cu copii mici, toate răspunsurile ulterioare țin cont de asta. Camera potrivită, facilitățile pentru copii, restaurantul cu meniu pentru cei mici — totul se adaptează natural.
+Dacă vizitatorul menționează că vine cu copii mici, toate răspunsurile ulterioare țin cont de asta. Camera potrivită, facilitățile pentru copii, restaurantul cu meniu pentru cei mici - totul se adaptează natural.
 
 ### 3. Upsell elegant, nu agresiv
 
@@ -64,7 +64,7 @@ Diferența dintre un vânzător agresiv și un concierge bun este că acesta din
 
 ### 4. Empatie reală
 
-Recunoaște emoția din mesaj înainte de a da informația. „Înțeleg că doriți o experiență specială — avem exact ce vă trebuie" creează o conexiune pe care „Avem camere disponibile" nu o poate face.
+Recunoaște emoția din mesaj înainte de a da informația. „Înțeleg că doriți o experiență specială - avem exact ce vă trebuie" creează o conexiune pe care „Avem camere disponibile" nu o poate face.
 
 ### 5. Niciodată fără alternativă
 
@@ -72,12 +72,12 @@ Un concierge bun nu spune niciodată „nu" fără să ofere o alternativă. Ser
 
 ## De ce contează pentru business-ul tău
 
-Vizitatorii care primesc o experiență de calitate în chat convertesc mai bine. Nu pentru că au fost convinși — ci pentru că s-au simțit ascultați și ajutați.
+Vizitatorii care primesc o experiență de calitate în chat convertesc mai bine. Nu pentru că au fost convinși - ci pentru că s-au simțit ascultați și ajutați.
 
 Un chatbot care comunică ca un concierge de 5 stele nu înlocuiește echipa ta. O reprezintă la cel mai bun nivel al ei, non-stop, pentru fiecare vizitator.
 
 ---
 
-Vrei să testezi cum comunică MyChatbot pe site-ul tău? Încearcă gratuit 7 zile — fără card, fără angajament.
+Vrei să testezi cum comunică MyChatbot pe site-ul tău? Încearcă gratuit 7 zile - fără card, fără angajament.
 
 [Încearcă MyChatbot gratuit →](https://app.mychatbot.ro/signup)
