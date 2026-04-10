@@ -60,13 +60,16 @@ Nu ești sigur? Începe cu trial-ul gratuit de 7 zile pe planul Standard și vez
 <style>
   .gray-section { background: #f8fafc; }
   .faq-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
+    columns: 2;
+    column-gap: 3rem;
+  }
+  .faq-item {
+    break-inside: avoid;
+    margin-bottom: 1.5rem;
   }
   .faq-item h3 { margin-bottom: 5px; }
   .faq-item p  { font-size: 12px; }
   @media (max-width: 640px) {
-    .faq-grid { grid-template-columns: 1fr; }
+    .faq-grid { columns: 1; }
   }
 </style>
