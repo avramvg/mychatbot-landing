@@ -1,5 +1,11 @@
 <svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
-  <rect width="800" height="400" fill="#f0f9ff"/>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#dc2626"/>
+      <stop offset="100%" stop-color="#9f1239"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="400" fill="url(#bg)"/>
 
   <!-- VS badge center -->
   <circle cx="400" cy="200" r="30" fill="#0f172a"/>
@@ -35,8 +41,8 @@
   <!-- Right card: Chat -->
   <rect x="450" y="40" width="320" height="320" rx="14" fill="white" stroke="#e2e8f0" stroke-width="1.5"/>
   <!-- Header -->
-  <rect x="450" y="40" width="320" height="48" rx="14" fill="#2563eb"/>
-  <rect x="450" y="74" width="320" height="14" fill="#2563eb"/>
+  <rect x="450" y="40" width="320" height="48" rx="14" fill="#dc2626"/>
+  <rect x="450" y="74" width="320" height="14" fill="#dc2626"/>
   <text x="610" y="70" text-anchor="middle" fill="white" font-size="15" font-weight="600">Chat AI</text>
 
   <!-- Chat bubbles -->

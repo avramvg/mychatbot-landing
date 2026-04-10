@@ -1,10 +1,16 @@
 <svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
-  <rect width="800" height="400" fill="#f0f9ff"/>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d9488"/>
+      <stop offset="100%" stop-color="#134e4a"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="400" fill="url(#bg)"/>
 
   <!-- Left card: Calendar -->
   <rect x="30" y="30" width="330" height="340" rx="14" fill="white" stroke="#e2e8f0" stroke-width="1.5"/>
-  <rect x="30" y="30" width="330" height="52" rx="14" fill="#2563eb"/>
-  <rect x="30" y="68" width="330" height="14" fill="#2563eb"/>
+  <rect x="30" y="30" width="330" height="52" rx="14" fill="#0d9488"/>
+  <rect x="30" y="68" width="330" height="14" fill="#0d9488"/>
   <text x="195" y="62" text-anchor="middle" fill="white" font-size="16" font-weight="600">Disponibilitate — Aprilie</text>
 
   <!-- Weekday labels -->
@@ -65,8 +71,8 @@
 
   <!-- Right card: Chat -->
   <rect x="440" y="30" width="330" height="340" rx="14" fill="white" stroke="#e2e8f0" stroke-width="1.5"/>
-  <rect x="440" y="30" width="330" height="52" rx="14" fill="#2563eb"/>
-  <rect x="440" y="68" width="330" height="14" fill="#2563eb"/>
+  <rect x="440" y="30" width="330" height="52" rx="14" fill="#0d9488"/>
+  <rect x="440" y="68" width="330" height="14" fill="#0d9488"/>
   <circle cx="468" cy="56" r="16" fill="white" opacity="0.25"/>
   <text x="492" y="61" fill="white" font-size="15" font-weight="600">MyChatbot</text>
 
@@ -76,7 +82,7 @@
   <text x="468" y="129" fill="#0f172a" font-size="13">vă pot ajuta?</text>
 
   <!-- User message -->
-  <rect x="508" y="150" width="240" height="36" rx="10" fill="#2563eb"/>
+  <rect x="508" y="150" width="240" height="36" rx="10" fill="#0d9488"/>
   <text x="520" y="173" fill="white" font-size="13">Aveți camere în 10-11 Apr?</text>
 
   <!-- Bot response — green -->
