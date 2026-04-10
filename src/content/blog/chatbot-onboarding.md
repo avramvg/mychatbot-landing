@@ -1,8 +1,10 @@
 ---
 title: "Cum ai un chatbot AI pe site în 10 minute - ghid pas cu pas pentru oricine"
 description: "De la înregistrare la primul răspuns automat - fără cunoștințe tehnice. Îți arătăm exact ce ai de făcut."
-pubDate: 2025-04-10
+pubDate: 2026-04-10
 image: "/blog/chatbot-onboarding.svg"
+imageAlt: "Ghid pas cu pas pentru configurarea unui chatbot AI pe site"
+author: "Hello Web"
 tags: ["ghid", "onboarding", "tutorial"]
 ---
 
