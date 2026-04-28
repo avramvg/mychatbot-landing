@@ -3,7 +3,10 @@ const plans = [
   {
     id: 'start',
     name: 'Start',
-    price: '150 lei',
+    pricing: {
+      yearly:  { lei_per_month: 150, total_label: 'Total anual: 1.800 lei' },
+      monthly: { lei_per_month: 195 },
+    },
     desc: 'Pentru pensiuni mici, restaurante, cafenele și atracții locale din turism și ospitalitate.',
     featured: false,
     cta: { label: 'Începe gratuit', href: 'https://app.mychatbot.ro/signup', style: 'secondary' },
@@ -26,7 +29,10 @@ const plans = [
   {
     id: 'standard',
     name: 'Standard',
-    price: '250 lei',
+    pricing: {
+      yearly:  { lei_per_month: 250, total_label: 'Total anual: 3.000 lei' },
+      monthly: { lei_per_month: 325 },
+    },
     desc: 'Pentru hoteluri boutique, agenții de turism mici, pensiuni active și restaurante cu rezervări.',
     featured: true,
     badge: 'Recomandat',
@@ -48,7 +54,10 @@ const plans = [
   {
     id: 'pro',
     name: 'Pro',
-    price: '550 lei',
+    pricing: {
+      yearly:  { lei_per_month: 550, total_label: 'Total anual: 6.600 lei' },
+      monthly: { lei_per_month: 715 },
+    },
     desc: 'Pentru hoteluri cu peste 30 camere, tour operatori, agenții cu volum și destinații turistice.',
     featured: false,
     cta: { label: 'Începe gratuit', href: 'https://app.mychatbot.ro/signup', style: 'secondary' },
@@ -92,14 +101,49 @@ const plans = [
     <h2>Alege planul potrivit</h2>
     <p>Toate planurile includ 7 zile gratuit. Fără card.</p>
 
+    <!-- Toggle Lunar / Anual -->
+    <div class="cycle-toggle-wrapper">
+      <div class="cycle-toggle">
+        <button id="btn-yearly" class="toggle-btn active" aria-pressed="true">
+          Plata anuală
+        </button>
+        <button id="btn-monthly" class="toggle-btn" aria-pressed="false">
+          Plata lunară
+        </button>
+      </div>
+      <div id="annual-savings" class="annual-savings-tag">
+        ✨ Economisești 23% cu plata anuală
+      </div>
+    </div>
+
     <div class="plans-grid mt-4">
       {plans.map((p) => (
         <div class={`plan-card ${p.featured ? 'featured' : ''}`}>
           {p.badge && <div class="plan-badge">{p.badge}</div>}
           <div class="plan-name">{p.name}</div>
-          <div class={`plan-price ${p.priceSmall ? 'plan-price-sm' : ''}`}>
-            {p.price}{!p.priceSmall && <span>/lună</span>}
-          </div>
+
+          {p.pricing ? (
+            <>
+              <div class="price-yearly">
+                <div class="plan-price">
+                  {p.pricing.yearly.lei_per_month} lei<span>/lună</span>
+                </div>
+                <p class="price-period-label">
+                  <strong>{p.pricing.yearly.total_label}</strong>
+                </p>
+              </div>
+              <div class="price-monthly">
+                <div class="plan-price">
+                  {p.pricing.monthly.lei_per_month} lei<span>/lună</span>
+                </div>
+              </div>
+            </>
+          ) : (
+            <div class={`plan-price ${p.priceSmall ? 'plan-price-sm' : ''}`}>
+              {p.price}{!p.priceSmall && <span>/lună</span>}
+            </div>
+          )}
+
           <div class="plan-desc">{p.desc}</div>
           <ul class="plan-features">
             {p.features.map((f) => (
@@ -321,4 +365,94 @@ const plans = [
   @media (max-width: 600px) {
     .helloweb-box { flex-direction: column; align-items: flex-start; }
   }
+
+  /* ── Toggle Lunar / Anual ─────────────────────────────────────── */
+  .cycle-toggle-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 1.25rem;
+    margin-bottom: 0.25rem;
+  }
+  .cycle-toggle {
+    display: inline-flex;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 4px;
+    gap: 2px;
+  }
+  .toggle-btn {
+    padding: 7px 20px;
+    border: none;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    background: transparent;
+    color: #94a3b8;
+    transition: background 0.15s, color 0.15s, box-shadow 0.15s;
+    white-space: nowrap;
+  }
+  .toggle-btn.active {
+    background: white;
+    color: var(--color-primary, #2563eb);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  }
+  .toggle-btn:hover:not(.active) {
+    color: #475569;
+  }
+  .annual-savings-tag {
+    font-size: 12px;
+    color: #059669;
+    background: #d1fae5;
+    border: 1px solid #a7f3d0;
+    border-radius: 20px;
+    padding: 4px 14px;
+  }
+  @media (max-width: 380px) {
+    .toggle-btn { padding: 7px 14px; font-size: 12px; }
+  }
+
+  /* ── Cycle switching ──────────────────────────────────────────── */
+  .price-monthly { display: none; }
+  #preturi.cycle-monthly .price-yearly { display: none; }
+  #preturi.cycle-monthly .price-monthly { display: block; }
+  #preturi.cycle-monthly #annual-savings { display: none; }
+
+  /* ── Price period label (under yearly price) ──────────────────── */
+  .price-period-label {
+    font-size: 12px;
+    color: #64748b;
+    margin: 0 0 6px;
+    line-height: 1.4;
+  }
+  .price-period-label strong {
+    color: var(--color-primary, #2563eb);
+  }
 </style>
+
+<script is:inline>
+(function () {
+  var section = document.getElementById('preturi');
+  var btnY    = document.getElementById('btn-yearly');
+  var btnM    = document.getElementById('btn-monthly');
+
+  btnM.addEventListener('click', function () {
+    section.classList.add('cycle-monthly');
+    btnM.classList.add('active');
+    btnM.setAttribute('aria-pressed', 'true');
+    btnY.classList.remove('active');
+    btnY.setAttribute('aria-pressed', 'false');
+  });
+
+  btnY.addEventListener('click', function () {
+    section.classList.remove('cycle-monthly');
+    btnY.classList.add('active');
+    btnY.setAttribute('aria-pressed', 'true');
+    btnM.classList.remove('active');
+    btnM.setAttribute('aria-pressed', 'false');
+  });
+}());
+</script>
