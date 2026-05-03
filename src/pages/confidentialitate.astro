@@ -13,19 +13,37 @@ import Footer from '../components/Footer.astro';
   <main>
     <div class="content">
       <h1>Politică de Confidențialitate</h1>
-      <p><em>Ultima actualizare: aprilie 2026</em></p>
+      <p><em>Ultima actualizare: mai 2026</em></p>
 
       <h2>1. Operatorul de date</h2>
-      <p>HELLO WEB SRL, Bdul. Ion Ionescu de la Brad 81-85, Et. 1, Ap. 1, Sector 1, București, CUI 39199732, Nr. Reg. Com. J40/451/2020, email: <a href="mailto:hello@helloweb.ro">hello@helloweb.ro</a>.</p>
+      <p>HELLO WEB SRL, Bdul. Ion Ionescu de la Brad 81-85, Et. 1, Ap. 1, Sector 1, București, CUI 39199732, Nr. Reg. Com. J40/451/2020, email: <a href="mailto:hello@mychatbot.ro">hello@mychatbot.ro</a>.</p>
 
       <h2>2. Ce date colectăm</h2>
-      <p><strong>Pentru clienții platformei (abonați):</strong></p>
+
+      <h3>2.1 Pentru clienții platformei (abonați)</h3>
+      <p><strong>Date de identificare și contact:</strong></p>
       <ul>
-        <li>Adresă email, nume, nume business</li>
-        <li>Date de facturare (procesate de Stripe — nu stocăm date de card)</li>
-        <li>Date de utilizare a platformei (conversații anonimizate, statistici)</li>
+        <li>Adresă email</li>
+        <li>Nume și prenume</li>
+        <li>Numele businessului</li>
       </ul>
-      <p><strong>Pentru vizitatorii end-user (prin chatbot):</strong></p>
+      <p><strong>Date de facturare</strong> (procesate și stocate de Stripe — noi nu păstrăm datele cardului):</p>
+      <ul>
+        <li>Numele și adresa fiscală</li>
+        <li>CUI / Cod fiscal (pentru entități juridice)</li>
+        <li>Tax ID / cod TVA (dacă există)</li>
+        <li>Țara de facturare</li>
+        <li>Detalii card (procesate și salvate exclusiv de Stripe pentru reînnoiri automate)</li>
+        <li>Istoricul facturilor și plăților</li>
+      </ul>
+      <p><strong>Date de utilizare a platformei:</strong></p>
+      <ul>
+        <li>Statistici de conversații (numărate, nu textul lor)</li>
+        <li>Configurări chatbot</li>
+        <li>Logs tehnice de audit (acces, modificări configurare)</li>
+      </ul>
+
+      <h3>2.2 Pentru vizitatorii end-user (prin chatbot)</h3>
       <ul>
         <li>Date furnizate voluntar în formularul de contact: nume, telefon, email, mesaj</li>
         <li>Date tehnice anonime: limbă browser, număr sesiune (fără IP stocat)</li>
@@ -33,9 +51,10 @@ import Footer from '../components/Footer.astro';
 
       <h2>3. De ce colectăm datele</h2>
       <ul>
-        <li>Executarea contractului de abonament (Art. 6(1)(b) GDPR)</li>
-        <li>Facturare și obligații fiscale (Art. 6(1)(c) GDPR)</li>
-        <li>Îmbunătățirea serviciului (Art. 6(1)(f) GDPR — interes legitim)</li>
+        <li><strong>Executarea contractului de abonament</strong> (Art. 6(1)(b) GDPR)</li>
+        <li><strong>Procesarea plăților recurente</strong> (Art. 6(1)(b) GDPR — necesar pentru executarea contractului)</li>
+        <li><strong>Facturare și obligații fiscale</strong> (Art. 6(1)(c) GDPR — Codul fiscal român, Legea contabilității 82/1991)</li>
+        <li><strong>Îmbunătățirea serviciului</strong> (Art. 6(1)(f) GDPR — interes legitim)</li>
         <li>Datele din formularul de contact sunt transmise businessului client care le-a solicitat</li>
       </ul>
 
@@ -47,27 +66,45 @@ import Footer from '../components/Footer.astro';
         <tbody>
           <tr><td>Supabase</td><td>Stocare date platformă</td><td>EU (Frankfurt)</td></tr>
           <tr><td>Anthropic</td><td>Procesare AI conversații</td><td>SUA (cu garanții adecvate)</td></tr>
-          <tr><td>Stripe</td><td>Procesare plăți</td><td>SUA/EU</td></tr>
+          <tr><td>Stripe Payments Europe Ltd.</td><td>Procesare plăți și facturare recurentă</td><td>EU (Irlanda) cu replicare globală</td></tr>
           <tr><td>Resend</td><td>Trimitere emailuri</td><td>SUA (cu garanții adecvate)</td></tr>
           <tr><td>Vercel</td><td>Hosting aplicație</td><td>SUA/EU</td></tr>
+          <tr><td>Cloudflare</td><td>DNS, Email Routing și protecție DDoS</td><td>EU/SUA (cu garanții adecvate, SCC)</td></tr>
         </tbody>
       </table>
+      <p>Toate transferurile internaționale de date se fac în baza Clauzelor Contractuale Standard (SCC) aprobate de Comisia Europeană.</p>
 
       <h2>5. Cât păstrăm datele</h2>
       <ul>
-        <li>Date cont: pe durata abonamentului + 5 ani (obligații fiscale)</li>
-        <li>Conversații: nu stocăm textul conversațiilor (GDPR)</li>
-        <li>Date formulare contact: transmise imediat businessului, nu stocate pe termen lung</li>
+        <li><strong>Date cont și facturare:</strong> pe durata abonamentului plus perioada cerută de legislația fiscală și contabilă română (Codul fiscal și Legea contabilității 82/1991)</li>
+        <li><strong>Istoric plăți Stripe:</strong> păstrat în Stripe pe durata abonamentului plus perioada cerută de legislație, gestionat de Stripe conform politicii lor</li>
+        <li><strong>Conturi trial expirate sau abonamente suspendate:</strong> păstrate cel puțin <strong>30 de zile</strong> după expirare/suspendare pentru reactivare. După acest termen, datele pot fi șterse fără preaviz suplimentar. La cerere expresă, ștergerea poate fi efectuată mai devreme conform GDPR Art. 17</li>
+        <li><strong>Conversații chatbot:</strong> <strong>nu stocăm textul conversațiilor</strong> — păstrăm doar statistici agregate</li>
+        <li><strong>Date formulare contact:</strong> transmise imediat businessului care folosește platforma; nu stocate de noi pe termen lung</li>
+        <li><strong>Logs tehnice (audit, errors):</strong> maxim 90 de zile</li>
       </ul>
 
       <h2>6. Drepturile tale (GDPR Art. 15-22)</h2>
-      <p>Ai dreptul la: acces, rectificare, ștergere, restricționare, portabilitate, opoziție. Pentru exercitarea drepturilor contactează-ne la <a href="mailto:hello@helloweb.ro">hello@helloweb.ro</a>. Răspundem în maximum 30 de zile.</p>
+      <p>Ai dreptul la: <strong>acces, rectificare, ștergere, restricționare, portabilitate, opoziție</strong>.</p>
+      <p>Pentru exercitarea drepturilor contactează-ne la <a href="mailto:hello@mychatbot.ro">hello@mychatbot.ro</a>. Răspundem în maximum 30 de zile.</p>
+      <p><strong>Notă privind ștergerea:</strong> unele date trebuie păstrate prin lege (perioada cerută de legislația fiscală și contabilă română) — în acest caz, datele rămân doar în arhivă și nu sunt accesibile decât autorităților competente la cerere.</p>
 
       <h2>7. Cookie-uri</h2>
-      <p>Folosim exclusiv cookie-uri tehnice necesare funcționării platformei. Nu folosim cookie-uri de tracking sau publicitate.</p>
+      <p>Folosim exclusiv cookie-uri tehnice necesare funcționării platformei (autentificare, sesiune). <strong>Nu folosim cookie-uri de tracking sau publicitate.</strong></p>
+      <p>Stripe Customer Portal poate seta propriile cookie-uri necesare procesării plății, conform politicii Stripe.</p>
 
-      <h2>8. Modificări</h2>
-      <p>Vom notifica utilizatorii prin email cu 30 de zile înainte de orice modificare semnificativă.</p>
+      <h2>8. Securitate</h2>
+      <p>Implementăm măsurile tehnice și organizatorice necesare pentru protecția datelor, conform Art. 32 GDPR, inclusiv:</p>
+      <ul>
+        <li>Criptare TLS pentru transferuri de date</li>
+        <li>Encryption at rest pentru stocare</li>
+        <li>Control de acces pe roluri (Row Level Security)</li>
+        <li>Monitorizare a operațiunilor administrative critice</li>
+      </ul>
+      <p>În caz de breach de date care vă afectează, vă vom notifica în maximum <strong>72 de ore</strong> conform GDPR Art. 33.</p>
+
+      <h2>9. Modificări</h2>
+      <p>Vom notifica utilizatorii prin email cu <strong>30 de zile</strong> înainte de orice modificare semnificativă a acestei politici.</p>
     </div>
   </main>
   <Footer />
@@ -126,4 +163,8 @@ import Footer from '../components/Footer.astro';
   a {
     color: #2563eb;
   }
+  h3 { font-size: 1.05rem; margin-top: 1.5rem; margin-bottom: 0.5rem; color: #0f172a; font-weight: 600; }
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+  th, td { text-align: left; padding: 0.5rem; border-bottom: 1px solid #e2e8f0; color: #475569; }
+  th { font-weight: 600; color: #0f172a; background: #f8fafc; }
 </style>

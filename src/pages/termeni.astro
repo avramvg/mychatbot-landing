@@ -13,48 +13,118 @@ import Footer from '../components/Footer.astro';
   <main>
     <div class="content">
       <h1>Termeni și Condiții de Utilizare</h1>
-      <p><em>Ultima actualizare: aprilie 2026</em></p>
+      <p><em>Ultima actualizare: mai 2026</em></p>
 
       <h2>1. Despre noi</h2>
-      <p>MyChatbot este un serviciu SaaS operat de <strong>HELLO WEB SRL</strong>, cu sediul în Bdul. Ion Ionescu de la Brad 81-85, Et. 1, Ap. 1, Sector 1, București, CUI 39199732, Nr. Reg. Com. J40/451/2020, email: <a href="mailto:hello@helloweb.ro">hello@helloweb.ro</a>.</p>
+      <p>MyChatbot este un serviciu SaaS operat de <strong>HELLO WEB SRL</strong>, cu sediul în Bdul. Ion Ionescu de la Brad 81-85, Et. 1, Ap. 1, Sector 1, București, CUI 39199732, Nr. Reg. Com. J40/451/2020, email: <a href="mailto:hello@mychatbot.ro">hello@mychatbot.ro</a>.</p>
 
       <h2>2. Serviciul oferit</h2>
-      <p>MyChatbot oferă o platformă de chatbot AI pentru site-uri web, disponibilă prin abonament lunar. Prin utilizarea platformei, acceptați acești termeni în totalitate.</p>
+      <p>MyChatbot oferă o platformă de chatbot AI pentru site-uri web, disponibilă prin abonament cu plată recurentă. Prin utilizarea platformei, acceptați acești termeni în totalitate.</p>
 
       <h2>3. Abonament și plată</h2>
+
+      <h3>3.1 Cicluri de facturare</h3>
+      <p>Abonamentul MyChatbot este disponibil în două cicluri de facturare:</p>
       <ul>
-        <li>Abonamentele se facturează lunar, prin Stripe</li>
-        <li>Prețurile includ TVA 21% conform Legii 141/2025</li>
-        <li>Plata se efectuează în avans pentru luna curentă</li>
-        <li>Puteți anula oricând — accesul rămâne activ până la sfârșitul perioadei plătite</li>
-        <li>Nu oferim rambursări pentru perioadele parțial utilizate</li>
+        <li><strong>Lunar</strong> — facturare în avans pentru luna următoare</li>
+        <li><strong>Anual</strong> — facturare în avans pentru anul următor, cu reducere de 23% față de plata lunară</li>
       </ul>
+      <p>Procesarea plăților se face exclusiv prin Stripe Payments Europe Ltd., procesator certificat PCI-DSS. Acceptăm carduri Visa, Mastercard și American Express.</p>
+      <p>Toate prețurile afișate pe platformă includ <strong>TVA 21%</strong> conform Legii 141/2025.</p>
 
-      <h2>4. Trial gratuit</h2>
-      <p>Noii utilizatori beneficiază de 7 zile de trial gratuit pe planul Standard, fără card de credit. La expirarea trialului, serviciul se suspendă automat dacă nu se alege un plan plătit.</p>
+      <h3>3.2 Reînnoire automată</h3>
+      <p>Abonamentele se reînnoiesc automat la sfârșitul fiecărei perioade plătite (lunar sau anual), folosind metoda de plată salvată. Veți primi un email de notificare cu cel puțin 7 zile înainte de orice reînnoire anuală.</p>
 
-      <h2>5. Utilizare acceptabilă</h2>
+      <h3>3.3 Salvarea metodei de plată</h3>
+      <p>La activarea abonamentului, metoda de plată este salvată securizat la Stripe pentru:</p>
+      <ul>
+        <li>Reînnoirile automate</li>
+        <li>Modificările de plan (upgrade)</li>
+        <li>Plata diferențelor de preț la upgrade</li>
+      </ul>
+      <p><strong>HELLO WEB SRL nu stochează datele cardului dvs.</strong> Toate datele cardului sunt procesate și stocate exclusiv de Stripe, cu respectarea standardelor PCI-DSS Level 1 și PSD2/SCA (Strong Customer Authentication).</p>
+
+      <h3>3.4 Modificarea planului (upgrade / downgrade)</h3>
+      <p><strong>Upgrade (trecerea la un plan superior):</strong><br>
+      Se aplică <strong>imediat</strong>, la momentul confirmării. Veți fi facturat pentru diferența de preț prorata, calculată pentru zilele rămase din perioada curentă. Planul nou și toate beneficiile acestuia devin disponibile instant.</p>
+      <p><strong>Downgrade (trecerea la un plan inferior) și anulare:</strong><br>
+      Se aplică <strong>la sfârșitul perioadei curente plătite</strong>. Până atunci, păstrați accesul complet la planul curent. <strong>Nu se acordă rambursări pentru diferența de preț</strong> între planul actual și cel inferior, indiferent de momentul programării schimbării.</p>
+      <p><strong>Schimbarea ciclului de facturare:</strong><br>
+      Trecerea de la Lunar la Anual se aplică la sfârșitul perioadei lunare curente. Trecerea de la Anual la Lunar se aplică la sfârșitul perioadei anuale curente. Niciuna din aceste schimbări nu generează rambursare proporțională.</p>
+
+      <h3>3.5 Garanția prețului pentru abonamente active</h3>
+      <p><strong>Pentru abonamentele active, prețul rămâne neschimbat pentru durata perioadei curente</strong> (luna sau anul facturat). Eventualele modificări de preț ale platformei se aplică <strong>doar la reînnoire</strong>, cu notificare prealabilă prin email cu cel puțin <strong>30 de zile</strong> înainte de aplicare.</p>
+      <p>În cazul în care nu sunteți de acord cu noul preț, puteți anula abonamentul oricând până la data reînnoirii, fără penalități.</p>
+
+      <h3>3.6 Eșecul plății și suspendarea pentru neplată</h3>
+      <p>Dacă reînnoirea automată eșuează (card respins, expirat sau insuficient), Stripe va încerca automat reîncărcarea de mai multe ori conform politicii sale standard de retry. Veți primi notificări prin email la fiecare încercare eșuată.</p>
+      <p>Dacă toate încercările eșuează, abonamentul se suspendă automat. Datele și configurările contului dvs. rămân salvate <strong>timp de 30 de zile</strong> de la data suspendării — în acest interval, puteți reactiva accesul prin actualizarea metodei de plată în Stripe Customer Portal.</p>
+      <p>După 30 de zile, contul poate fi marcat pentru ștergere conform Politicii de Confidențialitate, Sec. 5.</p>
+
+      <h3>3.7 Fără rambursări pentru perioade neutilizate</h3>
+      <p>Conform Sec. 3.4, nu oferim rambursări pentru:</p>
+      <ul>
+        <li>Perioade parțial utilizate la anularea abonamentului</li>
+        <li>Diferențe de preț la downgrade</li>
+        <li>Diferențe de cycle change (Anual ↔ Lunar)</li>
+      </ul>
+      <p>În cazul unor probleme excepționale care afectează utilizarea serviciului, ne puteți contacta la <a href="mailto:hello@mychatbot.ro">hello@mychatbot.ro</a> pentru evaluarea fiecărei situații în parte.</p>
+
+      <h2>4. Gestionarea abonamentului</h2>
+      <p>Gestionarea abonamentului se face prin <strong>Stripe Customer Portal</strong>, accesibil din pagina <strong>Abonamentul meu</strong> din contul dvs. de utilizator.</p>
+      <p>În Stripe Customer Portal puteți:</p>
+      <ul>
+        <li>Vizualiza istoricul facturilor și descărca facturile în PDF</li>
+        <li>Actualiza metoda de plată (card)</li>
+        <li>Modifica planul (upgrade sau downgrade)</li>
+        <li>Schimba ciclul de facturare (Lunar ↔ Anual)</li>
+        <li>Anula abonamentul cu efect la sfârșitul perioadei curente</li>
+        <li>Anula o modificare programată anterior</li>
+      </ul>
+      <p>Stripe Customer Portal este o aplicație externă operată de Stripe Payments Europe Ltd. Interfața este predominant în limba engleză, conform standardelor internaționale Stripe.</p>
+
+      <h2>5. Trial gratuit</h2>
+      <p>Noii utilizatori beneficiază de <strong>7 zile de trial gratuit</strong> pe planul Standard, fără introducerea cardului de credit. La expirarea trialului, serviciul se suspendă automat dacă nu se alege un plan plătit.</p>
+      <p>Datele și configurările contului de trial se păstrează <strong>cel puțin 30 de zile</strong> după expirare, pentru cazul în care doriți să activați un abonament. După acest termen, datele pot fi șterse fără preaviz suplimentar. La cerere expresă, ștergerea poate fi efectuată mai devreme conform GDPR Art. 17.</p>
+
+      <h2>6. Utilizare acceptabilă</h2>
       <p>Este interzisă utilizarea platformei pentru:</p>
       <ul>
         <li>Activități ilegale sau frauduloase</li>
         <li>Trimiterea de informații false sau înșelătoare către vizitatori</li>
         <li>Activități care încalcă drepturile terților</li>
+        <li>Acțiuni tehnice efectuate cu scopul de a depăși limitele planului contractat (de exemplu: apeluri automate ale endpoint-urilor API peste limita planului, multiple instanțe paralele în afara configurării standard)</li>
       </ul>
 
-      <h2>6. Disponibilitatea serviciului</h2>
-      <p>Ne străduim să menținem disponibilitatea serviciului la un nivel ridicat. Nu garantăm o disponibilitate specifică și nu suntem răspunzători pentru întreruperi cauzate de terți (Vercel, Supabase, Anthropic).</p>
+      <h2>7. Disponibilitatea serviciului</h2>
+      <p>Ne străduim să menținem disponibilitatea serviciului la un nivel ridicat. Nu garantăm o disponibilitate specifică și nu suntem răspunzători pentru întreruperi cauzate de furnizorii noștri terți (Vercel, Supabase, Anthropic, Stripe, Cloudflare).</p>
 
-      <h2>7. Răspunderea chatbot-ului</h2>
-      <p>Răspunsurile generate de chatbot sunt bazate pe informațiile furnizate de client. HELLO WEB SRL nu garantează acuratețea răspunsurilor și nu este răspunzătoare pentru deciziile luate pe baza acestora. Chatbot-ul nu confirmă rezervări — confirmarea revine întotdeauna businessului.</p>
+      <h2>8. Răspunderea chatbot-ului</h2>
+      <p>Răspunsurile generate de chatbot sunt bazate pe informațiile furnizate de client (documentele și conținutul site-ului). HELLO WEB SRL nu garantează acuratețea răspunsurilor și nu este răspunzătoare pentru deciziile luate pe baza acestora.</p>
+      <p><strong>Chatbot-ul nu confirmă rezervări, nu efectuează plăți și nu încheie contracte</strong> — confirmarea revine întotdeauna businessului care folosește platforma.</p>
 
-      <h2>8. Proprietate intelectuală</h2>
-      <p>Platforma MyChatbot, codul sursă și designul sunt proprietatea HELLO WEB SRL. Conținutul furnizat de clienți (texte, documente) rămâne proprietatea acestora.</p>
+      <h2>9. Proprietate intelectuală</h2>
+      <p>Platforma MyChatbot, codul sursă, designul și brand-ul sunt proprietatea HELLO WEB SRL. Conținutul furnizat de clienți (texte, documente, configurări) rămâne proprietatea acestora.</p>
 
-      <h2>9. Modificarea termenilor</h2>
-      <p>Ne rezervăm dreptul de a modifica acești termeni cu notificare prealabilă de 30 de zile prin email.</p>
+      <h2>10. Modificarea termenilor</h2>
+      <p>Ne rezervăm dreptul de a modifica acești termeni cu notificare prealabilă de <strong>30 de zile</strong> prin email. Pentru clienții cu abonament activ la momentul notificării:</p>
+      <ul>
+        <li><strong>Modificările în defavoarea clientului</strong> (preț mai mare, condiții mai restrictive) se aplică DOAR de la următoarea reînnoire a abonamentului</li>
+        <li><strong>Modificările în avantajul clientului</strong> (preț mai mic, beneficii noi, condiții mai favorabile) se aplică imediat</li>
+      </ul>
+      <p>Clientul are dreptul să anuleze abonamentul oricând până la data de aplicare a modificărilor, fără penalități.</p>
 
-      <h2>10. Legea aplicabilă</h2>
+      <h2>11. Cesiunea contractului</h2>
+      <p>HELLO WEB SRL își rezervă dreptul de a cesiona contractul de abonament către o entitate succesoare (în caz de fuziune, achiziție sau reorganizare). În acest caz, vom notifica utilizatorii cu cel puțin <strong>30 de zile</strong> înainte. Clienții au dreptul să anuleze abonamentul fără penalități în acest interval.</p>
+
+      <h2>12. Acord de prelucrare a datelor (DPA)</h2>
+      <p>Pentru datele vizitatorilor end-user (cei care folosesc chatbot-ul pe site-ul clientului), HELLO WEB SRL acționează ca <strong>persoană împuternicită</strong> (data processor) în numele clientului (data controller).</p>
+      <p>Acordul nostru de prelucrare a datelor (DPA), redactat conform GDPR Art. 28, este disponibil la <a href="https://mychatbot.ro/dpa">mychatbot.ro/dpa</a>. Prin acceptarea acestor termeni, clientul acceptă și prevederile DPA-ului.</p>
+      <p>DPA-ul detaliază: scopurile prelucrării, categoriile de date, durata, măsurile de securitate, sub-procesatorii utilizați și drepturile părților.</p>
+
+      <h2>13. Legea aplicabilă</h2>
       <p>Acești termeni sunt guvernați de legislația română. Orice litigiu va fi soluționat de instanțele competente din București.</p>
+      <p>Pentru întrebări legate de abonament, facturare sau acești termeni, ne puteți contacta la <a href="mailto:hello@mychatbot.ro">hello@mychatbot.ro</a>.</p>
     </div>
   </main>
   <Footer />
@@ -99,4 +169,5 @@ import Footer from '../components/Footer.astro';
   a {
     color: #2563eb;
   }
+  h3 { font-size: 1.05rem; margin-top: 1.5rem; margin-bottom: 0.5rem; color: #0f172a; font-weight: 600; }
 </style>

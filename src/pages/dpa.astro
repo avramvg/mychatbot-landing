@@ -1,0 +1,237 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Acord de Prelucrare a Datelor (DPA) — MyChatbot"
+  description="Acordul de prelucrare a datelor (Data Processing Agreement) MyChatbot conform GDPR Art. 28."
+  canonical="https://www.mychatbot.ro/dpa"
+>
+  <Nav />
+  <main>
+    <div class="content">
+      <h1>Acord de Prelucrare a Datelor (Data Processing Agreement)</h1>
+      <p><em>Versiune 1.1 — Mai 2026</em></p>
+
+      <h2>Preambul</h2>
+      <p>Prezentul Acord de Prelucrare a Datelor ("<strong>DPA</strong>") reglementează prelucrarea datelor cu caracter personal de către <strong>HELLO WEB SRL</strong> (denumită în continuare "<strong>Procesatorul</strong>") în numele clientului care utilizează platforma MyChatbot (denumit în continuare "<strong>Operatorul</strong>"), conform Regulamentului General privind Protecția Datelor (UE) 2016/679 ("<strong>GDPR</strong>"), în special Art. 28.</p>
+      <p>DPA-ul se aplică automat tuturor clienților platformei MyChatbot care folosesc chatbot-ul AI pe site-urile lor, conform Termenilor și Condițiilor de Utilizare disponibili la <a href="/termeni">mychatbot.ro/termeni</a>.</p>
+      <p>În cazul unor discrepanțe între prezentul DPA și Termenii și Condițiile de Utilizare, prevederile DPA prevalează în ceea ce privește prelucrarea datelor cu caracter personal.</p>
+
+      <h2>1. Părțile</h2>
+      <p><strong>Procesatorul:</strong></p>
+      <ul>
+        <li>HELLO WEB SRL</li>
+        <li>Bdul. Ion Ionescu de la Brad 81-85, Et. 1, Ap. 1, Sector 1, București</li>
+        <li>CUI: 39199732</li>
+        <li>Nr. Reg. Com.: J40/451/2020</li>
+        <li>Email: <a href="mailto:hello@mychatbot.ro">hello@mychatbot.ro</a></li>
+      </ul>
+      <p><strong>Operatorul:</strong></p>
+      <p>Clientul activ al platformei MyChatbot, identificat prin contul de utilizator creat la signup și prin abonamentul valid în vigoare.</p>
+
+      <h2>2. Obiectul prelucrării</h2>
+      <p>Procesatorul prelucrează datele cu caracter personal ale <strong>vizitatorilor end-user</strong> care interacționează cu chatbot-ul AI configurat de Operator pe site-ul său web, în scopul furnizării serviciilor descrise în Termeni și Condiții.</p>
+      <p>Operatorul este controler-ul (data controller) al acestor date conform GDPR Art. 4(7). Procesatorul acționează exclusiv în numele și pe baza instrucțiunilor Operatorului.</p>
+
+      <h2>3. Durata prelucrării</h2>
+      <p>DPA-ul intră în vigoare la activarea abonamentului Operatorului și rămâne valabil pe întreaga durată a abonamentului, incluzând perioadele de trial, reînnoire automată sau suspendare.</p>
+      <p>La încetarea relației contractuale, Procesatorul va proceda conform Art. 9 al prezentului DPA.</p>
+
+      <h2>4. Natura și scopul prelucrării</h2>
+      <p>Procesatorul prelucrează datele exclusiv în scopul:</p>
+      <ul>
+        <li>Furnizării serviciului de chatbot AI conform configurării făcute de Operator</li>
+        <li>Generării răspunsurilor automate către vizitatorii end-user</li>
+        <li>Transmiterii formularelor de contact completate de vizitatori către Operator</li>
+        <li>Colectării de statistici agregate (anonime) pentru rapoartele tehnice puse la dispoziția Operatorului</li>
+      </ul>
+
+      <h2>5. Categoriile de date prelucrate</h2>
+
+      <h3>5.1 Date prelucrate automat la fiecare interacțiune</h3>
+      <ul>
+        <li>Întrebările vizitatorilor către chatbot (procesate de modelul AI fără stocare permanentă)</li>
+        <li>Limba browser-ului vizitatorului</li>
+        <li>Identificator de sesiune temporar (fără IP stocat, fără cookie persistent)</li>
+      </ul>
+
+      <h3>5.2 Date furnizate voluntar de vizitator</h3>
+      <ul>
+        <li>Nume și prenume</li>
+        <li>Adresă email</li>
+        <li>Număr de telefon</li>
+        <li>Mesaj liber în formularul de contact</li>
+      </ul>
+
+      <h3>5.3 Categorii speciale de date (Art. 9 GDPR)</h3>
+      <p>Procesatorul <strong>nu colectează</strong> și <strong>nu prelucrează</strong> intenționat categorii speciale de date (date privind sănătatea, originea etnică, orientarea politică, sexuală sau religioasă, biometrice, etc.).</p>
+      <p>În cazul în care un vizitator furnizează voluntar astfel de date în mesajul liber al formularului, Procesatorul le tratează cu același standard de securitate ca celelalte date și le transmite Operatorului. Responsabilitatea de a gestiona aceste situații conform GDPR rămâne la Operator.</p>
+
+      <h2>6. Categoriile de persoane vizate</h2>
+      <ul>
+        <li>Vizitatorii anonimi ai site-ului web al Operatorului care interacționează cu chatbot-ul</li>
+        <li>Persoanele care completează formularul de contact integrat în chatbot</li>
+      </ul>
+
+      <h2>7. Obligațiile Procesatorului</h2>
+
+      <h3>7.1 Confidențialitate</h3>
+      <p>Prelucreze datele exclusiv pe baza instrucțiunilor documentate ale Operatorului (incluzând cele transmise prin configurarea platformei) și să asigure că persoanele autorizate să prelucreze datele sunt obligate prin contract sau lege la confidențialitate.</p>
+
+      <h3>7.2 Securitate (Art. 32 GDPR)</h3>
+      <p>Implementeze măsuri tehnice și organizatorice adecvate pentru protecția datelor, conform Art. 32 GDPR, inclusiv:</p>
+      <ul>
+        <li>Criptare TLS pentru transferuri</li>
+        <li>Encryption at rest pentru stocare</li>
+        <li>Control de acces pe roluri (Row Level Security)</li>
+        <li>Monitorizare a operațiunilor administrative critice</li>
+      </ul>
+
+      <h3>7.3 Asistență Operatorului</h3>
+      <p>Asiste Operatorul în îndeplinirea obligațiilor sale conform GDPR, inclusiv în:</p>
+      <ul>
+        <li>Răspunsul la cereri ale persoanelor vizate (Art. 15-22 GDPR)</li>
+        <li>Notificări de breach (Art. 33-34 GDPR)</li>
+        <li>Evaluări de impact privind protecția datelor (DPIA, Art. 35 GDPR)</li>
+      </ul>
+
+      <h3>7.4 Notificare de breach</h3>
+      <p>Notifice Operatorul <strong>fără întârziere nejustificată, în termen rezonabil</strong>, de la luarea la cunoștință despre o breșă de securitate care afectează datele prelucrate în numele Operatorului.</p>
+
+      <h2>8. Sub-procesatori</h2>
+
+      <h3>8.1 Autorizare generală</h3>
+      <p>Operatorul autorizează Procesatorul să utilizeze sub-procesatori pentru îndeplinirea obligațiilor contractuale.</p>
+
+      <h3>8.2 Lista sub-procesatorilor</h3>
+      <p>Lista sub-procesatorilor curent autorizați:</p>
+      <table>
+        <thead>
+          <tr><th>Sub-procesator</th><th>Scop</th><th>Locație</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Supabase Inc.</td><td>Stocare bază de date</td><td>EU (Frankfurt)</td></tr>
+          <tr><td>Anthropic PBC</td><td>Procesare AI conversații</td><td>SUA (cu SCC)</td></tr>
+          <tr><td>Stripe Payments Europe Ltd.</td><td>Procesare plăți</td><td>EU (Irlanda)</td></tr>
+          <tr><td>Resend Inc.</td><td>Trimitere emailuri</td><td>SUA (cu SCC)</td></tr>
+          <tr><td>Vercel Inc.</td><td>Hosting aplicație</td><td>SUA/EU</td></tr>
+          <tr><td>Cloudflare Inc.</td><td>DNS, Email Routing, protecție DDoS</td><td>EU/SUA (cu SCC)</td></tr>
+        </tbody>
+      </table>
+
+      <h3>8.3 Modificări</h3>
+      <p>Procesatorul va notifica Operatorul de regulă <strong>30 de zile</strong> înainte de adăugarea sau înlocuirea unui sub-procesator. În cazuri excepționale (de exemplu: încetarea unui sub-procesator existent, schimbare critică de furnizor), termenul poate fi mai scurt, cu justificare comunicată Operatorului.</p>
+      <p>În acest interval, Operatorul poate obiecta motivat la modificare prin email la <a href="mailto:hello@mychatbot.ro">hello@mychatbot.ro</a>.</p>
+      <p>În caz de obiecție justificată, Procesatorul va depune eforturi rezonabile pentru a oferi o soluție alternativă. Dacă nu este posibil, Operatorul are dreptul să anuleze abonamentul fără penalități.</p>
+
+      <h3>8.4 Răspundere</h3>
+      <p>Procesatorul rămâne pe deplin răspunzător față de Operator pentru îndeplinirea obligațiilor de către sub-procesatori. Toate contractele cu sub-procesatorii includ clauze de protecție a datelor cel puțin echivalente cu cele prevăzute în prezentul DPA.</p>
+
+      <h2>9. Returnarea sau ștergerea datelor</h2>
+      <p>La încetarea relației contractuale (anulare abonament, expirare trial fără conversie, etc.):</p>
+      <ul>
+        <li>Datele vizitatorilor formularelor de contact au fost deja transmise Operatorului în timpul abonamentului — nu există copie reziduală la Procesator</li>
+        <li>Configurările chatbot-ului și conținutul furnizat de Operator se păstrează <strong>30 de zile</strong> pentru reactivare, după care pot fi șterse</li>
+        <li>Datele agregate anonimizate (statistici fără identificatori personali) pot fi păstrate pentru îmbunătățirea serviciului, conform Art. 6(1)(f) GDPR</li>
+      </ul>
+      <p>La cerere expresă a Operatorului prin email la <a href="mailto:hello@mychatbot.ro">hello@mychatbot.ro</a>, Procesatorul va șterge sau returna datele anterior expirării celor 30 de zile, cu excepția datelor a căror păstrare e cerută de legea aplicabilă.</p>
+
+      <h2>10. Audit și inspecții</h2>
+
+      <h3>10.1 Drept de audit</h3>
+      <p>Operatorul are dreptul, <strong>o dată pe an calendaristic</strong>, să solicite Procesatorului dovezi documentate (rapoarte de securitate, certificări, atestări terțe) privind respectarea prezentului DPA.</p>
+      <p>Auditurile <strong>nu se efectuează prin auditor concurent al Procesatorului</strong>.</p>
+
+      <h3>10.2 Inspecție on-site</h3>
+      <p>Inspecțiile on-site sunt permise doar în cazuri excepționale (suspiciune de breach major) și cu acordul prealabil al Procesatorului. Costurile inspecției sunt suportate de Operator.</p>
+      <p>Auditul <strong>nu poate viza accesul la codul sursă proprietar al Procesatorului sau la datele altor clienți</strong>.</p>
+
+      <h3>10.3 Conformitate prin terți</h3>
+      <p>Procesatorul poate satisface obligațiile de audit prin furnizarea de rapoarte SOC 2, ISO 27001 sau certificări echivalente ale sub-procesatorilor săi (Supabase, Stripe, Vercel, etc.).</p>
+
+      <h2>11. Transferuri internaționale de date</h2>
+      <p>Anumiți sub-procesatori sunt situați în afara Spațiului Economic European (SUA). Pentru aceste transferuri, Procesatorul se asigură că există garanții adecvate conform Cap. V GDPR, în principal prin:</p>
+      <ul>
+        <li><strong>Clauze Contractuale Standard (SCC)</strong> aprobate de Comisia Europeană</li>
+        <li><strong>EU-US Data Privacy Framework</strong> (acolo unde aplicabil)</li>
+      </ul>
+      <p>Lista actualizată a garanțiilor specifice pentru fiecare sub-procesator este disponibilă la cerere prin email la <a href="mailto:hello@mychatbot.ro">hello@mychatbot.ro</a>.</p>
+
+      <h2>12. Răspundere și despăgubiri</h2>
+      <p>Răspunderea pentru încălcările GDPR se stabilește conform Art. 82 GDPR. Părțile colaborează cu bună credință pentru a determina repartizarea răspunderii în cazul cererilor formulate de persoane vizate sau autorități de supraveghere.</p>
+      <p>Răspunderea Procesatorului către Operator este limitată conform Termenilor și Condițiilor de Utilizare, cu excepția cazurilor de încălcare intenționată sau neglijență gravă.</p>
+
+      <h2>13. Conflict cu alte documente</h2>
+      <p>În cazul unui conflict între prevederile prezentului DPA și:</p>
+      <ul>
+        <li><strong>Termenii și Condițiile</strong> de Utilizare — prevederile DPA prevalează în privința prelucrării datelor cu caracter personal</li>
+        <li><strong>Politica de Confidențialitate</strong> — DPA-ul detaliază specific relația operator-procesator pentru datele vizitatorilor</li>
+      </ul>
+
+      <h2>14. Modificări</h2>
+      <p>Procesatorul poate modifica DPA-ul cu notificare prealabilă de <strong>30 de zile</strong> prin email. Modificările care reduc protecția datelor sub standardul GDPR nu sunt permise unilateral.</p>
+
+      <h2>15. Drept aplicabil și jurisdicție</h2>
+      <p>Prezentul DPA este guvernat de legislația română, inclusiv Legea 190/2018 privind aplicarea GDPR. Orice litigiu va fi soluționat de instanțele competente din București.</p>
+
+      <h2>16. Contact</h2>
+      <p>Pentru întrebări legate de prezentul DPA sau pentru exercitarea drepturilor:</p>
+      <ul>
+        <li><strong>Email:</strong> <a href="mailto:hello@mychatbot.ro">hello@mychatbot.ro</a></li>
+        <li><strong>Operator de date personale:</strong> HELLO WEB SRL</li>
+        <li><strong>Autoritate de supraveghere:</strong> Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal (<a href="https://dataprotection.ro" target="_blank" rel="noopener">dataprotection.ro</a>)</li>
+      </ul>
+
+      <p style="margin-top: 2rem; color: #94a3b8; font-size: 0.85rem;"><em>Acest document este pus la dispoziție conform Art. 28(3) GDPR. Versiunea actualizată este disponibilă oricând la <a href="/dpa">mychatbot.ro/dpa</a>.</em></p>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  main {
+    padding: 2rem 1.5rem;
+  }
+  @media (min-width: 768px) {
+    main {
+      padding: 4rem 2rem;
+    }
+  }
+  .content {
+    max-width: 48rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #0f172a;
+  }
+  h2 {
+    font-size: 1.25rem;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    color: #0f172a;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 0.25rem;
+  }
+  h3 { font-size: 1.05rem; margin-top: 1.5rem; margin-bottom: 0.5rem; color: #0f172a; font-weight: 600; }
+  p, li {
+    color: #475569;
+    line-height: 1.7;
+    font-size: 0.95rem;
+  }
+  ul {
+    padding-left: 1.5rem;
+    margin: 0.5rem 0;
+  }
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+  th, td { text-align: left; padding: 0.5rem; border-bottom: 1px solid #e2e8f0; color: #475569; }
+  th { font-weight: 600; color: #0f172a; background: #f8fafc; }
+  a {
+    color: #2563eb;
+  }
+</style>
