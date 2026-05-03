@@ -1,0 +1,607 @@
+---
+// HeroChatAnimation.astro
+// 
+// Hero chat animation cu 3 scenarii (Pensiune / Restaurant / Agenție turism)
+// Comportament: tab-uri (utilizator alege), animație restartează la fiecare schimbare
+// Avatare: placeholder SVG inline (înlocuibil ulterior cu /avatars/sofia.png etc.)
+// 
+// Plasare propusă: în Hero.astro, în coloana din dreapta (înlocuiește mock-ul curent)
+// Mobile: full-width, sub copy text + CTA
+---
+
+<div class="hca">
+  <!-- Tabs -->
+  <div class="hca-tabs" role="tablist" aria-label="Selectează scenariu">
+    <button
+      class="hca-tab is-active"
+      data-tab="pensiune"
+      role="tab"
+      aria-selected="true"
+      aria-controls="hca-pensiune"
+    >
+      <span class="hca-tab-emoji">🏡</span>
+      <span class="hca-tab-label">Pensiune</span>
+    </button>
+    <button
+      class="hca-tab"
+      data-tab="restaurant"
+      role="tab"
+      aria-selected="false"
+      aria-controls="hca-restaurant"
+    >
+      <span class="hca-tab-emoji">🍽️</span>
+      <span class="hca-tab-label">Restaurant</span>
+    </button>
+    <button
+      class="hca-tab"
+      data-tab="turism"
+      role="tab"
+      aria-selected="false"
+      aria-controls="hca-turism"
+    >
+      <span class="hca-tab-emoji">✈️</span>
+      <span class="hca-tab-label">Agenție turism</span>
+    </button>
+  </div>
+
+  <!-- Chat window -->
+  <div class="hca-window">
+    <!-- ============= SCENARIU 1: PENSIUNE ============= -->
+    <div
+      class="hca-scenario is-active"
+      id="hca-pensiune"
+      data-scenario="pensiune"
+      role="tabpanel"
+    >
+      <!-- Header -->
+      <div class="hca-header">
+        <div class="hca-avatar" style="background: #722F37">
+          <!-- Înlocuiește cu: <img src="/avatars/sofia.png" alt="Sofia" /> -->
+          <span>S</span>
+        </div>
+        <div class="hca-meta">
+          <p class="hca-name">Sofia</p>
+          <p class="hca-role">Concierge AI · Pensiunea Demo</p>
+        </div>
+        <div class="hca-status">
+          <span class="hca-dot"></span>
+          <span class="hca-online">Online</span>
+        </div>
+      </div>
+
+      <!-- Body -->
+      <div class="hca-body">
+        <div class="hca-msg hca-msg--bot hca-anim-1">
+          <p>Bună! Sunt Sofia, concierge-ul AI al Pensiunii Demo. Cu ce vă pot ajuta? 🌸</p>
+        </div>
+
+        <div class="hca-typing hca-typing--user hca-anim-2">
+          <span></span><span></span><span></span>
+        </div>
+
+        <div class="hca-msg hca-msg--user hca-anim-3">
+          <p>Salut! Vreau să-mi surprind soția cu o ieșire de weekend. Aveți cameră cu vedere?</p>
+        </div>
+
+        <div class="hca-typing hca-typing--bot hca-anim-4">
+          <span></span><span></span><span></span>
+        </div>
+
+        <div class="hca-msg hca-msg--bot hca-anim-5">
+          <p>
+            Ce idee frumoasă! Camera Deluxe cu vedere la munte e liberă vineri–duminică,
+            <strong>350 lei/noapte</strong> cu mic dejun inclus. Pot rezerva și un buchet de flori în cameră, dacă doriți.
+          </p>
+          <a href="#demo" class="hca-cta">Vezi disponibilitate →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============= SCENARIU 2: RESTAURANT ============= -->
+    <div
+      class="hca-scenario"
+      id="hca-restaurant"
+      data-scenario="restaurant"
+      role="tabpanel"
+      hidden
+    >
+      <div class="hca-header">
+        <div class="hca-avatar" style="background: #C0392B">
+          <span>M</span>
+        </div>
+        <div class="hca-meta">
+          <p class="hca-name">Marco</p>
+          <p class="hca-role">Chef AI · Restaurant Demo</p>
+        </div>
+        <div class="hca-status">
+          <span class="hca-dot"></span>
+          <span class="hca-online">Online</span>
+        </div>
+      </div>
+
+      <div class="hca-body">
+        <div class="hca-msg hca-msg--bot hca-anim-1">
+          <p>Salut! Sunt Marco. Vă ajut cu rezervări și informații despre meniu. 👨‍🍳</p>
+        </div>
+
+        <div class="hca-typing hca-typing--user hca-anim-2">
+          <span></span><span></span><span></span>
+        </div>
+
+        <div class="hca-msg hca-msg--user hca-anim-3">
+          <p>Aniversăm 5 ani de căsătorie sâmbătă. Aveți o masă liniștită pentru 2 persoane?</p>
+        </div>
+
+        <div class="hca-typing hca-typing--bot hca-anim-4">
+          <span></span><span></span><span></span>
+        </div>
+
+        <div class="hca-msg hca-msg--bot hca-anim-5">
+          <p>
+            Felicitări! Avem o masă pe terasă, lângă fântână. Disponibilă la
+            <strong>19:30 sau 21:00</strong>. Pot pregăti și un meniu de aniversare cu desert special.
+          </p>
+          <div class="hca-cta-group">
+            <a href="#demo" class="hca-cta-btn">19:30</a>
+            <a href="#demo" class="hca-cta-btn">21:00</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============= SCENARIU 3: AGENȚIE TURISM ============= -->
+    <div
+      class="hca-scenario"
+      id="hca-turism"
+      data-scenario="turism"
+      role="tabpanel"
+      hidden
+    >
+      <div class="hca-header">
+        <div class="hca-avatar" style="background: #16A085">
+          <span>A</span>
+        </div>
+        <div class="hca-meta">
+          <p class="hca-name">Alex</p>
+          <p class="hca-role">Travel AI · Travel Demo</p>
+        </div>
+        <div class="hca-status">
+          <span class="hca-dot"></span>
+          <span class="hca-online">Online</span>
+        </div>
+      </div>
+
+      <div class="hca-body">
+        <div class="hca-msg hca-msg--bot hca-anim-1">
+          <p>Bună! Sunt Alex. Caut pachete de vacanță potrivite pentru tine. ✈️</p>
+        </div>
+
+        <div class="hca-typing hca-typing--user hca-anim-2">
+          <span></span><span></span><span></span>
+        </div>
+
+        <div class="hca-msg hca-msg--user hca-anim-3">
+          <p>Caut o vacanță 5 zile la mare în iulie. 2 adulți și un copil de 8 ani.</p>
+        </div>
+
+        <div class="hca-typing hca-typing--bot hca-anim-4">
+          <span></span><span></span><span></span>
+        </div>
+
+        <div class="hca-msg hca-msg--bot hca-anim-5">
+          <p>
+            Am 3 oferte cu plaje sigure pentru copii. În Grecia (Halkidiki) sau Bulgaria (Sunny Beach), între
+            <strong>1.800 și 2.400 lei/persoană</strong>, all-inclusive.
+          </p>
+          <a href="#demo" class="hca-cta">Vezi ofertele →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* === Container === */
+  .hca {
+    width: 100%;
+    max-width: 480px;
+    margin-left: auto;
+  }
+
+  /* === Tabs === */
+  .hca-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .hca-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #475569;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+  }
+
+  .hca-tab:hover {
+    border-color: #94a3b8;
+    color: #1e293b;
+  }
+
+  .hca-tab.is-active {
+    background: #0ea5e9;
+    color: white;
+    border-color: #0ea5e9;
+    box-shadow: 0 4px 12px rgba(14, 165, 233, 0.25);
+  }
+
+  .hca-tab-emoji {
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  /* === Chat window === */
+  .hca-window {
+    background: #0f172a;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(15, 23, 42, 0.25), 0 8px 20px rgba(15, 23, 42, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    min-height: 480px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* === Scenarios === */
+  .hca-scenario {
+    display: none;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .hca-scenario.is-active {
+    display: flex;
+  }
+
+  /* === Header === */
+  .hca-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    background: #1e293b;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    flex-shrink: 0;
+  }
+
+  .hca-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  .hca-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hca-meta {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .hca-name {
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 0 2px;
+    line-height: 1.2;
+  }
+
+  .hca-role {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 11px;
+    margin: 0;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .hca-status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 11px;
+    flex-shrink: 0;
+  }
+
+  .hca-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #4ade80;
+    animation: hca-pulse 2s ease-in-out infinite;
+  }
+
+  /* === Body === */
+  .hca-body {
+    flex: 1;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-height: 380px;
+    justify-content: flex-start;
+  }
+
+  /* === Messages === */
+  .hca-msg {
+    max-width: 85%;
+    padding: 10px 14px;
+    border-radius: 14px;
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  .hca-msg p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+  .hca-msg strong {
+    font-weight: 600;
+  }
+
+  .hca-msg--bot {
+    background: #1e293b;
+    color: #e2e8f0;
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+  }
+
+  .hca-msg--user {
+    background: #0ea5e9;
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+  }
+
+  /* === Typing indicators === */
+  .hca-typing {
+    display: flex;
+    gap: 4px;
+    padding: 12px 14px;
+    border-radius: 14px;
+    width: fit-content;
+    opacity: 0;
+  }
+
+  .hca-typing--bot {
+    background: #1e293b;
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+  }
+
+  .hca-typing--user {
+    background: #0ea5e9;
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+  }
+
+  .hca-typing span {
+    width: 6px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    animation: hca-typing-dot 1.4s ease-in-out infinite;
+  }
+
+  .hca-typing span:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .hca-typing span:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+
+  /* === CTAs === */
+  .hca-cta {
+    display: inline-block;
+    margin-top: 8px;
+    color: #38bdf8;
+    font-size: 12px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .hca-cta:hover {
+    color: #7dd3fc;
+  }
+
+  .hca-cta-group {
+    display: flex;
+    gap: 6px;
+    margin-top: 10px;
+  }
+
+  .hca-cta-btn {
+    display: inline-block;
+    padding: 6px 14px;
+    background: rgba(14, 165, 233, 0.15);
+    color: #38bdf8;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .hca-cta-btn:hover {
+    background: rgba(14, 165, 233, 0.25);
+  }
+
+  /* === Animations: scenariu activ pornește animațiile === */
+  .hca-scenario.is-active .hca-anim-1 {
+    animation: hca-msg-in 0.4s ease-out 0.5s forwards;
+  }
+
+  .hca-scenario.is-active .hca-anim-2 {
+    animation: hca-msg-in 0.3s ease-out 2s forwards,
+               hca-fade-out 0.3s ease-out 3.3s forwards;
+  }
+
+  .hca-scenario.is-active .hca-anim-3 {
+    animation: hca-msg-in 0.4s ease-out 3.6s forwards;
+  }
+
+  .hca-scenario.is-active .hca-anim-4 {
+    animation: hca-msg-in 0.3s ease-out 5.1s forwards,
+               hca-fade-out 0.3s ease-out 6.4s forwards;
+  }
+
+  .hca-scenario.is-active .hca-anim-5 {
+    animation: hca-msg-in 0.4s ease-out 6.7s forwards;
+  }
+
+  /* === Keyframes === */
+  @keyframes hca-msg-in {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes hca-fade-out {
+    to {
+      opacity: 0;
+      display: none;
+    }
+  }
+
+  @keyframes hca-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  @keyframes hca-typing-dot {
+    0%, 60%, 100% {
+      transform: translateY(0);
+      opacity: 0.4;
+    }
+    30% {
+      transform: translateY(-4px);
+      opacity: 1;
+    }
+  }
+
+  /* === Mobile === */
+  @media (max-width: 768px) {
+    .hca {
+      max-width: 100%;
+      margin-left: 0;
+      margin-top: 2rem;
+    }
+
+    .hca-window {
+      min-height: 440px;
+    }
+
+    .hca-body {
+      min-height: 340px;
+      padding: 14px;
+    }
+
+    .hca-tab-label {
+      font-size: 12px;
+    }
+  }
+
+  /* === Reduced motion === */
+  @media (prefers-reduced-motion: reduce) {
+    .hca-msg, .hca-typing {
+      opacity: 1;
+      transform: none;
+      animation: none !important;
+    }
+
+    .hca-typing--user.hca-anim-2,
+    .hca-typing--bot.hca-anim-4 {
+      display: none;
+    }
+
+    .hca-dot {
+      animation: none;
+    }
+  }
+</style>
+
+<script>
+  // Tab switching cu restart animație
+  function initHeroChatAnimation() {
+    const tabs = document.querySelectorAll<HTMLButtonElement>('.hca-tab');
+    const scenarios = document.querySelectorAll<HTMLDivElement>('.hca-scenario');
+
+    if (!tabs.length || !scenarios.length) return;
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const targetId = tab.dataset.tab;
+        if (!targetId) return;
+
+        // Update tabs state
+        tabs.forEach((t) => {
+          t.classList.remove('is-active');
+          t.setAttribute('aria-selected', 'false');
+        });
+        tab.classList.add('is-active');
+        tab.setAttribute('aria-selected', 'true');
+
+        // Switch scenarios + restart animații prin reflow forțat
+        scenarios.forEach((s) => {
+          if (s.dataset.scenario === targetId) {
+            s.hidden = false;
+            // Force reflow ca animațiile să restartează
+            s.classList.remove('is-active');
+            void s.offsetWidth; // trigger reflow
+            s.classList.add('is-active');
+          } else {
+            s.classList.remove('is-active');
+            s.hidden = true;
+          }
+        });
+      });
+    });
+  }
+
+  // Init la load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initHeroChatAnimation);
+  } else {
+    initHeroChatAnimation();
+  }
+</script>
