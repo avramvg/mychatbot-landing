@@ -2,8 +2,8 @@
 // IntegrationsStrip.astro
 //
 // Strip integrări cu fundal dark navy.
-// Layout 2 coloane: stânga = 6 wordmark-uri în grid 3×2, dreapta = SVG
-// mockup browser cu chat embed.
+// Layout 2 coloane: stânga = 6 wordmark-uri în grid 3×2, dreapta = imagine
+// laptop mockup PNG transparent cu chatbot embed.
 //
 // Plasare: imediat după TrustStrip, înainte de TrustBadges.
 // Rol: răspunde la "merge cu site-ul meu?" + "cum arată pe site-ul meu?"
@@ -28,110 +28,19 @@
         </div>
 
         <p class="it-suffix">
-          Un singur fragment de cod — funcționează pe orice site, fără PMS, fără integrări complicate.
+          Funcționează pe orice site, simplu, rapid, fără integrări complicate.
         </p>
       </div>
 
-      <!-- Dreapta: SVG mockup browser cu chat embed -->
+      <!-- Dreapta: laptop mockup PNG transparent -->
       <div class="it-mockup">
-        <svg
-          viewBox="0 0 480 360"
-          xmlns="http://www.w3.org/2000/svg"
-          role="img"
-          aria-label="Browser cu chatbot embedat pe site"
-        >
-          <!-- Drop shadow definition -->
-          <defs>
-            <filter id="browserShadow" x="-10%" y="-10%" width="120%" height="120%">
-              <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#000" flood-opacity="0.3"/>
-            </filter>
-            <linearGradient id="bubbleGradient" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#3B9EE0"/>
-              <stop offset="100%" stop-color="#0ea5e9"/>
-            </linearGradient>
-          </defs>
-
-          <!-- Browser frame -->
-          <g filter="url(#browserShadow)">
-            <!-- Window background -->
-            <rect x="20" y="20" width="440" height="320" rx="12" fill="#ffffff"/>
-
-            <!-- Browser top bar -->
-            <rect x="20" y="20" width="440" height="32" rx="12" fill="#f1f5f9"/>
-            <rect x="20" y="40" width="440" height="12" fill="#f1f5f9"/>
-
-            <!-- Window controls (red, yellow, green dots) -->
-            <circle cx="38" cy="36" r="5" fill="#ef4444"/>
-            <circle cx="56" cy="36" r="5" fill="#eab308"/>
-            <circle cx="74" cy="36" r="5" fill="#22c55e"/>
-
-            <!-- URL bar -->
-            <rect x="100" y="28" width="280" height="16" rx="4" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
-            <text x="110" y="40" font-family="system-ui, sans-serif" font-size="9" fill="#94a3b8">
-              pensiunea-ta.ro
-            </text>
-
-            <!-- Page content (mock) -->
-            <!-- Header -->
-            <rect x="40" y="72" width="120" height="14" rx="3" fill="#0f172a"/>
-            <rect x="170" y="72" width="40" height="10" rx="2" fill="#cbd5e1"/>
-            <rect x="220" y="72" width="40" height="10" rx="2" fill="#cbd5e1"/>
-            <rect x="270" y="72" width="40" height="10" rx="2" fill="#cbd5e1"/>
-
-            <!-- Hero section -->
-            <rect x="40" y="108" width="200" height="20" rx="3" fill="#0f172a"/>
-            <rect x="40" y="138" width="160" height="20" rx="3" fill="#0f172a"/>
-            <rect x="40" y="170" width="280" height="6" rx="2" fill="#cbd5e1"/>
-            <rect x="40" y="184" width="240" height="6" rx="2" fill="#cbd5e1"/>
-            <rect x="40" y="198" width="200" height="6" rx="2" fill="#cbd5e1"/>
-
-            <!-- Hero image placeholder -->
-            <rect x="280" y="108" width="140" height="100" rx="6" fill="#e0f2fe"/>
-            <circle cx="320" cy="148" r="14" fill="#0ea5e9" opacity="0.4"/>
-            <circle cx="350" cy="158" r="10" fill="#0ea5e9" opacity="0.6"/>
-            <circle cx="380" cy="148" r="12" fill="#0ea5e9" opacity="0.5"/>
-
-            <!-- CTA button -->
-            <rect x="40" y="222" width="100" height="28" rx="6" fill="#0ea5e9"/>
-            <rect x="58" y="232" width="64" height="8" rx="2" fill="#ffffff"/>
-
-            <!-- Chatbot widget (floating bottom-right) -->
-            <!-- Widget shadow -->
-            <ellipse cx="392" cy="318" rx="55" ry="6" fill="#000" opacity="0.2"/>
-
-            <!-- Widget container -->
-            <rect x="320" y="220" width="140" height="100" rx="12" fill="#0f172a"/>
-
-            <!-- Avatar circle -->
-            <circle cx="338" cy="240" r="10" fill="#722F37"/>
-            <text x="338" y="244" font-family="system-ui, sans-serif" font-size="10"
-                  font-weight="600" fill="#ffffff" text-anchor="middle">S</text>
-
-            <!-- Bot name -->
-            <rect x="354" y="234" width="40" height="6" rx="2" fill="#ffffff"/>
-            <rect x="354" y="244" width="60" height="4" rx="1" fill="#475569"/>
-
-            <!-- Online dot -->
-            <circle cx="445" cy="237" r="2.5" fill="#4ade80"/>
-
-            <!-- Bot message bubble -->
-            <rect x="328" y="260" width="100" height="20" rx="8" fill="#1e293b"/>
-            <rect x="334" y="266" width="60" height="3" rx="1" fill="#cbd5e1"/>
-            <rect x="334" y="272" width="80" height="3" rx="1" fill="#cbd5e1"/>
-
-            <!-- User message bubble -->
-            <rect x="350" y="288" width="80" height="14" rx="7" fill="url(#bubbleGradient)"/>
-            <rect x="356" y="293" width="55" height="2.5" rx="1" fill="#ffffff" opacity="0.7"/>
-            <rect x="356" y="298" width="40" height="2.5" rx="1" fill="#ffffff" opacity="0.7"/>
-          </g>
-
-          <!-- Floating "FAB" suggestion (bottom-right corner of browser) -->
-          <g>
-            <circle cx="430" cy="320" r="20" fill="#0ea5e9" opacity="0.95"/>
-            <path d="M 421 318 L 426 322 L 437 313" stroke="#fff" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          </g>
-        </svg>
+        <img
+          src="/images/laptop-mockup.png"
+          alt="Laptop cu chatbot AI deschis pe un site web"
+          loading="lazy"
+          width="1200"
+          height="674"
+        />
       </div>
     </div>
   </div>
@@ -170,7 +79,7 @@
 
   .it-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1.1fr;
     gap: 4rem;
     align-items: center;
   }
@@ -266,17 +175,20 @@
     max-width: 380px;
   }
 
-  /* === RIGHT: Browser mockup === */
+  /* === RIGHT: Laptop mockup image === */
   .it-mockup {
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
-  .it-mockup svg {
+  .it-mockup img {
     width: 100%;
-    max-width: 480px;
+    max-width: 600px;
     height: auto;
+    display: block;
+    /* Subtle drop shadow pentru profunzime suplimentară pe fundalul navy */
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
   }
 
   /* === Tablet === */
@@ -322,8 +234,8 @@
       order: -1;  /* mockup deasupra logos pe mobile */
     }
 
-    .it-mockup svg {
-      max-width: 360px;
+    .it-mockup img {
+      max-width: 480px;
     }
 
     .it-suffix {
@@ -339,6 +251,10 @@
 
     .it-logo {
       font-size: 15px;
+    }
+
+    .it-mockup img {
+      max-width: 380px;
     }
   }
 </style>
