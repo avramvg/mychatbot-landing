@@ -3,47 +3,389 @@ const year = new Date().getFullYear();
 ---
 <footer class="dark-footer">
   <div class="container footer-inner">
-    <div>
+
+    <!-- ═══ COL 1: BRAND ═══ -->
+    <div class="footer-col footer-col-brand">
       <div class="footer-brand">
-        <div style="display:flex;align-items:baseline;gap:4px;line-height:1;margin-bottom:4px;">
-          <span style="font-family:'Pacifico',cursive;font-size:24px;color:#F5A623;line-height:1;">my</span>
-          <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:20px;color:#FFFFFF;letter-spacing:2px;line-height:1;">CHATBOT</span>
-          <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:400;font-size:10px;color:rgba(255,255,255,0.55);letter-spacing:0.5px;margin-left:4px;">by Hello Web</span>
+        <span class="footer-brand-my">my</span>
+        <span class="footer-brand-chatbot">CHATBOT</span>
+      </div>
+      <div class="footer-brand-by">
+        by <a href="https://helloweb.ro" target="_blank" rel="noopener" class="footer-brand-link">Hello Web</a>
+      </div>
+
+      <p class="footer-tagline">Concierge AI pentru HoReCa</p>
+
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/company/hello-web-ro/" target="_blank" rel="noopener" aria-label="LinkedIn" class="footer-social-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+          </svg>
+        </a>
+        <a href="https://www.facebook.com/helloweb.ro" target="_blank" rel="noopener" aria-label="Facebook" class="footer-social-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.5 2 2 6.5 2 12c0 5 3.66 9.13 8.44 9.88v-6.99H7.9V12h2.54V9.8c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.45 2.89h-2.33v6.99C18.34 21.13 22 17 22 12c0-5.5-4.5-10-10-10z"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="footer-contact">
+        <a href="tel:+40720891800" class="footer-contact-link">
+          <span class="footer-contact-icon">📞</span>
+          <span>+40 720 891 800</span>
+        </a>
+        <a href="mailto:contact@mychatbot.ro" class="footer-contact-link">
+          <span class="footer-contact-icon">✉</span>
+          <span>contact@mychatbot.ro</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- ═══ COL 2: PRODUS ═══ -->
+    <div class="footer-col">
+      <h4 class="footer-heading">Produs</h4>
+      <ul class="footer-links">
+        <li><a href="/#features">Funcționalități</a></li>
+        <li><a href="/#pricing">Prețuri</a></li>
+        <li><a href="/#demo">Demo live</a></li>
+        <li><a href="/#industries">Industrii</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/#faq">FAQ</a></li>
+      </ul>
+    </div>
+
+    <!-- ═══ COL 3: LEGAL ═══ -->
+    <div class="footer-col">
+      <h4 class="footer-heading">Legal</h4>
+      <ul class="footer-links">
+        <li><a href="/termeni">Termeni și condiții</a></li>
+        <li><a href="/confidentialitate">Confidențialitate</a></li>
+        <li><a href="/dpa">DPA</a></li>
+      </ul>
+
+      <h4 class="footer-heading footer-heading-secondary">Protecția consumatorului</h4>
+      <ul class="footer-links">
+        <li>
+          <a href="https://anpc.ro/" target="_blank" rel="noopener">
+            ANPC <span class="footer-ext-icon">↗</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://anpc.ro/ce-este-sal/" target="_blank" rel="noopener">
+            SAL <span class="footer-ext-icon">↗</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">
+            SOL / ODR <span class="footer-ext-icon">↗</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- ═══ COL 4: COMPANIE ═══ -->
+    <div class="footer-col">
+      <h4 class="footer-heading">Hello Web SRL</h4>
+      <div class="footer-company">
+        <div class="footer-company-row">
+          <span class="footer-company-label">CUI</span>
+          <span>39199732</span>
+        </div>
+        <div class="footer-company-row">
+          <span class="footer-company-label">Reg. Com.</span>
+          <span>J40/451/2020</span>
+        </div>
+        <div class="footer-company-address">
+          <span class="footer-company-icon">📍</span>
+          <span>
+            Bdul. Ion Ionescu de la Brad<br>
+            Nr. 81-85, Et. 1, Ap. 1<br>
+            Sector 1, București<br>
+            România
+          </span>
         </div>
       </div>
-      <div class="footer-copy">© {year} Hello Web SRL · Toate drepturile rezervate</div>
-      <div class="footer-phone">+40 720 891 800</div>
     </div>
-    <div class="footer-links">
-      <a href="/termeni">Termeni</a>
-      <a href="/confidentialitate">Confidențialitate</a>
-      <a href="mailto:hello@helloweb.ro">hello@helloweb.ro</a>
+
+  </div>
+
+  <!-- ═══ Bottom row ═══ -->
+  <div class="container footer-bottom">
+    <div class="footer-copy">
+      © {year} Hello Web SRL · Toate drepturile rezervate · Made in Romania 🇷🇴
+    </div>
+    <div class="footer-payments">
+      <span class="footer-payments-label">Plăți securizate</span>
+      <span class="footer-payment-badge">Stripe</span>
+      <span class="footer-payment-badge">Visa</span>
+      <span class="footer-payment-badge">Mastercard</span>
     </div>
   </div>
+
 </footer>
 
 <style>
   .dark-footer {
     background: #0f172a;
-    border-top: none;
-    padding: 2rem 0 1.5rem;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 4rem 0 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
   }
+
   .footer-inner {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1.2fr 1.2fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .footer-col {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ═══ Brand column ═══ */
+  .footer-brand {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .footer-brand-my {
+    font-family: 'Pacifico', cursive;
+    font-size: 28px;
+    color: #F5A623;
+    line-height: 1;
+  }
+
+  .footer-brand-chatbot {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    color: #FFFFFF;
+    letter-spacing: 2px;
+    line-height: 1;
+  }
+
+  .footer-brand-by {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.55);
+    letter-spacing: 0.5px;
+    margin-bottom: 1.25rem;
+  }
+
+  .footer-brand-link {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.4);
+    transition: all 0.2s ease;
+  }
+
+  .footer-brand-link:hover {
+    color: #FFFFFF;
+    border-bottom-color: #FFFFFF;
+  }
+
+  .footer-tagline {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0 0 1.5rem 0;
+    line-height: 1.5;
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-social-link {
     display: flex;
     align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.2s ease;
+  }
+
+  .footer-social-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(14, 165, 233, 0.4);
+    color: #0EA5E9;
+    transform: translateY(-1px);
+  }
+
+  .footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footer-contact-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s ease;
+  }
+
+  .footer-contact-link:hover {
+    color: #FFFFFF;
+  }
+
+  .footer-contact-icon {
+    font-size: 14px;
+    width: 18px;
+    text-align: center;
+  }
+
+  /* ═══ Other columns ═══ */
+  .footer-heading {
+    font-size: 12px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.95);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 1.25rem 0;
+  }
+
+  .footer-heading-secondary {
+    margin-top: 1.75rem;
+  }
+
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .footer-links a {
+    color: rgba(255, 255, 255, 0.65);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .footer-links a:hover {
+    color: #FFFFFF;
+  }
+
+  .footer-ext-icon {
+    font-size: 11px;
+    opacity: 0.6;
+  }
+
+  /* ═══ Company info column ═══ */
+  .footer-company {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.65);
+  }
+
+  .footer-company-row {
+    display: flex;
+    gap: 8px;
+  }
+
+  .footer-company-label {
+    color: rgba(255, 255, 255, 0.4);
+    min-width: 70px;
+  }
+
+  .footer-company-address {
+    display: flex;
+    gap: 8px;
+    margin-top: 0.5rem;
+    line-height: 1.6;
+  }
+
+  .footer-company-icon {
+    flex-shrink: 0;
+  }
+
+  /* ═══ Bottom row ═══ */
+  .footer-bottom {
+    display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
     flex-wrap: wrap;
     gap: 1rem;
   }
-  .footer-brand { font-size: 13px; font-weight: 500; color: white; }
-  .footer-copy  { font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 2px; }
-  .footer-phone { font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 2px; }
-  .footer-links { display: flex; gap: 1.5rem; }
-  .footer-links a {
-    font-size: 12px;
-    color: rgba(255,255,255,0.6);
-    text-decoration: none;
-    transition: color 0.15s;
+
+  .footer-copy {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.5);
   }
-  .footer-links a:hover { color: white; }
+
+  .footer-payments {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 12px;
+  }
+
+  .footer-payments-label {
+    color: rgba(255, 255, 255, 0.45);
+    margin-right: 0.5rem;
+  }
+
+  .footer-payment-badge {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    padding: 3px 8px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+  }
+
+  /* ═══ Responsive ═══ */
+  @media (max-width: 1024px) {
+    .footer-inner {
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .dark-footer {
+      padding: 3rem 0 1.5rem;
+    }
+
+    .footer-inner {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-bottom {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .footer-payments {
+      flex-wrap: wrap;
+    }
+  }
 </style>
