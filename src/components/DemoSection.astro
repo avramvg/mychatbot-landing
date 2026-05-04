@@ -27,16 +27,36 @@
     <!-- Grid 2 coloane -->
     <div class="demo-grid">
 
-      <!-- ═══ STÂNGA: Chatbot embed ═══ -->
+      <!-- ═══ STÂNGA: Chatbot embed cu chenar + stats ═══ -->
       <div class="demo-chat">
-        <div id="mychatbot"></div>
-        <script
-          src="https://app.mychatbot.ro/widget.js"
-          data-client-id="5fe6055a-89ce-4cb5-be41-c8ce27ebd3da"
-          data-mode="inline"
-          data-target="#mychatbot"
-          async
-        ></script>
+        <div class="demo-chat-window">
+          <div id="mychatbot"></div>
+          <script
+            src="https://app.mychatbot.ro/widget.js"
+            data-client-id="5fe6055a-89ce-4cb5-be41-c8ce27ebd3da"
+            data-mode="inline"
+            data-target="#mychatbot"
+            async
+          ></script>
+        </div>
+
+        <!-- Micro-stats sub chat -->
+        <div class="demo-chat-stats">
+          <div class="demo-stat">
+            <span class="demo-stat-icon">⚡</span>
+            <span class="demo-stat-text">Răspuns sub 2s</span>
+          </div>
+          <div class="demo-stat-divider"></div>
+          <div class="demo-stat">
+            <span class="demo-stat-icon">🌍</span>
+            <span class="demo-stat-text">50+ limbi</span>
+          </div>
+          <div class="demo-stat-divider"></div>
+          <div class="demo-stat">
+            <span class="demo-stat-icon">🔒</span>
+            <span class="demo-stat-text">GDPR · Server UE</span>
+          </div>
+        </div>
       </div>
 
       <!-- ═══ DREAPTA: Context + idei + bridge ═══ -->
@@ -157,17 +177,63 @@
   .demo-chat {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 16px;
-    padding: 8px;
+    border-radius: 20px;
+    padding: 12px;
     overflow: hidden;
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+    box-shadow:
+      0 25px 60px rgba(0, 0, 0, 0.4),
+      0 0 80px rgba(14, 165, 233, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 0;
   }
 
-  .demo-chat #mychatbot {
+  .demo-chat-window {
+    border-radius: 14px;
+    overflow: hidden;
+  }
+
+  .demo-chat #mychatbot,
+  .demo-chat-window #mychatbot {
     width: 100%;
     height: 600px;
     border-radius: 12px;
     overflow: hidden;
+  }
+
+  .demo-chat-stats {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 16px 8px;
+    gap: 8px;
+  }
+
+  .demo-stat {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    justify-content: center;
+  }
+
+  .demo-stat-icon {
+    font-size: 16px;
+    line-height: 1;
+  }
+
+  .demo-stat-text {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .demo-stat-divider {
+    width: 1px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    flex-shrink: 0;
   }
 
   /* ═══ DREAPTA: Info ═══ */
@@ -297,7 +363,8 @@
       font-size: 30px;
     }
 
-    .demo-chat #mychatbot {
+    .demo-chat #mychatbot,
+    .demo-chat-window #mychatbot {
       height: 600px;
     }
   }
@@ -325,13 +392,24 @@
       font-size: 15px;
     }
 
-    .demo-chat #mychatbot {
+    .demo-chat #mychatbot,
+    .demo-chat-window #mychatbot {
       height: 550px;
+    }
+
+    .demo-chat-stats {
+      gap: 4px;
+      padding: 12px 4px;
+    }
+
+    .demo-stat-text {
+      font-size: 12px;
     }
   }
 
   @media (max-width: 480px) {
-    .demo-chat #mychatbot {
+    .demo-chat #mychatbot,
+    .demo-chat-window #mychatbot {
       height: 500px;
     }
 
@@ -342,6 +420,15 @@
     .demo-block,
     .demo-bridge {
       padding: 1.25rem;
+    }
+
+    .demo-chat-stats {
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .demo-stat-divider {
+      display: none;
     }
   }
 </style>
