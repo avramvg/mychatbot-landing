@@ -1,31 +1,67 @@
 ---
+// Founder.astro
+//
+// Secțiune unificată — combină founder quote + integrări CMS.
+// Plasare: între TrustStrip și TrustBadges (înlocuiește vechea IntegrationsStrip).
+// Componenta vechea IntegrationsStrip.astro va fi ștearsă.
+//
+// Layout 2 coloane pe desktop:
+//   - Stânga: card founder (foto Vali + citat + CTA)
+//   - Dreapta: integrări CMS (titlu + 6 logos PNG + descriptor)
+//
+// Pe mobile: stack vertical.
 ---
-<section class="founder-section">
-  <div class="container">
-    <div class="founder-inner">
 
-      <div class="founder-photo-wrap">
-        <img
-          src="/poza_vali.jpeg"
-          alt="Valentin Avram — Fondator Hello Web"
-          class="founder-photo"
-          width="160"
-          height="160"
-        />
-        <p class="founder-name">Valentin Avram</p>
-        <p class="founder-title">Fondator Hello Web</p>
-      </div>
+<section class="founder">
+  <div class="founder-container">
+    <div class="founder-grid">
 
-      <div class="founder-quote-wrap">
-        <p class="founder-quote">
-          „Un vizitator care nu primește răspuns imediat caută
-          în altă parte. MyChatbot există pentru că am văzut
-          prea mulți proprietari de business pierzând clienți
-          din cauza unui mesaj fără răspuns."
-        </p>
-        <a href="https://app.mychatbot.ro/signup" class="founder-cta">
+      <!-- ═══ STÂNGA: Founder card ═══ -->
+      <div class="founder-card">
+        <div class="founder-photo-wrap">
+          <img
+            src="/poza_vali.jpeg"
+            alt="Valentin Avram, fondator Hello Web"
+            class="founder-photo"
+            width="160"
+            height="160"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="founder-info">
+          <p class="founder-name">Valentin Avram</p>
+          <p class="founder-title">Fondator Hello Web</p>
+        </div>
+
+        <div class="founder-divider"></div>
+
+        <blockquote class="founder-quote">
+          „Un vizitator care nu primește răspuns imediat caută în altă parte. MyChatbot există pentru că am văzut prea mulți proprietari de business pierzând clienți din cauza unui mesaj fără răspuns."
+        </blockquote>
+
+        <a href="https://app.mychatbot.ro/signup" class="founder-cta" target="_blank" rel="noopener">
           → Începe aici
         </a>
+      </div>
+
+      <!-- ═══ DREAPTA: Integrări CMS ═══ -->
+      <div class="founder-integrations">
+        <p class="founder-int-title">Funcționează pe orice site</p>
+
+        <div class="founder-int-logos">
+          <img
+            src="/images/cms-logos.png"
+            alt="WordPress, Wix, Shopify, Webflow, Hello Web, HTML/JS"
+            width="600"
+            height="160"
+            loading="lazy"
+          />
+        </div>
+
+        <p class="founder-int-desc">
+          Funcționează pe orice site, simplu, rapid, fără integrări complicate.
+        </p>
       </div>
 
     </div>
@@ -33,88 +69,203 @@
 </section>
 
 <style>
-.founder-section {
-  background: #f8fafc;
-  border-top: 1px solid #e2e8f0;
-  border-bottom: 1px solid #e2e8f0;
-  padding: 2rem 0;
-}
-.founder-inner {
-  display: flex;
-  align-items: center;
-  gap: 3.5rem;
-  flex-wrap: wrap;
-}
-.founder-photo-wrap {
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-}
-.founder-photo {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: top;
-  display: block;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.08);
-}
-.founder-name {
-  margin: 0;
-  font-size: 13px;
-  font-weight: 600;
-  color: #0f172a;
-  text-align: center;
-}
-.founder-title {
-  margin: 0;
-  font-size: 11px;
-  color: #94a3b8;
-  text-align: center;
-}
-.founder-quote-wrap {
-  flex: 1;
-  min-width: 280px;
-  border-left: 3px solid #2563eb;
-  padding-left: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.founder-quote {
-  font-size: 18px;
-  line-height: 1.75;
-  color: #1e293b;
-  font-style: italic;
-  margin: 0;
-}
-.founder-cta {
-  display: inline-block;
-  margin-top: 1rem;
-  font-size: 14px;
-  color: #2563eb;
-  text-decoration: none;
-  font-weight: 500;
-  opacity: 0.75;
-  transition: opacity 0.15s;
-}
-.founder-cta:hover {
-  opacity: 1;
-  text-decoration: underline;
-}
-@media (max-width: 640px) {
-  .founder-inner {
-    flex-direction: column;
+  /* ═══ Section bg navy + subtle gradient ═══ */
+  .founder {
+    width: 100%;
+    background: #0f172a;
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(14, 165, 233, 0.08), transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(168, 85, 247, 0.05), transparent 50%);
+    padding: 5rem 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .founder::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+  }
+
+  .founder-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    position: relative;
+  }
+
+  .founder-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  /* ═══════════════════════════════════════
+     STÂNGA: Founder card
+     ═══════════════════════════════════════ */
+  .founder-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
     text-align: center;
-    gap: 1.5rem;
+    max-width: 440px;
+    margin: 0 auto;
+    width: 100%;
   }
-  .founder-quote-wrap {
-    border-left: none;
-    border-top: 3px solid #2563eb;
-    padding-left: 0;
-    padding-top: 1.5rem;
+
+  .founder-photo-wrap {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #f1f5f9;
   }
-}
+
+  .founder-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+  }
+
+  .founder-info {
+    margin-bottom: 1.25rem;
+  }
+
+  .founder-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #0f172a;
+    margin: 0 0 0.25rem;
+  }
+
+  .founder-title {
+    font-size: 12px;
+    color: #64748b;
+    margin: 0;
+  }
+
+  .founder-divider {
+    width: 60px;
+    height: 1px;
+    background: #cbd5e1;
+    margin: 0 auto 1.25rem;
+  }
+
+  .founder-quote {
+    font-size: 14px;
+    line-height: 1.65;
+    color: #334155;
+    font-style: italic;
+    margin: 0 0 1.5rem;
+    quotes: none;
+  }
+
+  .founder-cta {
+    display: inline-block;
+    color: #0ea5e9;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+
+  .founder-cta:hover {
+    color: #0284c7;
+  }
+
+  /* ═══════════════════════════════════════
+     DREAPTA: Integrări
+     ═══════════════════════════════════════ */
+  .founder-integrations {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .founder-int-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 0;
+  }
+
+  .founder-int-logos {
+    width: 100%;
+    max-width: 540px;
+  }
+
+  .founder-int-logos img {
+    width: 100%;
+    height: auto;
+    display: block;
+    opacity: 0.9;
+  }
+
+  .founder-int-desc {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.55);
+    margin: 0;
+    line-height: 1.5;
+    max-width: 420px;
+  }
+
+  /* ═══════════════════════════════════════
+     Tablet
+     ═══════════════════════════════════════ */
+  @media (max-width: 1024px) {
+    .founder-grid {
+      gap: 2.5rem;
+    }
+  }
+
+  /* ═══════════════════════════════════════
+     Mobile — stack vertical
+     ═══════════════════════════════════════ */
+  @media (max-width: 768px) {
+    .founder {
+      padding: 3rem 0;
+    }
+
+    .founder-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .founder-card {
+      padding: 2rem 1.5rem;
+    }
+
+    .founder-int-logos {
+      max-width: 480px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .founder-card {
+      padding: 1.75rem 1.25rem;
+    }
+
+    .founder-photo-wrap {
+      width: 100px;
+      height: 100px;
+    }
+
+    .founder-quote {
+      font-size: 13px;
+    }
+  }
 </style>
