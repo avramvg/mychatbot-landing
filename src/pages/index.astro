@@ -33,12 +33,14 @@ const organizationSchema = {
     "width": 1200,
     "height": 630
   },
+  "image": PUBLISHER_LOGO,
   "description": "Concierge AI pentru pensiuni, hoteluri și restaurante. Răspunde 24/7 în 50+ limbi, cu informațiile reale despre afacerea ta.",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Bdul. Ion Ionescu de la Brad nr. 81-85, Et. 1, Ap. 1",
+    "streetAddress": "Bdul. Ion Ionescu de la Brad nr. 81-85",
     "addressLocality": "București",
     "addressRegion": "Sector 1",
+    "postalCode": "013812",
     "addressCountry": "RO"
   },
   "contactPoint": [{
@@ -84,49 +86,28 @@ const softwareSchema = {
   "applicationCategory": "BusinessApplication",
   "applicationSubCategory": "Customer Service AI",
   "operatingSystem": "Web Browser",
-  "browserRequirements": "Requires JavaScript. Compatible with all modern browsers.",
+  "softwareRequirements": "Requires JavaScript. Compatible with all modern browsers.",
   "offers": [
     {
       "@type": "Offer",
       "name": "Start",
       "description": "Pentru afaceri mici cu trafic sezonier",
       "price": "150",
-      "priceCurrency": "RON",
-      "priceSpecification": {
-        "@type": "UnitPriceSpecification",
-        "price": "150",
-        "priceCurrency": "RON",
-        "billingDuration": "P1M",
-        "unitText": "MONTH"
-      }
+      "priceCurrency": "RON"
     },
     {
       "@type": "Offer",
       "name": "Standard",
       "description": "Pentru business-uri active cu disponibilitate în timp real",
       "price": "250",
-      "priceCurrency": "RON",
-      "priceSpecification": {
-        "@type": "UnitPriceSpecification",
-        "price": "250",
-        "priceCurrency": "RON",
-        "billingDuration": "P1M",
-        "unitText": "MONTH"
-      }
+      "priceCurrency": "RON"
     },
     {
       "@type": "Offer",
       "name": "Pro",
       "description": "Pentru hoteluri și operatori turistici cu volum mare",
       "price": "550",
-      "priceCurrency": "RON",
-      "priceSpecification": {
-        "@type": "UnitPriceSpecification",
-        "price": "550",
-        "priceCurrency": "RON",
-        "billingDuration": "P1M",
-        "unitText": "MONTH"
-      }
+      "priceCurrency": "RON"
     }
   ],
   "publisher": { "@id": ORG_ID },
