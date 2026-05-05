@@ -14,9 +14,152 @@ import TrustStrip from '../components/TrustStrip.astro';
 import TrustBadges from '../components/TrustBadges.astro';
 import Founder from '../components/Founder.astro';
 import Footer from '../components/Footer.astro';
+import { faqs } from '../data/faqs';
+
+const SITE_URL = 'https://www.mychatbot.ro';
+const ORG_ID = `${SITE_URL}/#organization`;
+const PUBLISHER_LOGO = `${SITE_URL}/og-image.png`;
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": ORG_ID,
+  "name": "MyChatbot by Hello Web",
+  "legalName": "Hello Web SRL",
+  "url": SITE_URL,
+  "logo": {
+    "@type": "ImageObject",
+    "url": PUBLISHER_LOGO,
+    "width": 1200,
+    "height": 630
+  },
+  "description": "Concierge AI pentru pensiuni, hoteluri și restaurante. Răspunde 24/7 în 50+ limbi, cu informațiile reale despre afacerea ta.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Bdul. Ion Ionescu de la Brad nr. 81-85, Et. 1, Ap. 1",
+    "addressLocality": "București",
+    "addressRegion": "Sector 1",
+    "addressCountry": "RO"
+  },
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "telephone": "+40720891800",
+    "email": "contact@mychatbot.ro",
+    "contactType": "customer service",
+    "availableLanguage": ["Romanian", "English"]
+  }],
+  "vatID": "RO39199732",
+  "taxID": "39199732",
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "propertyID": "Reg. Com.",
+      "value": "J40/451/2020"
+    }
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/company/hello-web-ro/",
+    "https://www.facebook.com/helloweb.ro",
+    "https://helloweb.ro"
+  ]
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${SITE_URL}/#website`,
+  "url": SITE_URL,
+  "name": "MyChatbot",
+  "description": "Concierge AI pentru pensiuni, hoteluri și restaurante",
+  "publisher": { "@id": ORG_ID },
+  "inLanguage": "ro-RO"
+};
+
+const softwareSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "MyChatbot",
+  "description": "Concierge AI specializat HoReCa pentru pensiuni, hoteluri, restaurante și agenții de turism. Răspunde 24/7 cu informațiile reale despre afacere, în 50+ limbi, cu integrări iCal pentru disponibilitate în timp real și handoff către recepție pentru cazuri complexe.",
+  "url": SITE_URL,
+  "applicationCategory": "BusinessApplication",
+  "applicationSubCategory": "Customer Service AI",
+  "operatingSystem": "Web Browser",
+  "browserRequirements": "Requires JavaScript. Compatible with all modern browsers.",
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Start",
+      "description": "Pentru afaceri mici cu trafic sezonier",
+      "price": "150",
+      "priceCurrency": "RON",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "150",
+        "priceCurrency": "RON",
+        "billingDuration": "P1M",
+        "unitText": "MONTH"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Standard",
+      "description": "Pentru business-uri active cu disponibilitate în timp real",
+      "price": "250",
+      "priceCurrency": "RON",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "250",
+        "priceCurrency": "RON",
+        "billingDuration": "P1M",
+        "unitText": "MONTH"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Pro",
+      "description": "Pentru hoteluri și operatori turistici cu volum mare",
+      "price": "550",
+      "priceCurrency": "RON",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "550",
+        "priceCurrency": "RON",
+        "billingDuration": "P1M",
+        "unitText": "MONTH"
+      }
+    }
+  ],
+  "publisher": { "@id": ORG_ID },
+  "featureList": [
+    "Răspunsuri AI 24/7 în 50+ limbi",
+    "Integrare iCal pentru disponibilitate în timp real",
+    "Handoff către recepție pentru cazuri complexe",
+    "GDPR compliant cu server UE",
+    "Conformitate cu legislația română",
+    "Setup în 10 minute fără cunoștințe tehnice"
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(item => ({
+    "@type": "Question",
+    "name": item.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.a
+    }
+  }))
+};
 ---
 
 <Layout>
+  <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(softwareSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
   <Nav />
   <main>
     <Hero />
