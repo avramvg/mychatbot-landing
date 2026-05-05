@@ -10,6 +10,20 @@ const blog = defineCollection({
     image:       z.string(),
     imageAlt:    z.string(),
     tags:        z.array(z.string()).default([]),
+
+    faqs: z.array(z.object({
+      question: z.string(),
+      answer: z.string(),
+    })).optional(),
+
+    howTo: z.object({
+      name: z.string(),
+      description: z.string().optional(),
+      steps: z.array(z.object({
+        name: z.string(),
+        text: z.string(),
+      })),
+    }).optional(),
   }),
 });
 
