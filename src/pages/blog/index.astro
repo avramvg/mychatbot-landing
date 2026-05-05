@@ -36,7 +36,8 @@ const blogSchema = {
       "image": imageUrl,
       "author": {
         "@type": "Organization",
-        "name": post.data.author
+        "name": post.data.author,
+        "url": "https://helloweb.ro"
       },
       "keywords": post.data.tags.join(", ")
     };
