@@ -6,6 +6,41 @@ image: "/blog/concierge-ai-pensiuni-hoteluri-ghid-2026.svg"
 imageAlt: "Concierge AI pentru pensiuni și hoteluri - ghidul complet 2026"
 author: "Hello Web"
 tags: ["ghid", "concierge-ai", "pensiuni", "hoteluri", "horeca"]
+
+faqs:
+  - question: "Ce este mai exact un concierge AI?"
+    answer: "Un concierge AI este un asistent virtual bazat pe inteligență artificială care răspunde la întrebările oaspeților unei pensiuni, hotel sau restaurant, direct pe site-ul afacerii, în limba lor și 24 din 24. Este versiunea automatizată a concierge-ului hotelier clasic, dar disponibilă non-stop și capabilă să gestioneze mii de conversații simultan."
+  - question: "Diferă de un chatbot obișnuit?"
+    answer: "Da. Un chatbot clasic are răspunsuri predefinite și se bazează pe scripturi rigide. Un concierge AI folosește modele de limbaj moderne (GPT, Claude, Gemini) care înțeleg întrebări formulate natural, în orice limbă, și formulează răspunsuri contextuale pe baza informațiilor reale despre unitatea HoReCa."
+  - question: "Cât costă lunar un concierge AI pentru o pensiune din România?"
+    answer: "Pentru pensiuni mici și mijlocii, prețul unei platforme SaaS specializate este între 30 și 150 EUR pe lună, în funcție de volumul de conversații și funcționalitățile incluse. Soluțiile cu setup gratuit și trial real sunt cele recomandate pentru testare înainte de angajament."
+  - question: "În ce limbi poate răspunde concierge-ul AI?"
+    answer: "Concierge-ul AI poate răspunde în 50+ limbi, detectând automat limba mesajului oaspetelui. Pentru afacerile HoReCa din România, limba română nativă este criteriul principal - multe platforme internaționale traduc răspunsurile, ceea ce duce la erori și formulări nenaturale."
+  - question: "Confirmă rezervarea în mod automat?"
+    answer: "Nu. Un concierge AI bine configurat NU confirmă rezervări fără validarea proprietarului. Colectează cererea, datele oaspetelui și o trimite recepției pentru aprobare. Confirmarea rezervării rămâne o decizie umană, ceea ce previne suprarezervări sau erori de tarif."
+  - question: "Ce se întâmplă dacă nu știe răspunsul la o întrebare?"
+    answer: "Un concierge AI bine antrenat recunoaște limita propriei cunoașteri și fie cere clarificări, fie transferă conversația către un operator uman. Niciun concierge AI serios nu inventează răspunsuri - această caracteristică este esențială pentru încrederea oaspeților și protejarea reputației afacerii."
+  - question: "Cum se instalează pe site?"
+    answer: "Instalarea pe site se face prin adăugarea unui fragment de cod JavaScript în secțiunea HTML a site-ului. Procesul durează sub 5 minute pe platformele moderne (WordPress, Wix, Shopify, Webflow, Astro) și nu necesită cunoștințe tehnice avansate."
+  - question: "Sunt datele oaspeților protejate conform GDPR?"
+    answer: "Platformele profesionale sunt conforme GDPR și nu păstrează conținutul conversațiilor mai mult decât e necesar. Pentru afacerile din România, este important să alegi o platformă care procesează datele în UE și oferă acord de procesare a datelor (DPA) în limba română."
+  - question: "Înlocuiește concierge-ul AI personalul de la recepție?"
+    answer: "Nu. Un concierge AI preia volumul repetitiv (până la 80% din întrebările frecvente), eliberând personalul de la recepție pentru interacțiuni cu valoare reală - primirea oaspeților, rezolvarea situațiilor speciale, vânzări consultative. Rezultatul este o experiență mai bună pentru oaspeți, nu personal redus."
+  - question: "Funcționează și pentru restaurante, nu doar hoteluri?"
+    answer: "Da. Restaurantele cu volum mare de rezervări și cereri pe site beneficiază similar: răspunsuri automate la întrebări despre meniu, disponibilitate, evenimente, alergii, livrare. Funcționează la fel de bine pentru cafenele, pensiuni cu restaurant propriu și unități cu evenimente private."
+
+howTo:
+  name: "Cum implementezi un concierge AI pe site-ul tău"
+  description: "4 pași concreți pentru a instala un concierge AI specializat HoReCa pe site-ul afacerii tale, fără cunoștințe tehnice avansate."
+  steps:
+    - name: "Pregătește informațiile cheie despre afacere"
+      text: "Adună într-un document tipurile de camere și tarifele, programul de check-in/out, politica pentru animale, parcare, mic dejun, anulări, atracții turistice apropiate. Aceste informații vor alimenta concierge-ul AI și vor determina calitatea răspunsurilor."
+    - name: "Alege o platformă specializată HoReCa"
+      text: "Pentru o pensiune sau un hotel mic-mediu din România, criteriile principale sunt limba română nativă, suport local, conformitate GDPR, preț predictibil lunar, fără cost de setup, fără contract pe termen lung. Verifică dacă platforma oferă demo gratuit și trial cu funcționalități reale."
+    - name: "Configurează tonul și scenariile speciale"
+      text: "Decide tonul: formal, prietenos, sau hibrid. Pentru o pensiune de țară, un ton cald și familiar funcționează mai bine. Pentru un hotel boutique urban, un ton profesional și concis e mai potrivit. Setează scenarii speciale: ce să facă concierge-ul când nu știe răspunsul, când să transfere către un operator uman."
+    - name: "Integrează codul pe site"
+      text: "Platformele moderne oferă un fragment de cod JavaScript pe care îl adaugi în site-ul tău. Funcționează pe orice CMS - WordPress, Wix, Shopify, Webflow, Astro, site-uri custom. După instalare, widgetul de chat apare automat și începe să răspundă oaspeților."
 ---
 
 Un concierge AI este un asistent virtual care răspunde oaspeților 24 din 24, cu informațiile reale despre pensiunea, hotelul sau restaurantul tău. În 2026, peste 60% dintre călătorii Gen Z și Millennials folosesc deja instrumente AI pentru a planifica vacanțele, iar așteptarea de a primi răspuns instant a devenit standardul în ospitalitate.
