@@ -1,0 +1,367 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+
+const SITE_URL = 'https://www.mychatbot.ro';
+const ORG_ID = `${SITE_URL}/#organization`;
+const PAGE_URL = `${SITE_URL}/industrii/restaurante`;
+const COVER_URL = `${SITE_URL}/industrii/restaurante-cover.svg`;
+
+const faqs = [
+  {
+    q: "Confirmă concierge-ul AI rezervări automat?",
+    a: "Nu. Concierge-ul AI colectează cererea oaspetelui (data, ora, număr persoane, cerințe speciale, ocazie) și o trimite hostess-ului în format structurat pentru aprobare manuală. Confirmarea rămâne o decizie umană — această alegere previne suprarezervări (special în orele de vârf), permite verificarea cazurilor speciale (grupuri mari, evenimente, alergii severe) și menține controlul asupra mix-ului de rezervări."
+  },
+  {
+    q: "Înțelege alergeni și restricții dietetice?",
+    a: "Da. Concierge-ul AI răspunde pe baza meniului real configurat: ingrediente, alergeni, opțiuni vegetariene/vegane/gluten-free/fără lactoză. Pentru cazuri complexe — alergii multiple severe, intoleranțe rare, restricții medicale — recunoaște limita și transferă conversația către manager. Niciun concierge AI serios nu inventează informații despre alergeni — această caracteristică e esențială pentru siguranța oaspeților."
+  },
+  {
+    q: "Cum gestionează modificările last-minute?",
+    a: "Modificările de rezervare (schimbare oră, număr persoane, anulare) sunt preluate automat de concierge-ul AI și trimise hostess-ului pentru actualizare în sistem. Pentru anulări în interval scurt de timp (sub 2 ore), concierge-ul informează oaspetele despre politica restaurantului (deposit, taxă anulare) și redirecționează la contact direct dacă e necesar."
+  },
+  {
+    q: "Funcționează pentru programul sărbătorilor?",
+    a: "Da. Concierge-ul AI răspunde cu programul real configurat (ore deschidere/închidere normale, program special pentru sărbători, închideri sezoniere, evenimente speciale Crăciun/Revelion/Paște). Crawl-ul zilnic (planul Pro) actualizează automat orice modificare temporară fără intervenție tehnică."
+  },
+  {
+    q: "Sunt datele dietetice protejate conform GDPR?",
+    a: "Da. MyChatbot procesează datele exclusiv pe servere UE (Frankfurt). Informațiile dietetice și restricțiile medicale ale oaspeților sunt tratate ca date sensibile conform Regulamentului UE 2016/679 (GDPR). Acordul de procesare a datelor (DPA) este disponibil în limba română. Conținutul conversațiilor nu e păstrat mai mult decât e necesar pentru funcționare."
+  },
+  {
+    q: "Cum gestionează volume mari în pauza de prânz?",
+    a: "Concierge-ul AI gestionează zeci de conversații simultan, fără limită de bandwidth. În timp ce hostess-ul răspunde la 3 telefoane succesive, concierge-ul AI răspunde online la 15 cereri paralele — toate cu informații consistente, în limba potrivită. Pentru planul Pro, conversațiile sunt nelimitate, ideal pentru lanțuri de restaurante sau locații cu volum extrem."
+  },
+  {
+    q: "În câte limbi poate răspunde?",
+    a: "Concierge-ul AI răspunde nativ în 50+ limbi, detectând automat limba mesajului oaspetelui. Pentru restaurantele și cafenelele din zone turistice (Centrul Vechi București, Brașov, Sibiu, Cluj, litoral), engleza, italiana, germana, franceza, ucraineana, israeliana, turca sunt cele mai folosite în practică."
+  },
+  {
+    q: "Se integrează cu sistemele de rezervări online?",
+    a: "Da, prin integrare iCal disponibilă din planul Standard în sus. Pentru restaurantele care folosesc OpenTable, Booking pentru mese, sau sisteme proprii, concierge-ul AI poate verifica disponibilitatea în timp real și sincroniza rezervările confirmate. Pentru restaurantele fără sistem online, concierge-ul colectează cererile și le trimite manager-ului pentru confirmare manuală."
+  }
+];
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Concierge AI pentru restaurante și cafenele",
+  "description": "Concierge AI specializat HoReCa pentru restaurante, cafenele, pizzerii și fast food. Răspunde 24/7 la rezervări, întrebări meniu, alergeni și evenimente private — în 50+ limbi.",
+  "url": PAGE_URL,
+  "image": COVER_URL,
+  "provider": { "@id": ORG_ID },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Romania"
+  },
+  "serviceType": "AI Customer Service for Restaurants",
+  "category": "Hospitality Technology",
+  "audience": {
+    "@type": "BusinessAudience",
+    "audienceType": "Restaurants, Cafes, Bistros, Pizzerias, Fast Food"
+  }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Acasă", "item": SITE_URL },
+    { "@type": "ListItem", "position": 2, "name": "Industrii", "item": `${SITE_URL}/industrii` },
+    { "@type": "ListItem", "position": 3, "name": "Restaurante", "item": PAGE_URL }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(item => ({
+    "@type": "Question",
+    "name": item.q,
+    "acceptedAnswer": { "@type": "Answer", "text": item.a }
+  }))
+};
+---
+
+<Layout
+  title="Concierge AI pentru restaurante și cafenele — MyChatbot"
+  description="Concierge AI specializat HoReCa pentru restaurante, cafenele, pizzerii. Răspunde 24/7 la rezervări, întrebări meniu, alergeni și evenimente private."
+  canonical={PAGE_URL}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <Nav basePath="/" />
+
+  <main>
+    <nav class="breadcrumb-nav" aria-label="breadcrumb">
+      <div class="container">
+        <a href="/">Acasă</a>
+        <span class="separator">›</span>
+        <a href="/industrii/">Industrii</a>
+        <span class="separator">›</span>
+        <span class="current">Restaurante</span>
+      </div>
+    </nav>
+
+    <section class="vert-hero">
+      <div class="container">
+        <span class="section-tag">VERTICALA · RESTAURANTE</span>
+        <h1>Concierge AI pentru restaurante și cafenele</h1>
+        <p class="lead">De la cafenele independente la restaurante fine dining, un concierge AI răspunde 24/7 la rezervări, întrebări despre meniu, alergeni și evenimente private — fără să blocheze telefonul în orele de vârf. Pentru restaurantele din România, e diferența între a pierde rezervarea care vine la 22:00 și a o converti într-o seară plină.</p>
+        <p>În 2026, peste 70% dintre rezervările pentru restaurante mici și medii încep cu o cerere online — formular site, mesaj pe Instagram, întrebare în chat. Restaurantul care răspunde primul câștigă oaspetele. Restaurantul care răspunde a doua zi pierde clientul către concurent.</p>
+        <div class="hero-img-wrapper">
+          <img src="/industrii/restaurante-cover.svg" alt="Concierge AI pentru restaurante și cafenele" width="1200" height="630" />
+        </div>
+      </div>
+    </section>
+
+    <section class="vert-section">
+      <div class="container">
+        <h2>Pentru cine este concierge-ul AI MyChatbot</h2>
+        <p>MyChatbot acoperă tot range-ul unităților de alimentație publică — de la cafenele specialty cu 20 locuri, la restaurante fine dining cu rezervări pe săptămâni întregi, până la pizzerii și fast food cu volum mare. Logica de bază e aceeași: răspunsuri instant la rezervări, întrebări meniu, alergeni și evenimente. Diferența între planuri stă în volumul de conversații, profunzimea integrărilor și capacitatea de a gestiona simultan zeci de cereri în orele de vârf.</p>
+
+        <div class="subverticals-grid">
+          <article class="subvert-card">
+            <div class="plan-badge plan-standard">PLAN STANDARD · 250 lei/lună</div>
+            <h3>Restaurante clasice și fine dining</h3>
+            <p>Pentru restaurantele cu 50-150 locuri, problema clasică e telefonul ocupat în orele de vârf. La 19:00 vineri, hostess-ul nu poate răspunde simultan la 3 cereri telefonice și 5 mesaje pe site. Concierge-ul AI Standard preia automat cererile online: verifică disponibilitate pentru o seară specifică, oferă alternativele orelor libere, colectează cerințele speciale (alergii, scaun copii, ocazie specială) și trimite rezervarea spre confirmare.</p>
+            <p>Pentru fine dining cu poziționare premium, tonul concierge-ului AI e adaptat brand-ului — răspunsuri elegante despre meniul degustare, regulamentul vestimentar, posibilitățile de pairing vinuri. Recomandările pentru ocazii speciale (aniversare, cerere în căsătorie, business dinner) creează diferențiere reală.</p>
+          </article>
+
+          <article class="subvert-card">
+            <div class="plan-badge plan-start">PLAN START · 150 lei/lună</div>
+            <h3>Cafenele și bistro-uri</h3>
+            <p>Pentru cafenelele specialty și bistro-urile cu 20-50 locuri, concierge-ul AI Start e suficient pentru volumul de cereri. Întrebări tipice: program de funcționare, opțiuni vegane sau fără gluten, dacă acceptă lucratul cu laptop-ul, dacă au prize, Wi-Fi parolă, ofertă de mic dejun, evenimente live (jazz nights, book clubs).</p>
+            <p>Pentru cafenele cu evenimente regulate (deschideri expoziții, citiri literare, sesiuni de tasting cafea), concierge-ul AI poate prelua cererile de înregistrare și informează automat oaspeții despre eveniment.</p>
+          </article>
+
+          <article class="subvert-card">
+            <div class="plan-badge plan-pro">PLAN PRO · 550 lei/lună</div>
+            <h3>Pizzerii, fast food și food trucks</h3>
+            <p>Pentru pizzerii cu volum mare (200+ comenzi pe seară) sau food trucks cu trafic constant, concierge-ul AI Pro gestionează volume mari simultan, integrează cu sistemele de comandă online, răspunde la întrebări despre timp de livrare, opțiuni meniu, promoții curente. Conversațiile nelimitate și crawl-ul zilnic al modificărilor (meniu sezon, promoții weekend) sunt critice pentru afaceri cu rotație rapidă.</p>
+            <p>Pentru lanțuri de restaurante cu 3-10 locații, concierge-ul AI răspunde la întrebări despre toate locațiile, redirectează la cea mai apropiată în funcție de adresa oaspetelui, sincronizează informații despre disponibilitate.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="vert-section">
+      <div class="container">
+        <h2>Cum ajută concierge AI un restaurant sau cafenea</h2>
+        <p>Patru probleme tipice și soluțiile concrete oferite de un concierge AI specializat HoReCa.</p>
+
+        <div class="problem-block">
+          <h3>Rezervările care vin după închiderea telefonică</h3>
+          <p>Aproape jumătate din cererile de rezervare pentru restaurante vin în afara orelor 11-16 (când hostess-ul nu e încă la post sau e ocupat cu pregătirile). Cuplurile decid joia seară unde merg vineri. Familiile planifică duminica masă. Business travelers caută rezervări în pauza de prânz. Fără concierge AI, aceste cereri se pierd — formularele rămân fără răspuns ore bune, iar oaspetele alege primul restaurant care răspunde rapid.</p>
+          <p>Cu concierge AI, vizitatorul primește răspuns instant la 22:00 cu disponibilitate pentru seara dorită, alternativele orelor libere, link spre meniu și politica de anulare. Cererile sunt structurate și trimise spre confirmare manuală în timp util — fără ca oaspetele să simtă că nimeni nu i-a răspuns.</p>
+        </div>
+
+        <div class="problem-block">
+          <h3>Întrebările repetitive despre meniu, alergeni și opțiuni dietetice</h3>
+          <p>"Aveți opțiuni vegane?", "Ce conține sosul X?", "E gluten-free?", "Aveți preparate fără lactoză?", "Care e prețul mediu?", "Aveți meniu copii?". Aceste întrebări identice consumă timp prețios al hostess-ului în orele de vârf — exact când cele mai multe rezervări trebuie procesate.</p>
+          <p>Concierge-ul AI le răspunde instant pe baza meniului real al restaurantului, cu informații despre ingrediente și alergeni. Pentru cazuri complexe (alergii severe, intoleranțe multiple), transferă conversația către manager pentru confirmare — dar 80% din întrebări sunt rezolvate automat fără intervenție umană.</p>
+        </div>
+
+        <div class="problem-block">
+          <h3>Bariera lingvistică în zone turistice</h3>
+          <p>Pentru restaurantele și cafenelele din zone turistice (Centrul Vechi București, Brașov, Sibiu, Cluj, litoral), traficul internațional e o oportunitate constantă. Dar dacă personalul nu vorbește toate limbile, multe cereri se pierd sau primesc răspunsuri rigide care diminuează experiența.</p>
+          <p>Concierge-ul AI detectează automat limba mesajului și răspunde nativ în 50+ limbi cu informații reale despre meniu, prețuri, program. Pentru un turist israelian la Brașov sau un italian la Sibiu, răspunsul vine instant în limba lor, idiomatic — nu traducere rigidă.</p>
+        </div>
+
+        <div class="problem-block">
+          <h3>Volume mari în orele de vârf — fără timp pentru telefon</h3>
+          <p>Vineri seara la 19:30, hostess-ul are deja 3 grupuri în așteptare la intrare, telefonul sună constant și mesajele pe Instagram se acumulează. Cererile online intrate în acest interval primesc răspuns abia luni dimineață — moment în care oaspetele a rezervat în altă parte.</p>
+          <p>Concierge-ul AI gestionează zeci de conversații simultan, fără să blocheze telefonul fizic. Hostess-ul se concentrează pe oaspeții prezenți, iar concierge-ul AI răspunde online cererilor pentru seara următoare, weekend, săptămâna viitoare.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="vert-section vert-section-alt">
+      <div class="container">
+        <h2>Concierge AI specializat vs. chatbot generic — comparație pentru restaurante</h2>
+        <p>Diferența nu e doar de preț, ci de înțelegere a contextului culinar și hotelier. Un chatbot generic învață de la zero ce înseamnă "fără gluten" sau "rezervare pentru 8 persoane cu copii". Un concierge AI specializat MyChatbot pleacă cu acest context preinstalat.</p>
+
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr><th>Criteriu</th><th>Chatbot generic</th><th>MyChatbot pentru restaurante</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Cunoaștere domeniu HoReCa</td><td>Generală, learn from scratch</td><td>Pre-antrenat pe scenarii restaurante</td></tr>
+              <tr><td>Limba română</td><td>Variabilă, traducere</td><td>Nativă, idiomatică</td></tr>
+              <tr><td>Înțelegere meniu și alergeni</td><td>Slabă</td><td>Cunoaște ingrediente, restricții, alternative</td></tr>
+              <tr><td>Suport în română</td><td>Rar</td><td>Standard, în 5 minute</td></tr>
+              <tr><td>Conformitate GDPR-RO</td><td>Generică</td><td>Server UE, DPA în română</td></tr>
+              <tr><td>Gestionare rezervări</td><td>Generic</td><td>Cunoaște logica disponibilitate ore de masă</td></tr>
+              <tr><td>Tonalitate adaptată</td><td>Generic</td><td>Cald pentru bistro, premium pentru fine dining</td></tr>
+              <tr><td>Setup pentru restaurant mic</td><td>Configurare extinsă</td><td>Sub o oră, fără cunoștințe tehnice</td></tr>
+              <tr><td>Preț pentru restaurant mic</td><td>100-500 EUR/lună</td><td>30 EUR/lună (150 lei)</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>Pentru un patron de restaurant fără echipă tehnică, diferența practică se vede în primele 30 de minute. Un chatbot generic îi cere să configureze de la zero ce înseamnă "rezervare în timpul cinei". MyChatbot știe deja aceste concepte și se concentrează pe particularitățile meniului tău.</p>
+      </div>
+    </section>
+
+    <section class="vert-section">
+      <div class="container">
+        <h2>ROI: cât costă vs. cât economisești</h2>
+        <p>Calculul e simplu pentru un restaurant cu 50-100 locuri care primește între 10 și 30 cereri zilnice prin formular site, mesaje Instagram și cereri prin Booking.</p>
+
+        <div class="roi-block">
+          <p><strong>Cost concierge AI:</strong> 150 lei/lună (planul Start pentru cafenele) sau 250 lei/lună (Standard pentru restaurante cu volum mediu).</p>
+
+          <p><strong>Cost economisit lunar:</strong></p>
+          <ul>
+            <li>2-4 ore zilnice de timp hostess/manager: aproximativ 60-120 ore lunare la cost-oră de minimum 30 lei = 1800-3600 lei</li>
+            <li>2-5 rezervări recuperate la 150-300 lei/persoană din cereri ce s-ar fi pierdut după ore = 600-3000 lei/lună</li>
+            <li>Reducere abandonuri formulare: timpul de răspuns scade de la ore la secunde</li>
+          </ul>
+
+          <p><strong>Break-even tipic:</strong> 2-4 săptămâni. După aceea, fiecare rezervare suplimentară captată e profit net direct.</p>
+        </div>
+
+        <p>Pentru un fine dining cu meniu degustare la 400-600 lei/persoană, ROI-ul e atins în prima săptămână. Pentru un restaurant cu volum mare, în primele zile.</p>
+      </div>
+    </section>
+
+    <section class="vert-section vert-section-alt">
+      <div class="container">
+        <h2>Ce face concierge-ul AI pentru restaurante în practică</h2>
+        <p>Listă concretă de scenarii rezolvate automat de MyChatbot pentru un restaurant sau cafenea:</p>
+        <ul class="scenarios-list">
+          <li>Verificarea disponibilității pentru o seară specifică ("aveți masă pentru 4 vineri la 19:30?")</li>
+          <li>Prezentarea meniului, prețurilor și opțiunilor sezoniere</li>
+          <li>Răspuns la întrebări despre alergeni, opțiuni vegetariene/vegane/gluten-free</li>
+          <li>Politica restaurantului: program, dress code, anulare, deposit pentru grupuri</li>
+          <li>Informații despre evenimente private (botez, nuntă, business dinner)</li>
+          <li>Recomandări de pairing vinuri, băuturi semnătură, meniu degustare</li>
+          <li>Preluarea cererilor de rezervare pentru aprobare manuală de către hostess</li>
+          <li>Răspuns la oaspeții care vor să modifice rezervarea (oră, persoane, cerințe)</li>
+          <li>Detectare automată limbă oaspete și răspuns în limba lor</li>
+          <li>Handoff către manager pentru cereri complexe (alergii severe, evenimente speciale)</li>
+          <li>Informații despre livrare/ridicare și parteneri (Glovo, Tazz, Foodpanda)</li>
+          <li>Sugestii de meniu pentru ocazii speciale (aniversare, cerere în căsătorie)</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="vert-section">
+      <div class="container">
+        <h2>Vezi concierge-ul AI în acțiune</h2>
+        <p>Hotel Demo este un hotel 3-stele din Brașov cu restaurant propriu, configurat complet în MyChatbot ca exemplu real. Conversația e cu Sofia, concierge-ul lor AI, care răspunde la întrebări despre meniu, rezervări la restaurant, evenimente și recomandări locale.</p>
+        <a href="/#demo" class="btn-cta">Vezi demo live →</a>
+        <p class="demo-note">Demo-ul folosește datele reale ale unei unități HoReCa — meniu, program restaurant, opțiuni mic dejun, atracții locale. Poți testa cum răspunde la cereri de rezervare la masă, întrebări despre alergeni sau evenimente private.</p>
+      </div>
+    </section>
+
+    <section class="vert-section vert-section-alt">
+      <div class="container">
+        <h2>Întrebări frecvente despre concierge AI pentru restaurante și cafenele</h2>
+        <div class="faq-list">
+          {faqs.map((item) => (
+            <details class="faq-item">
+              <summary>{item.q}</summary>
+              <p>{item.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="vert-cta-final">
+      <div class="container">
+        <h2>Începe cu un trial gratuit de 7 zile</h2>
+        <p>Cele mai utile decizii se iau cu informații concrete. Trial-ul de 7 zile pe planul Standard îți permite să testezi cu meniul real al restaurantului tău — fără card bancar, fără angajament. După cele 7 zile, alegi planul potrivit sau renunți.</p>
+        <a href="https://app.mychatbot.ro/signup" class="btn-cta-primary">Începe trial gratuit →</a>
+        <p class="cta-secondary">Pentru întrebări specifice sau o demonstrație ghidată, <a href="mailto:contact@mychatbot.ro">contactează-ne la contact@mychatbot.ro</a>.</p>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .breadcrumb-nav { background: #f8fafc; padding: 14px 0; border-bottom: 1px solid #e2e8f0; font-size: 14px; }
+  .breadcrumb-nav .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+  .breadcrumb-nav a { color: #475569; text-decoration: none; }
+  .breadcrumb-nav a:hover { color: #06b6d4; }
+  .breadcrumb-nav .separator { margin: 0 8px; color: #94a3b8; }
+  .breadcrumb-nav .current { color: #0f172a; font-weight: 600; }
+
+  main { background: #ffffff; }
+  .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+
+  .vert-hero { padding: 64px 0 32px; text-align: left; }
+  .vert-hero .container { max-width: 880px; }
+  .section-tag { display: inline-block; background: rgba(6, 182, 212, 0.12); color: #0891b2; padding: 6px 14px; border-radius: 16px; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; margin-bottom: 20px; }
+  .vert-hero h1 { font-size: clamp(32px, 5vw, 52px); font-weight: 800; line-height: 1.1; color: #0f172a; margin: 0 0 24px; letter-spacing: -1px; }
+  .vert-hero .lead { font-size: 20px; line-height: 1.6; color: #334155; margin-bottom: 20px; }
+  .vert-hero p { font-size: 17px; line-height: 1.7; color: #475569; margin-bottom: 16px; }
+  .hero-img-wrapper { margin-top: 40px; border-radius: 12px; overflow: hidden; }
+  .hero-img-wrapper img { width: 100%; height: auto; display: block; }
+
+  .vert-section { padding: 56px 0; }
+  .vert-section-alt { background: #f8fafc; }
+  .vert-section .container { max-width: 880px; }
+  .vert-section h2 { font-size: clamp(26px, 4vw, 36px); font-weight: 700; color: #0f172a; margin: 0 0 20px; line-height: 1.2; }
+  .vert-section p { font-size: 17px; line-height: 1.7; color: #475569; margin-bottom: 16px; }
+  .vert-section h3 { font-size: 22px; font-weight: 700; color: #0f172a; margin: 32px 0 12px; }
+
+  .subverticals-grid { display: grid; grid-template-columns: 1fr; gap: 24px; margin-top: 32px; }
+  .subvert-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 28px; }
+  .subvert-card h3 { margin-top: 12px; margin-bottom: 12px; }
+  .plan-badge { display: inline-block; padding: 4px 12px; border-radius: 12px; font-size: 11px; font-weight: 700; letter-spacing: 1px; }
+  .plan-start { background: rgba(34, 197, 94, 0.12); color: #15803d; }
+  .plan-standard { background: rgba(6, 182, 212, 0.12); color: #0891b2; }
+  .plan-pro { background: rgba(168, 85, 247, 0.12); color: #7e22ce; }
+
+  .problem-block { margin: 32px 0; }
+
+  .comparison-table-wrapper { overflow-x: auto; margin: 32px 0; border-radius: 8px; border: 1px solid #e2e8f0; }
+  .comparison-table { width: 100%; border-collapse: collapse; background: #ffffff; font-size: 15px; }
+  .comparison-table th { background: #0f172a; color: #ffffff; padding: 14px 16px; text-align: left; font-weight: 600; font-size: 14px; }
+  .comparison-table td { padding: 14px 16px; border-bottom: 1px solid #e2e8f0; color: #334155; line-height: 1.5; }
+  .comparison-table tr:last-child td { border-bottom: none; }
+  .comparison-table tr:nth-child(even) { background: #f8fafc; }
+
+  .roi-block { background: #f8fafc; border-left: 4px solid #06b6d4; padding: 24px 28px; margin: 24px 0; border-radius: 0 8px 8px 0; }
+  .roi-block ul { margin: 12px 0; padding-left: 20px; }
+  .roi-block li { line-height: 1.7; color: #475569; margin-bottom: 8px; }
+
+  .scenarios-list { list-style: none; padding: 0; margin: 24px 0; }
+  .scenarios-list li { padding: 12px 0 12px 32px; position: relative; line-height: 1.6; color: #334155; border-bottom: 1px solid #e2e8f0; }
+  .scenarios-list li:last-child { border-bottom: none; }
+  .scenarios-list li::before { content: '✓'; position: absolute; left: 0; top: 12px; color: #06b6d4; font-weight: 700; font-size: 18px; }
+
+  .btn-cta { display: inline-block; background: #0f172a; color: #ffffff; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; margin: 16px 0; transition: background 0.2s; }
+  .btn-cta:hover { background: #1e293b; }
+  .demo-note { color: #64748b; font-style: italic; font-size: 15px; }
+
+  .faq-list { margin-top: 24px; }
+  .faq-item { border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 12px; background: #ffffff; }
+  .faq-item summary { padding: 18px 20px; cursor: pointer; font-weight: 600; color: #0f172a; list-style: none; position: relative; padding-right: 48px; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after { content: '+'; position: absolute; right: 20px; top: 50%; transform: translateY(-50%); font-size: 22px; color: #06b6d4; transition: transform 0.2s; }
+  .faq-item[open] summary::after { content: '−'; }
+  .faq-item p { padding: 0 20px 18px; line-height: 1.7; color: #475569; margin: 0; }
+
+  .vert-cta-final { background: #0f172a; color: #ffffff; padding: 80px 0; text-align: center; }
+  .vert-cta-final .container { max-width: 720px; }
+  .vert-cta-final h2 { color: #ffffff; font-size: clamp(28px, 4vw, 40px); font-weight: 700; margin: 0 0 16px; }
+  .vert-cta-final p { color: rgba(255, 255, 255, 0.8); font-size: 18px; line-height: 1.6; margin-bottom: 24px; }
+  .btn-cta-primary { display: inline-block; background: #06b6d4; color: #0f172a; padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 17px; margin: 12px 0 24px; transition: background 0.2s; }
+  .btn-cta-primary:hover { background: #0891b2; color: #ffffff; }
+  .cta-secondary { font-size: 15px; color: rgba(255, 255, 255, 0.6); }
+  .cta-secondary a { color: #06b6d4; text-decoration: none; }
+  .cta-secondary a:hover { color: #ffffff; }
+
+  @media (min-width: 768px) {
+    .subverticals-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>
