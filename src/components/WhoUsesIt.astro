@@ -79,6 +79,13 @@ const planColor: Record<string, string> = {
         </div>
       ))}
     </div>
+
+    <div class="who-uses-cta-wrapper">
+      <a href="/industrii/" class="who-uses-cta-link">
+        Lucrezi în alt domeniu? Vezi toate industriile acoperite
+        <span class="cta-arrow">→</span>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -136,5 +143,50 @@ const planColor: Record<string, string> = {
   }
   @media (max-width: 540px) {
     .who-grid { grid-template-columns: 1fr; }
+  }
+
+  .who-uses-cta-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 48px;
+    padding: 0 24px;
+  }
+
+  .who-uses-cta-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    border: 2px solid #06b6d4;
+    border-radius: 8px;
+    background: transparent;
+    color: #06b6d4;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .who-uses-cta-link:hover {
+    background: rgba(6, 182, 212, 0.08);
+    color: #0891b2;
+    border-color: #0891b2;
+  }
+
+  .who-uses-cta-link .cta-arrow {
+    transition: transform 0.2s ease;
+    display: inline-block;
+  }
+
+  .who-uses-cta-link:hover .cta-arrow {
+    transform: translateX(4px);
+  }
+
+  @media (max-width: 640px) {
+    .who-uses-cta-link {
+      font-size: 15px;
+      padding: 12px 20px;
+      text-align: center;
+    }
   }
 </style>
