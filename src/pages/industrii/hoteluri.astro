@@ -1,0 +1,642 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+
+const SITE_URL = 'https://www.mychatbot.ro';
+const ORG_ID = `${SITE_URL}/#organization`;
+const PAGE_URL = `${SITE_URL}/industrii/hoteluri`;
+const COVER_URL = `${SITE_URL}/industrii/hoteluri-cover.svg`;
+
+const faqs = [
+  {
+    q: "Pentru ce dimensiune de unitate este concierge-ul AI MyChatbot?",
+    a: "MyChatbot funcționează la fel de bine pentru o pensiune cu 5 camere și pentru un resort cu 200. Diferența între planuri e dată de volumul de conversații lunare și complexitatea integrărilor. Pentru pensiuni mici, planul Start (150 lei/lună) e suficient. Pentru hoteluri boutique cu 30-80 camere, Standard (250 lei) include verificare disponibilitate iCal și eliminarea brandului MyChatbot. Pentru volume mari, Pro (550 lei) oferă conversații nelimitate, crawl zilnic și rapoarte avansate."
+  },
+  {
+    q: "Confirmă concierge-ul AI rezervări automat?",
+    a: "Nu. Concierge-ul AI colectează cererea oaspetelui (perioadă, persoane, tip cameră, cerințe speciale) și o trimite recepției în format structurat pentru aprobare manuală. Confirmarea rezervării rămâne o decizie umană — această alegere previne suprarezervări, erori de tarif și permite gazdei să verifice cazuri speciale (grupuri mari, evenimente, cerințe medicale, alergii alimentare)."
+  },
+  {
+    q: "Verifică disponibilitatea în timp real?",
+    a: "Da, prin integrare iCal disponibilă din planul Standard în sus. MyChatbot citește calendarul tău (din Booking, AirBnB, Channel Manager, sau iCal direct) și răspunde cu disponibilitate reală pentru perioade specifice. Pentru planul Start, concierge-ul răspunde despre disponibilitate generală și redirecționează către formularul de contact pentru perioade specifice — adecvat pentru pensiuni cu volum scăzut."
+  },
+  {
+    q: "Cum gestionează cererile complexe sau emoționale?",
+    a: "Pentru întrebări care depășesc cunoașterea automată — alergii alimentare, situații medicale, plângeri, evenimente private, modificări de rezervare — concierge-ul recunoaște limita propriei competențe și transferă conversația către un operator uman. Tot contextul conversației e deja documentat, astfel încât recepționerul nu trebuie să ceară oaspetelui să repete povestea."
+  },
+  {
+    q: "În câte limbi poate răspunde?",
+    a: "Concierge-ul AI răspunde nativ în 50+ limbi, detectând automat limba mesajului oaspetelui. Pentru pensiuni cu trafic intern majoritar, limba română este standard. Pentru hoteluri boutique și resorturi cu turism internațional, engleza, germana, italiana, franceza, ucraineana sunt cele mai folosite în practică."
+  },
+  {
+    q: "Ce date sunt protejate conform GDPR?",
+    a: "MyChatbot procesează datele exclusiv pe servere UE (Frankfurt) și nu păstrează conținutul conversațiilor mai mult decât e necesar pentru funcționare. Acordul de procesare a datelor (DPA) este disponibil în limba română și conform Regulamentului UE 2016/679 (GDPR). Vizitatorul primește acord explicit înainte ca conversația să fie procesată."
+  },
+  {
+    q: "Pot anula abonamentul oricând?",
+    a: "Da, fără penalități și fără perioadă minimă. Abonamentul Stripe se oprește la cerere prin self-service în panoul de control. Datele și configurarea rămân salvate timp de 30 de zile, în caz că dorești să reactivezi."
+  },
+  {
+    q: "Cum se instalează pe site?",
+    a: "Instalarea durează sub 5 minute — un fragment de cod JavaScript (un singur rând) adăugat în secțiunea HTML a site-ului. Funcționează pe orice CMS: WordPress, Wix, Shopify, Squarespace, Webflow, Astro, sau site-uri custom HTML. Echipa Hello Web te asistă gratuit la setup dacă ai nevoie de ajutor — fără cost suplimentar."
+  }
+];
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Concierge AI pentru hoteluri, pensiuni și resorturi",
+  "description": "Concierge AI specializat HoReCa pentru pensiuni, hoteluri boutique și resorturi. Răspunde 24/7 în 50+ limbi cu informațiile reale despre afacere, verifică disponibilitate iCal și preia cereri de rezervare.",
+  "url": PAGE_URL,
+  "image": COVER_URL,
+  "provider": { "@id": ORG_ID },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Romania"
+  },
+  "serviceType": "AI Customer Service for Hospitality",
+  "category": "Hospitality Technology",
+  "audience": {
+    "@type": "BusinessAudience",
+    "audienceType": "Hotels, Pensions, Resorts, Vacation Rentals"
+  }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Acasă", "item": SITE_URL },
+    { "@type": "ListItem", "position": 2, "name": "Industrii", "item": `${SITE_URL}/industrii` },
+    { "@type": "ListItem", "position": 3, "name": "Hoteluri", "item": PAGE_URL }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(item => ({
+    "@type": "Question",
+    "name": item.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.a
+    }
+  }))
+};
+---
+
+<Layout
+  title="Concierge AI pentru hoteluri și pensiuni — MyChatbot"
+  description="Concierge AI specializat HoReCa pentru pensiuni, hoteluri boutique și resorturi. Răspunde 24/7 în 50+ limbi, verifică disponibilitate iCal și preia cereri de rezervare."
+  canonical={PAGE_URL}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <Nav basePath="/" />
+
+  <main>
+    <nav class="breadcrumb-nav" aria-label="breadcrumb">
+      <div class="container">
+        <a href="/">Acasă</a>
+        <span class="separator">›</span>
+        <a href="/industrii/">Industrii</a>
+        <span class="separator">›</span>
+        <span class="current">Hoteluri</span>
+      </div>
+    </nav>
+
+    <section class="vert-hero">
+      <div class="container">
+        <span class="section-tag">VERTICALA · HOTELURI</span>
+        <h1>Concierge AI pentru hoteluri, pensiuni și resorturi</h1>
+        <p class="lead">De la pensiuni de 5 camere la resorturi cu 200, un concierge AI răspunde oaspeților 24/7 în limba lor, verifică disponibilitate în timp real și preia cereri de rezervare — fără să suprasolicite recepția. Pentru afacerile HoReCa din România, e diferența între a pierde rezervările care vin la 23:00 și a le converti în clienți.</p>
+        <p>În 2026, peste 60% dintre călătorii Gen Z și Millennials folosesc instrumente AI pentru a planifica vacanțele. Așteptarea de a primi răspuns instant a devenit standardul — iar unitățile de cazare care nu adoptă concierge AI pierd rezervări către cei care l-au implementat deja.</p>
+        <div class="hero-img-wrapper">
+          <img src="/industrii/hoteluri-cover.svg" alt="Concierge AI pentru hoteluri și pensiuni — ghidul complet" width="1200" height="630" />
+        </div>
+      </div>
+    </section>
+
+    <section class="vert-section">
+      <div class="container">
+        <h2>Pentru cine este concierge-ul AI MyChatbot</h2>
+        <p>MyChatbot acoperă tot range-ul unităților de cazare — de la pensiuni mici cu 5-15 camere, la hoteluri boutique de 30-80 camere, până la resorturi cu volum mare. Logica de bază e aceeași: răspunsuri instant, în limba oaspetelui, cu informațiile reale despre afacerea ta. Diferența între planuri stă în volumul de conversații, profunzimea integrărilor și nivelul de personalizare.</p>
+
+        <div class="subverticals-grid">
+          <article class="subvert-card">
+            <div class="plan-badge plan-start">PLAN START · 150 lei/lună</div>
+            <h3>Pensiuni și case de vacanță</h3>
+            <p>Pentru pensiunile cu 5-15 camere, problema clasică nu e lipsa de cerere — e timpul. Proprietarul răspunde la mesaje în pauze, recepția nu există fizic, iar ofertele sezoniere creează vârfuri de întrebări identice ("aveți disponibilitate?", "care e prețul?", "acceptați animale?"). Concierge-ul AI Start răspunde automat la 80% din întrebările repetitive: prețuri, disponibilitate, parcare, mic dejun, animale, anulări, atracții locale.</p>
+            <p><strong>Avantajul concret:</strong> un proprietar de pensiune își recuperează 2-3 ore zilnic — timp care altfel ar fi consumat pe răspunsuri repetitive în pauze de masă, seara târziu, sau în weekend.</p>
+          </article>
+
+          <article class="subvert-card">
+            <div class="plan-badge plan-standard">PLAN STANDARD · 250 lei/lună</div>
+            <h3>Hoteluri boutique</h3>
+            <p>Pentru hoteluri de 30-80 camere cu poziționare premium, concierge-ul AI nu e doar răspuns la întrebări — e parte din experiența brand-ului. Tonul, recomandările locale, capacitatea de upsell pentru servicii suplimentare contează la fel de mult ca răspunsurile factuale. Planul Standard include verificare disponibilitate în timp real prin iCal, eliminarea brand-ului MyChatbot din widget și integrare a mai multor surse de cunoștințe.</p>
+            <p>Pentru un hotel boutique, fiecare conversație e o oportunitate de a construi prima impresie — un concierge AI care răspunde elegant și cunoaște împrejurimile e diferența între un oaspete care rezervă și unul care continuă căutarea.</p>
+          </article>
+
+          <article class="subvert-card">
+            <div class="plan-badge plan-pro">PLAN PRO · 550 lei/lună</div>
+            <h3>Hoteluri și resorturi</h3>
+            <p>Pentru hoteluri cu 80+ camere și volum constant, concierge-ul AI gestionează cereri în zeci de limbi simultan, integrează multiple sisteme de booking, preia cereri pentru evenimente și grupuri, și produce rapoarte de performanță. Planul Pro include conversații nelimitate, crawl zilnic al modificărilor de tarife și disponibilitate, plus rapoarte avansate.</p>
+            <p>Pentru un resort cu trafic internațional, capacitatea de a răspunde simultan în 5-10 limbi diferite, cu informații actualizate zilnic despre tarife sezoniere și pachete, transformă concierge-ul într-un canal de vânzare 24/7.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="vert-section">
+      <div class="container">
+        <h2>Cum ajută concierge AI o unitate de cazare</h2>
+        <p>Patru probleme tipice și soluțiile concrete oferite de un concierge AI specializat HoReCa.</p>
+
+        <div class="problem-block">
+          <h3>Cererile care vin după închiderea recepției</h3>
+          <p>Aproape jumătate din cererile de rezervare directă pentru pensiuni și hoteluri vin în afara orelor 9-17. Părinți care decid noaptea, cupluri care plănuiesc weekend-ul după ce copiii adorm, turiști internaționali în alt fus orar, business travelers care își rezervă în pauza de seară. Fără concierge AI, aceste cereri se pierd — formularele de contact rămân fără răspuns ore bune, iar oaspetele alege primul concurent care răspunde dimineața.</p>
+          <p>Cu concierge AI, vizitatorul primește răspuns instant la 23:00 cu prețuri, disponibilitate și pașii pentru rezervare. Cererile complexe sau personalizate sunt structurate și trimise recepției pentru aprobare în dimineața următoare — fără ca oaspetele să simtă că nimeni nu i-a răspuns.</p>
+        </div>
+
+        <div class="problem-block">
+          <h3>Întrebările identice repetate de zeci de ori pe zi</h3>
+          <p>"Aveți parcare? E gratuită? Mic dejun e inclus în preț? Animale sunt acceptate? Care e ora de check-in? Care e politica de anulare?". Aceleași întrebări, în fiecare zi, primesc același răspuns — dar consumă timp prețios al recepționerilor și al gazdelor. Pentru o pensiune cu volum mediu, aceste interacțiuni repetitive pot consuma 2-3 ore zilnic. Pentru un hotel cu volum mare, mult mai mult.</p>
+          <p>Concierge-ul AI le rezolvă instant, eliberând personalul pentru interacțiuni cu valoare reală: primirea oaspeților, rezolvarea situațiilor speciale, vânzări consultative pentru servicii premium. Rezultatul nu este personal redus — este un personal mai eficient și oaspeți mai mulțumiți de experiența rapidă.</p>
+        </div>
+
+        <div class="problem-block">
+          <h3>Bariera lingvistică pentru turiști internaționali</h3>
+          <p>Pentru hotelurile boutique și resorturile cu trafic internațional, traducerea în engleză, germană, italiană, franceză a întrebărilor consumă timp și introduce erori. Un site bilingv parțial sau un personal care nu vorbește toate limbile creează o experiență fragmentată. Pentru oaspeții turci, ucraineni, japonezi, sau israelieni în vizită, soluția clasică e răspuns târziu sau confuz.</p>
+          <p>Concierge-ul AI detectează automat limba mesajului și răspunde nativ în 50+ limbi cu informațiile reale ale unității. Răspunsurile sunt idiomatice, nu traduceri rigide care duc la mesaje nenaturale.</p>
+        </div>
+
+        <div class="problem-block">
+          <h3>Lipsa de control asupra ce întrebări convertesc</h3>
+          <p>Recepția răspunde la întrebări, dar nu păstrează evidența: care întrebări duc la rezervări, care la abandonuri, ce nu e clar pe site, ce promoții se cer cel mai des. Decizia de marketing devine intuitivă în loc să fie bazată pe date concrete.</p>
+          <p>Concierge-ul AI urmărește toate conversațiile și produce rapoarte: top întrebări, perioade cu vârf de cerere, ce informații lipsesc din knowledge base, care pagini trimit cel mai mult trafic spre chat, care cereri se transformă în rezervări. Pentru un hotel boutique sau un resort, aceste insights sunt direct conectate la deciziile de marketing și operațiuni.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="vert-section vert-section-alt">
+      <div class="container">
+        <h2>Concierge AI specializat vs. chatbot generic — comparație pentru cazare</h2>
+        <p>Diferența nu e doar de preț, ci de înțelegere a contextului hotelier. Un chatbot generic învață de la zero ce înseamnă "cameră dublă" sau "mic dejun continental". Un concierge AI specializat MyChatbot pleacă cu acest context preinstalat, cu template-uri specifice pentru pensiuni, hoteluri boutique, resorturi.</p>
+
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Criteriu</th>
+                <th>Chatbot generic</th>
+                <th>MyChatbot pentru cazare</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Cunoaștere domeniu HoReCa</td><td>Generală, learn from scratch</td><td>Pre-antrenat pe scenarii cazare</td></tr>
+              <tr><td>Limba română</td><td>Variabilă, traducere</td><td>Nativă, idiomatică</td></tr>
+              <tr><td>Înțelegere tipuri cazare</td><td>Slabă</td><td>Cunoaște twin/double/suite, regimuri, tarife</td></tr>
+              <tr><td>Suport în română</td><td>Rar</td><td>Standard, în 5 minute</td></tr>
+              <tr><td>Conformitate GDPR-RO</td><td>Generică</td><td>Server UE, DPA în română</td></tr>
+              <tr><td>Verificare disponibilitate</td><td>Nu</td><td>Da, prin integrare iCal (Standard+)</td></tr>
+              <tr><td>Tonalitate adaptată</td><td>Generic</td><td>Prietenos pentru pensiuni, premium pentru boutique</td></tr>
+              <tr><td>Setup pentru o pensiune</td><td>Configurare extinsă</td><td>Sub o oră, fără cunoștințe tehnice</td></tr>
+              <tr><td>Preț pentru pensiune mică</td><td>100-500 EUR/lună</td><td>30 EUR/lună (150 lei)</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>Pentru un proprietar de pensiune fără echipă tehnică, diferența practică se vede în primele 30 de minute. Un chatbot generic îi cere să configureze ce înseamnă "cameră dublă matrimonială cu vedere la grădină". MyChatbot știe deja aceste concepte și se concentrează pe particularitățile afacerii tale.</p>
+      </div>
+    </section>
+
+    <section class="vert-section">
+      <div class="container">
+        <h2>ROI: cât costă vs. cât economisești</h2>
+        <p>Calculul e simplu pentru o pensiune cu 10-20 camere care primește între 5 și 20 cereri zilnice prin formular și mesaje pe rețele sociale.</p>
+
+        <div class="roi-block">
+          <p><strong>Cost concierge AI:</strong> 150 lei/lună (planul Start) sau 250 lei/lună (Standard cu disponibilitate iCal automată).</p>
+
+          <p><strong>Cost economisit lunar:</strong></p>
+          <ul>
+            <li>2-3 ore zilnice de timp recepționer/proprietar: aproximativ 60-90 ore lunare la cost-oră de minimum 30 lei = 1800-2700 lei</li>
+            <li>1-3 rezervări recuperate la 200-400 lei/noapte din cereri ce s-ar fi pierdut după ore = 200-1200 lei/lună</li>
+            <li>Reducere abandonuri formulare contact: timpul de răspuns scade de la zile la secunde</li>
+          </ul>
+
+          <p><strong>Break-even tipic:</strong> 1-3 luni. După aceea, fiecare rezervare suplimentară captată e profit net direct.</p>
+        </div>
+
+        <p>Pentru un hotel boutique de 50 camere cu volum mai mare, ROI-ul e atins în prima săptămână de utilizare. Pentru un resort cu trafic constant, în primele zile.</p>
+      </div>
+    </section>
+
+    <section class="vert-section vert-section-alt">
+      <div class="container">
+        <h2>Ce face concierge-ul AI pentru hoteluri în practică</h2>
+        <p>Listă concretă de scenarii rezolvate automat de MyChatbot pentru o unitate de cazare:</p>
+        <ul class="scenarios-list">
+          <li>Verificarea disponibilității pentru o perioadă specifică ("aveți camere libere 12-15 iunie?") cu integrare iCal</li>
+          <li>Prezentarea tarifelor pe tip cameră, regim, sezon</li>
+          <li>Politicile cazării: check-in/out, anulare, animale, copii, parcare</li>
+          <li>Informații despre servicii suplimentare: mic dejun, spa, restaurant, transferuri</li>
+          <li>Recomandări de atracții turistice locale și transferuri</li>
+          <li>Preluarea cererilor de rezervare pentru aprobare manuală de către recepție</li>
+          <li>Răspuns la oaspeții care au cazare confirmată ("la ce oră e check-in-ul?", "există parcare?")</li>
+          <li>Sugestii de upsell pentru servicii suplimentare (Standard+)</li>
+          <li>Detectare automată limbă oaspete și răspuns în limba lor</li>
+          <li>Handoff către recepționer uman pentru cereri complexe sau emoționale</li>
+          <li>Follow-up post-cazare cu solicitare review</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="vert-section">
+      <div class="container">
+        <h2>Vezi concierge-ul AI în acțiune</h2>
+        <p>Hotel Demo este un hotel 3-stele din Brașov, configurat complet în MyChatbot ca exemplu real de implementare. Conversația e cu Sofia, concierge-ul lor AI, care răspunde la întrebări reale despre camere, prețuri, atracții locale și politici.</p>
+        <a href="/#demo" class="btn-cta">Vezi demo live →</a>
+        <p class="demo-note">Demo-ul folosește datele reale ale unei unități de cazare — disponibilitate, tarife, regulament, atracții (Castelul Bran, Cetatea Râșnov, telecabină Postăvarul). Poți să-i pui orice întrebare ai pune unei recepții reale.</p>
+      </div>
+    </section>
+
+    <section class="vert-section vert-section-alt">
+      <div class="container">
+        <h2>Întrebări frecvente despre concierge AI pentru hoteluri și pensiuni</h2>
+        <div class="faq-list">
+          {faqs.map((item) => (
+            <details class="faq-item">
+              <summary>{item.q}</summary>
+              <p>{item.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="vert-cta-final">
+      <div class="container">
+        <h2>Începe cu un trial gratuit de 7 zile</h2>
+        <p>Cele mai utile decizii se iau cu informații concrete. Trial-ul de 7 zile pe planul Standard îți permite să testezi cu date reale ale propriei pensiuni sau hotel — fără card bancar, fără angajament. După cele 7 zile, alegi planul potrivit sau renunți.</p>
+        <a href="https://app.mychatbot.ro/signup" class="btn-cta-primary">Începe trial gratuit →</a>
+        <p class="cta-secondary">Pentru întrebări specifice sau o demonstrație ghidată, <a href="mailto:contact@mychatbot.ro">contactează-ne la contact@mychatbot.ro</a>.</p>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .breadcrumb-nav {
+    background: #f8fafc;
+    padding: 14px 0;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 14px;
+  }
+  .breadcrumb-nav .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .breadcrumb-nav a {
+    color: #475569;
+    text-decoration: none;
+  }
+  .breadcrumb-nav a:hover {
+    color: #06b6d4;
+  }
+  .breadcrumb-nav .separator {
+    margin: 0 8px;
+    color: #94a3b8;
+  }
+  .breadcrumb-nav .current {
+    color: #0f172a;
+    font-weight: 600;
+  }
+
+  main {
+    background: #ffffff;
+  }
+
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .vert-hero {
+    padding: 64px 0 32px;
+    text-align: left;
+  }
+  .vert-hero .container {
+    max-width: 880px;
+  }
+  .section-tag {
+    display: inline-block;
+    background: rgba(6, 182, 212, 0.12);
+    color: #0891b2;
+    padding: 6px 14px;
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+  }
+  .vert-hero h1 {
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 800;
+    line-height: 1.1;
+    color: #0f172a;
+    margin: 0 0 24px;
+    letter-spacing: -1px;
+  }
+  .vert-hero .lead {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #334155;
+    margin-bottom: 20px;
+  }
+  .vert-hero p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #475569;
+    margin-bottom: 16px;
+  }
+  .hero-img-wrapper {
+    margin-top: 40px;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .hero-img-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .vert-section {
+    padding: 56px 0;
+  }
+  .vert-section-alt {
+    background: #f8fafc;
+  }
+  .vert-section .container {
+    max-width: 880px;
+  }
+  .vert-section h2 {
+    font-size: clamp(26px, 4vw, 36px);
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 20px;
+    line-height: 1.2;
+  }
+  .vert-section p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #475569;
+    margin-bottom: 16px;
+  }
+  .vert-section h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 32px 0 12px;
+  }
+
+  .subverticals-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 32px;
+  }
+  .subvert-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 28px;
+  }
+  .subvert-card h3 {
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+  .plan-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  .plan-start {
+    background: rgba(34, 197, 94, 0.12);
+    color: #15803d;
+  }
+  .plan-standard {
+    background: rgba(6, 182, 212, 0.12);
+    color: #0891b2;
+  }
+  .plan-pro {
+    background: rgba(168, 85, 247, 0.12);
+    color: #7e22ce;
+  }
+
+  .problem-block {
+    margin: 32px 0;
+  }
+
+  .comparison-table-wrapper {
+    overflow-x: auto;
+    margin: 32px 0;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+  }
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    font-size: 15px;
+  }
+  .comparison-table th {
+    background: #0f172a;
+    color: #ffffff;
+    padding: 14px 16px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  .comparison-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #e2e8f0;
+    color: #334155;
+    line-height: 1.5;
+  }
+  .comparison-table tr:last-child td {
+    border-bottom: none;
+  }
+  .comparison-table tr:nth-child(even) {
+    background: #f8fafc;
+  }
+
+  .roi-block {
+    background: #f8fafc;
+    border-left: 4px solid #06b6d4;
+    padding: 24px 28px;
+    margin: 24px 0;
+    border-radius: 0 8px 8px 0;
+  }
+  .roi-block ul {
+    margin: 12px 0;
+    padding-left: 20px;
+  }
+  .roi-block li {
+    line-height: 1.7;
+    color: #475569;
+    margin-bottom: 8px;
+  }
+
+  .scenarios-list {
+    list-style: none;
+    padding: 0;
+    margin: 24px 0;
+  }
+  .scenarios-list li {
+    padding: 12px 0 12px 32px;
+    position: relative;
+    line-height: 1.6;
+    color: #334155;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .scenarios-list li:last-child {
+    border-bottom: none;
+  }
+  .scenarios-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 12px;
+    color: #06b6d4;
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  .btn-cta {
+    display: inline-block;
+    background: #0f172a;
+    color: #ffffff;
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    margin: 16px 0;
+    transition: background 0.2s;
+  }
+  .btn-cta:hover {
+    background: #1e293b;
+  }
+  .demo-note {
+    color: #64748b;
+    font-style: italic;
+    font-size: 15px;
+  }
+
+  .faq-list {
+    margin-top: 24px;
+  }
+  .faq-item {
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    background: #ffffff;
+  }
+  .faq-item summary {
+    padding: 18px 20px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #0f172a;
+    list-style: none;
+    position: relative;
+    padding-right: 48px;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item summary::after {
+    content: '+';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 22px;
+    color: #06b6d4;
+    transition: transform 0.2s;
+  }
+  .faq-item[open] summary::after {
+    content: '−';
+  }
+  .faq-item p {
+    padding: 0 20px 18px;
+    line-height: 1.7;
+    color: #475569;
+    margin: 0;
+  }
+
+  .vert-cta-final {
+    background: #0f172a;
+    color: #ffffff;
+    padding: 80px 0;
+    text-align: center;
+  }
+  .vert-cta-final .container {
+    max-width: 720px;
+  }
+  .vert-cta-final h2 {
+    color: #ffffff;
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 700;
+    margin: 0 0 16px;
+  }
+  .vert-cta-final p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+  .btn-cta-primary {
+    display: inline-block;
+    background: #06b6d4;
+    color: #0f172a;
+    padding: 16px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 17px;
+    margin: 12px 0 24px;
+    transition: background 0.2s;
+  }
+  .btn-cta-primary:hover {
+    background: #0891b2;
+    color: #ffffff;
+  }
+  .cta-secondary {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.6);
+  }
+  .cta-secondary a {
+    color: #06b6d4;
+    text-decoration: none;
+  }
+  .cta-secondary a:hover {
+    color: #ffffff;
+  }
+
+  @media (min-width: 768px) {
+    .subverticals-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>
